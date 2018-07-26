@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>springboot-lifecat</artifactId>
+        <groupId>com.ten</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>lifecat-wx-api</artifactId>
+    <packaging>war</packaging>
+
+    <name>lifecat-wx-api Maven Webapp</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ten</groupId>
+            <artifactId>lifecat-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ten</groupId>
+            <artifactId>lifecat-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ten</groupId>
+            <artifactId>lifecat-vo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ten</groupId>
+            <artifactId>lifecat-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>lifecat-wx-api</finalName>
+    </build>
+</project>
