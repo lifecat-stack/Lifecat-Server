@@ -1,22 +1,86 @@
 package com.ten.entity;
 
+/**
+ * c_log
+ *
+ * @author Administrator
+ */
 public class LogDO {
-    private Integer albumId;
+
+    private Integer logId;
     private Integer userId;
-    private String albumName;
-    private String albumDesc;
-    private String albumCoverUrl;
-    private boolean deleted;
-    private String albumGmtCreate;
-    private String albumGmtModified;
+    private Integer userRoleId;
+    private String userIp;
+    private String userAddress;
+    private String userSource;
+    private String logRecordTime;
 
     @Override
     public String toString() {
-        return "c_album@{" +
-                "album_id:" + albumId +
+        return "c_log@{" +
+                "log_id:" + logId +
                 ",user_id:" + userId +
-                ",album_name:" + albumName +
-                ",album_desc:" + albumDesc +
+                ",user_role_id:" + userRoleId +
+                ",user_ip:" + userIp +
+                ",user_address:" + userAddress +
+                ",user_source:" + userSource +
+                ",log_record_time:" + logRecordTime +
+                "}";
     }
 
+    public Integer getLogId() {
+        return logId;
+    }
+
+    public void setLogId(Integer logId) {
+        this.logId = logId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getUserRoleId() {
+        return userRoleId;
+    }
+
+    public void setUserRoleId(Integer userRoleId) {
+        this.userRoleId = userRoleId;
+    }
+
+    public String getUserIp() {
+        return userIp;
+    }
+
+    public void setUserIp(String userIp) {
+        this.userIp = userIp;
+    }
+
+    public String getUserAddress() {
+        return userAddress;
+    }
+
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
+    }
+
+    public String getUserSource() {
+        return userSource;
+    }
+
+    public void setUserSource(String userSource) {
+        this.userSource = userSource;
+    }
+
+    public String getLogRecordTime() {
+        return logRecordTime;
+    }
+
+    public void setLogRecordTime(String logRecordTime) {
+        this.logRecordTime = logRecordTime;
+    }
 }

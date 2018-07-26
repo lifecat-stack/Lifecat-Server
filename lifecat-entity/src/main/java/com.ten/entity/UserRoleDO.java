@@ -1,22 +1,66 @@
 package com.ten.entity;
 
+/**
+ * c_user_role
+ *
+ * @author Administrator
+ */
 public class UserRoleDO {
-    private Integer albumId;
+
+    private Integer urId;
     private Integer userId;
-    private String albumName;
-    private String albumDesc;
-    private String albumCoverUrl;
-    private boolean deleted;
-    private String albumGmtCreate;
-    private String albumGmtModified;
+    private Integer roleId;
+    private String urGmtCreate;
+    private String urGmtModified;
 
     @Override
     public String toString() {
-        return "c_album@{" +
-                "album_id:" + albumId +
+        return "c_user_role@{" +
+                "ur_id:" + urId +
                 ",user_id:" + userId +
-                ",album_name:" + albumName +
-                ",album_desc:" + albumDesc +
+                ",role_id:" + roleId +
+                ",ur_gmt_create:" + urGmtCreate +
+                ",ur_gmt_modified:" + urGmtModified +
+                "}";
     }
 
+    public Integer getUrId() {
+        return urId;
+    }
+
+    public void setUrId(Integer urId) {
+        this.urId = urId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getUrGmtCreate() {
+        return urGmtCreate;
+    }
+
+    public void setUrGmtCreate(String urGmtCreate) {
+        this.urGmtCreate = urGmtCreate;
+    }
+
+    public String getUrGmtModified() {
+        return urGmtModified;
+    }
+
+    public void setUrGmtModified(String urGmtModified) {
+        this.urGmtModified = urGmtModified;
+    }
 }

@@ -1,22 +1,76 @@
 package com.ten.entity;
 
+/**
+ * c_group
+ *
+ * @author Administrator
+ */
 public class GroupDO {
-    private Integer albumId;
-    private Integer userId;
-    private String albumName;
-    private String albumDesc;
-    private String albumCoverUrl;
-    private boolean deleted;
-    private String albumGmtCreate;
-    private String albumGmtModified;
+
+    private Integer groupId;
+    private Integer groupParentId;
+    private String groupName;
+    private String groupDesc;
+    private String groupGmtCreate;
+    private String groupGmtModified;
 
     @Override
     public String toString() {
-        return "c_album@{" +
-                "album_id:" + albumId +
-                ",user_id:" + userId +
-                ",album_name:" + albumName +
-                ",album_desc:" + albumDesc +
+        return "c_group@{" +
+                "group_id:" + groupId +
+                ",group_parent_id:" + groupParentId +
+                ",group_name:" + groupName +
+                ",group_desc:" + groupDesc +
+                ",group_gmt_create:" + groupGmtCreate +
+                ",group_gmt_modified:" + groupGmtModified +
+                "}";
     }
 
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
+
+    public Integer getGroupParentId() {
+        return groupParentId;
+    }
+
+    public void setGroupParentId(Integer groupParentId) {
+        this.groupParentId = groupParentId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
+    public String getGroupGmtCreate() {
+        return groupGmtCreate;
+    }
+
+    public void setGroupGmtCreate(String groupGmtCreate) {
+        this.groupGmtCreate = groupGmtCreate;
+    }
+
+    public String getGroupGmtModified() {
+        return groupGmtModified;
+    }
+
+    public void setGroupGmtModified(String groupGmtModified) {
+        this.groupGmtModified = groupGmtModified;
+    }
 }

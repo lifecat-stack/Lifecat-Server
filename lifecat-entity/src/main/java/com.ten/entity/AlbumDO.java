@@ -12,7 +12,7 @@ public class AlbumDO {
     private String albumName;
     private String albumDesc;
     private String albumCoverUrl;
-    private boolean deleted;
+    private Integer deleted;
     private String albumGmtCreate;
     private String albumGmtModified;
 
@@ -23,6 +23,11 @@ public class AlbumDO {
                 ",user_id:" + userId +
                 ",album_name:" + albumName +
                 ",album_desc:" + albumDesc +
+                ",album_cover_url:" + albumCoverUrl +
+                ",is_deleted:" + deleted +
+                ",album_gmt_create:" + albumGmtCreate +
+                ",album_gmt_modified:" + albumGmtModified +
+                "}";
     }
 
     public Integer getAlbumId() {
@@ -65,11 +70,11 @@ public class AlbumDO {
         this.albumCoverUrl = albumCoverUrl;
     }
 
-    public boolean isDeleted() {
+    public Integer getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Integer deleted) {
         this.deleted = deleted;
     }
 

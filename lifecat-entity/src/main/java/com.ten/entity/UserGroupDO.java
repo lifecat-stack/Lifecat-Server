@@ -1,22 +1,66 @@
 package com.ten.entity;
 
+/**
+ * c_user_group
+ *
+ * @author Administrator
+ */
 public class UserGroupDO {
-    private Integer albumId;
+
+    private Integer ugId;
     private Integer userId;
-    private String albumName;
-    private String albumDesc;
-    private String albumCoverUrl;
-    private boolean deleted;
-    private String albumGmtCreate;
-    private String albumGmtModified;
+    private Integer groupId;
+    private String ugGmtCreate;
+    private String ugGmtModified;
 
     @Override
     public String toString() {
-        return "c_album@{" +
-                "album_id:" + albumId +
+        return "c_user_group@{" +
+                "ug_id:" + ugId +
                 ",user_id:" + userId +
-                ",album_name:" + albumName +
-                ",album_desc:" + albumDesc +
+                ",group_id:" + groupId +
+                ",ug_gmt_create:" + ugGmtCreate +
+                ",ug_gmt_modified:" + ugGmtModified +
+                "}";
     }
 
+    public Integer getUgId() {
+        return ugId;
+    }
+
+    public void setUgId(Integer ugId) {
+        this.ugId = ugId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getUgGmtCreate() {
+        return ugGmtCreate;
+    }
+
+    public void setUgGmtCreate(String ugGmtCreate) {
+        this.ugGmtCreate = ugGmtCreate;
+    }
+
+    public String getUgGmtModified() {
+        return ugGmtModified;
+    }
+
+    public void setUgGmtModified(String ugGmtModified) {
+        this.ugGmtModified = ugGmtModified;
+    }
 }

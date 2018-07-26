@@ -1,22 +1,66 @@
 package com.ten.entity;
 
+/**
+ * c_group_permission
+ *
+ * @author Administrator
+ */
 public class GroupPermissionDO {
-    private Integer albumId;
-    private Integer userId;
-    private String albumName;
-    private String albumDesc;
-    private String albumCoverUrl;
-    private boolean deleted;
-    private String albumGmtCreate;
-    private String albumGmtModified;
+
+    private Integer gpId;
+    private Integer groupId;
+    private Integer permissionId;
+    private String gpGmtCreate;
+    private String gpGmtModified;
 
     @Override
     public String toString() {
-        return "c_album@{" +
-                "album_id:" + albumId +
-                ",user_id:" + userId +
-                ",album_name:" + albumName +
-                ",album_desc:" + albumDesc +
+        return "c_group_permission@{" +
+                "gp_id:" + gpId +
+                ",group_id:" + groupId +
+                ",permisson_id:" + permissionId +
+                ",gp_gmt_create:" + gpGmtCreate +
+                ",gp_gmt_modified:" + gpGmtModified +
+                "}";
     }
 
+    public Integer getGpId() {
+        return gpId;
+    }
+
+    public void setGpId(Integer gpId) {
+        this.gpId = gpId;
+    }
+
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
+
+    public Integer getPermissionId() {
+        return permissionId;
+    }
+
+    public void setPermissionId(Integer permissionId) {
+        this.permissionId = permissionId;
+    }
+
+    public String getGpGmtCreate() {
+        return gpGmtCreate;
+    }
+
+    public void setGpGmtCreate(String gpGmtCreate) {
+        this.gpGmtCreate = gpGmtCreate;
+    }
+
+    public String getGpGmtModified() {
+        return gpGmtModified;
+    }
+
+    public void setGpGmtModified(String gpGmtModified) {
+        this.gpGmtModified = gpGmtModified;
+    }
 }
