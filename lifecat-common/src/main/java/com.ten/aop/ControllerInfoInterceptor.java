@@ -9,25 +9,25 @@ import org.springframework.stereotype.Component;
 @Component
 public class ControllerInfoInterceptor {
 
-    private Logger logger = LoggerFactory.getLogger(ControllerInfoInterceptor.class);
+//    private Logger logger = LoggerFactory.getLogger(ControllerInfoInterceptor.class);
 
-    @Pointcut("execution(public * com.spring.controller.UserController.*(..))")
-    public void infoToken(){}
-
-    @Before("infoToken()")
-    public void beforeInfoToken(){
-        System.out.println("controller execute before");
-        logger.info("controller execute before");
-    }
-
-    @After("infoToken()")
-    public void afterInfoToken(){
-        System.out.println("controller execute before");
-        logger.info("controller execute before");
-    }
-
-    @AfterThrowing
-    public void afterThrowing(){
-        logger.warn("controller execute exception");
-    }
+//    @Pointcut("execution(public * com.spring.controller.UserController.*(..))")
+//    public void infoToken(){}
+//
+//    @Before("infoToken()")
+//    public void beforeInfoToken(){
+//        System.out.println("controller execute before");
+//        logger.info("controller execute before");
+//    }
+//
+//    @After("infoToken()")
+//    public void afterInfoToken(){
+//        System.out.println("controller execute before");
+//        logger.info("controller execute before");
+//    }
+//
+//    @AfterThrowing
+//    public void afterThrowing(){
+//        logger.warn("controller execute exception");
+//    }
 }

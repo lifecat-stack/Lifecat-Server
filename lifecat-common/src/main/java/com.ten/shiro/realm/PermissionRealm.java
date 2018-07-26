@@ -1,6 +1,6 @@
 package com.ten.shiro.realm;
 
-import com.ten.service.UserService;
+
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -12,9 +12,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PermissionRealm extends AuthorizingRealm {
-
-    @Autowired
-    private UserService userService;
 
     /**
      * 授权
@@ -46,17 +43,18 @@ public class PermissionRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        // 1.把AuthenticationToken转换成UsernamePasswordToken
-        UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
-        // 2.从UsernamePasswordToken获取username
-        String userName = token.getUsername();
-        UserDO user = userService.readUserByName(userName);
-        // 3.验证
-        if (user != null) {
-            return new SimpleAuthenticationInfo(
-                    user.getUserName(), user.getUserPassword(), getName());
-        } else {
-            throw new UnknownAccountException();
-        }
+//        // 1.把AuthenticationToken转换成UsernamePasswordToken
+//        UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
+//        // 2.从UsernamePasswordToken获取username
+//        String userName = token.getUsername();
+//        UserDO user = userService.readUserByName(userName);
+//        // 3.验证
+//        if (user != null) {
+//            return new SimpleAuthenticationInfo(
+//                    user.getUserName(), user.getUserPassword(), getName());
+//        } else {
+//            throw new UnknownAccountException();
+//        }
+        return null;
     }
 }

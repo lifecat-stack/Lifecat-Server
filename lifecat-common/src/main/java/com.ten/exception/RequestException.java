@@ -7,4 +7,5 @@ package com.ten.exception;
  */
 public interface RequestException {
     String getErrorMsg();
+
 }

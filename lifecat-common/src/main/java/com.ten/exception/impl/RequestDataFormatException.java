@@ -18,4 +18,5 @@ public class RequestDataFormatException extends RuntimeException implements Requ
     public String getErrorMsg() {
         return errorMsg;
     }
+
 }

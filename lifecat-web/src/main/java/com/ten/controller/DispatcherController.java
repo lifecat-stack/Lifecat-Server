@@ -5,13 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 主视图控制器
  *
  * @author Administrator
  */
-@Controller
+@RestController
 public class DispatcherController {
 
     private Logger logger = LoggerFactory.getLogger(DispatcherController.class);

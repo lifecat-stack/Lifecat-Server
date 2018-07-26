@@ -14,4 +14,5 @@ public class RequestDataNullException extends RuntimeException implements Reques
     public String getErrorMsg() {
         return errorMsg;
     }
+
 }
