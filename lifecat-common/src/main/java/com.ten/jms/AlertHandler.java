@@ -1,7 +1,7 @@
 package com.ten.jms;
 
-import com.spring.email.AlertMailSendManager;
-import com.spring.email.SimpleEmail;
+import com.ten.email.AlertMailSendManager;
+import com.ten.email.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.mail.MessagingException;

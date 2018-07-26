@@ -24,8 +24,6 @@
         <module>lifecat-manager</module>
         <module>lifecat-dao</module>
         <module>lifecat-entity</module>
-        <module>lifecat-wx-api</module>
-        <module>lifecat-vo</module>
         <module>lifecat-common</module>
     </modules>
 
@@ -65,11 +63,6 @@
             </dependency>
             <dependency>
                 <groupId>com.ten</groupId>
-                <artifactId>lifecat-wx-api</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ten</groupId>
                 <artifactId>lifecat-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
@@ -86,6 +79,18 @@
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+                <!-- mybatis generator 自动生成代码插件 -->
+                <plugin>
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-maven-plugin</artifactId>
+                    <version>1.3.2</version>
+                    <configuration>
+                        <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml
+                        </configurationFile>
+                        <overwrite>true</overwrite>
+                        <verbose>true</verbose>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.0.0</version>

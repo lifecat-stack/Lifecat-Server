@@ -26,32 +26,12 @@
         <!--modules-->
         <dependency>
             <groupId>com.ten</groupId>
-            <artifactId>lifecat-web</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ten</groupId>
             <artifactId>lifecat-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.ten</groupId>
-            <artifactId>lifecat-manager</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ten</groupId>
-            <artifactId>lifecat-dao</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ten</groupId>
             <artifactId>lifecat-entity</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ten</groupId>
-            <artifactId>lifecat-wx-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

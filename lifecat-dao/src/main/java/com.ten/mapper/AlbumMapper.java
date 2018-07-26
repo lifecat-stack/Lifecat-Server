@@ -1,12 +1,13 @@
 package com.ten.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * c_album
  *
  * @author Administrator
  */
-@Mapper
+@Repository
 public interface AlbumMapper {
 }

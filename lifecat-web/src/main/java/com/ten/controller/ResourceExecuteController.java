@@ -1,7 +1,7 @@
 package com.ten.controller;
 
-import com.spring.exception.RequestError;
-import com.spring.exception.impl.*;
+import com.ten.exception.RequestError;
+import com.ten.exception.impl.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

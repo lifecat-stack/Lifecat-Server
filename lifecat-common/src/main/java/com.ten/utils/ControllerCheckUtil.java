@@ -1,9 +1,9 @@
 package com.ten.utils;
 
-import com.spring.exception.impl.RequestDataFormatException;
-import com.spring.exception.impl.RequestDataNullException;
-import com.spring.exception.impl.ResourceExecuteException;
-import com.spring.exception.impl.ResourceNotFoundException;
+import com.ten.exception.impl.RequestDataFormatException;
+import com.ten.exception.impl.RequestDataNullException;
+import com.ten.exception.impl.ResourceExecuteException;
+import com.ten.exception.impl.ResourceNotFoundException;
 import org.springframework.stereotype.Component;
 
 /**

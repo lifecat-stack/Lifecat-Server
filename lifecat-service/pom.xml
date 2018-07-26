@@ -26,18 +26,17 @@
         <dependency>
             <groupId>com.ten</groupId>
             <artifactId>lifecat-manager</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.ten</groupId>
             <artifactId>lifecat-dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.ten</groupId>
             <artifactId>lifecat-entity</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.ten</groupId>
-            <artifactId>lifecat-vo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.ten</groupId>

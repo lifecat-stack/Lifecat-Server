@@ -1,7 +1,7 @@
 package com.ten.jms.impl;
 
-import com.spring.jms.AlertMessage;
-import com.spring.jms.AlertService;
+import com.ten.jms.AlertMessage;
+import com.ten.jms.AlertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsOperations;
 import org.springframework.stereotype.Component;

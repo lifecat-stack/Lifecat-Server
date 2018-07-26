@@ -1,7 +1,7 @@
 package com.ten.email.impl;
 
-import com.spring.email.AlertMailSendManager;
-import com.spring.email.SimpleEmail;
+import com.ten.email.AlertMailSendManager;
+import com.ten.email.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
