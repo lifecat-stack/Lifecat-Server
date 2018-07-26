@@ -1,10 +1,12 @@
 package com.ten.serviceimpl;
 
+import com.ten.mapper.AlbumMapper;
 import com.ten.service.AdminService;
 import com.ten.utils.DateTimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -19,6 +21,9 @@ public class AdminServiceImpl implements AdminService {
     private Logger logger = LoggerFactory.getLogger(AdminServiceImpl.class);
 
     private final AdminMapper adminMapper;
+
+    @Autowired
+    private AlbumMapper albumMapper;
 
     private DateTimeUtil dateTimeUtil = DateTimeUtil.getInstance();
 

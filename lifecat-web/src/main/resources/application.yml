@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:mysql://111.230.244.153:3306/catdb?useSSL=false
-    username: root
-    password: wangshihao
-    driver-class-name: com.mysql.jdbc.Driver
