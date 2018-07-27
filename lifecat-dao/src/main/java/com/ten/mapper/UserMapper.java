@@ -1,8 +1,6 @@
 package com.ten.mapper;
 
-import com.ten.entity.UserDO;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,9 +8,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author Administrator
  */
-@Component
-@Mapper
+@Repository
 public interface UserMapper {
-
     String getTest(String test);
 }
