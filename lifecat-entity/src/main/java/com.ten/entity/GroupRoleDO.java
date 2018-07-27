@@ -1,11 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_group_role
  *
  * @author Administrator
  */
+@Table(name = "c_group_role")
 public class GroupRoleDO {
+    @Id
     private Integer grId;
     private Integer groupId;
     private Integer roleId;

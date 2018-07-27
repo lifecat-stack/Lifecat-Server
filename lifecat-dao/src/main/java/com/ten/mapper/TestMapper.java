@@ -1,9 +1,14 @@
 package com.ten.mapper;
 
-import org.springframework.stereotype.Component;
+import com.ten.entity.TestDO;
 import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.Mapper;
 
-@Repository(value = "testMapper")
-public interface TestMapper {
-    String getTest(String test);
+/**
+ * c_test
+ *
+ * @author Administrator
+ */
+@Repository
+public interface TestMapper extends Mapper<TestDO> {
 }

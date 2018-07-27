@@ -1,4 +1,4 @@
-//package com.ten.email.impl;
+//package com.ten.email.serviceimpl;
 //
 //import com.ten.email.AlertMailSendManager;
 //import com.ten.email.SimpleEmail;

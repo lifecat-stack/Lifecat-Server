@@ -1,12 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_group_permission
  *
  * @author Administrator
  */
+@Table(name = "c_group_permission")
 public class GroupPermissionDO {
-
+    @Id
     private Integer gpId;
     private Integer groupId;
     private Integer permissionId;

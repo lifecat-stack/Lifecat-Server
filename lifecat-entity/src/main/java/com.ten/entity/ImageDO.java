@@ -1,12 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_image
  *
  * @author Administrator
  */
+@Table(name = "c_image")
 public class ImageDO {
-
+    @Id
     private Integer imageId;
     private Integer albumId;
     private Integer userId;

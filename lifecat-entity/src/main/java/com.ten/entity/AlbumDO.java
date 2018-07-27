@@ -1,12 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_album
  *
  * @author Administrator
  */
+@Table(name = "c_album")
 public class AlbumDO {
-
+    @Id
     private Integer albumId;
     private Integer userId;
     private String albumName;

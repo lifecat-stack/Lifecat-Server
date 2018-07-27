@@ -1,12 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_user
  *
  * @author Administrator
  */
+@Table(name = "c_user")
 public class UserDO {
-
+    @Id
     private Integer userId;
     private String userAccountName;
     private String userAccountPassword;

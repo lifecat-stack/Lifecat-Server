@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * shiro验证控制器
+ * shiro controller
  *
  * @author Administrator
  */

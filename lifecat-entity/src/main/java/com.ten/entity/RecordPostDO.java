@@ -1,12 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_record_post
  *
  * @author Administrator
  */
+@Table(name = "c_record_post")
 public class RecordPostDO {
-
+    @Id
     private Integer postId;
     private String postTitle;
     private String postContent;

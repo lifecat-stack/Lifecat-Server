@@ -1,6 +1,8 @@
 package com.ten.mapper;
 
+import com.ten.entity.GroupPermissionDO;
 import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.Mapper;
 
 /**
  * c_group_permission
@@ -8,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @author Administrator
  */
 @Repository
-public interface GroupPermissionMapper {
+public interface GroupPermissionMapper extends Mapper<GroupPermissionDO> {
 }

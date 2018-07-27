@@ -1,12 +1,16 @@
 package com.ten.entity;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * c_log
  *
  * @author Administrator
  */
+@Table(name = "c_log")
 public class LogDO {
-
+    @Id
     private Integer logId;
     private Integer userId;
     private Integer userRoleId;
