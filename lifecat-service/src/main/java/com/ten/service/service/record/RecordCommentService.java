@@ -14,5 +14,5 @@ import com.ten.vo.RecordVO;
  *
  * @author Administrator
  */
-public interface RecordCommentService extends BaseService<CommentVO, RecordCommentDO> {
+public interface RecordCommentService extends BaseService<CommentVO> {
 }

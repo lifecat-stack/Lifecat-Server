@@ -13,5 +13,5 @@ import com.ten.vo.InfoVO;
  *
  * @author Administrator
  */
-public interface InfoService extends BaseService<InfoVO, InfoDO> {
+public interface InfoService extends BaseService<InfoVO> {
 }

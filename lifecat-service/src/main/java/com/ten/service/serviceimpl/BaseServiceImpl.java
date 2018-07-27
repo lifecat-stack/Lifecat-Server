@@ -16,7 +16,7 @@ import java.util.List;
  * @author Administrator
  * @see BaseService,BaseExecute
  */
-public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO, DO>, BaseExecute<DO> {
+public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO>, BaseExecute<DO> {
     /**
      * base mapper
      */
@@ -30,42 +30,42 @@ public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO, DO>, Ba
     /**
      * select list
      *
-     * @param entity DO object
+     * @param entity VO object
      */
     @Override
-    public abstract List<VO> list(DO entity);
+    public abstract List<VO> list(VO entity);
 
     /**
      * select
      *
-     * @param entity DO object
+     * @param entity VO object
      */
     @Override
-    public abstract VO get(DO entity);
+    public abstract VO get(VO entity);
 
     /**
      * create
      *
-     * @param entity DO object
+     * @param entity VO object
      */
     @Override
-    public abstract int post(DO entity);
+    public abstract int post(VO entity);
 
     /**
      * update
      *
-     * @param entity DO object
+     * @param entity VO object
      */
     @Override
-    public abstract int put(DO entity);
+    public abstract int put(VO entity);
 
     /**
      * delete
      *
-     * @param entity DO object
+     * @param entity VO object
      */
     @Override
-    public abstract int delete(DO entity);
+    public abstract int delete(VO entity);
 
     /* **********************************/
     /* ********** base execute***********/

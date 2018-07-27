@@ -12,5 +12,5 @@ import com.ten.vo.TestVO;
  *
  * @author Administrator
  */
-public interface TestService extends BaseService<TestVO, TestDO> {
+public interface TestService extends BaseService<TestVO> {
 }

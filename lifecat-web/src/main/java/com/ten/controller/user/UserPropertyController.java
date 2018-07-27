@@ -21,26 +21,41 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     @Autowired
     private UserPropertyService userPropertyService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(UserPropertyVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(UserPropertyVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(UserPropertyVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(UserPropertyVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(UserPropertyVO entity) {
         return null;

@@ -7,39 +7,39 @@ import java.util.List;
  *
  * @author Administrator
  */
-public interface BaseService<VO, DO> {
+public interface BaseService<VO> {
     /**
      * select list
      *
-     * @param entity DO object
+     * @param entity VO object
      */
-    List<VO> list(DO entity);
+    List<VO> list(VO entity);
 
     /**
      * select
      *
-     * @param entity DO object
+     * @param entity VO object
      */
-    VO get(DO entity);
+    VO get(VO entity);
 
     /**
      * create
      *
-     * @param entity DO object
+     * @param entity VO object
      */
-    int post(DO entity);
+    int post(VO entity);
 
     /**
      * update
      *
-     * @param entity DO object
+     * @param entity VO object
      */
-    int put(DO entity);
+    int put(VO entity);
 
     /**
      * delete
      *
-     * @param entity DO object
+     * @param entity VO object
      */
-    int delete(DO entity);
+    int delete(VO entity);
 }

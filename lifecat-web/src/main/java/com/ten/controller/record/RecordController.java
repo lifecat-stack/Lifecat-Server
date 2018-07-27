@@ -16,31 +16,46 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/record")
-public class RecordController  extends BaseController<RecordVO, ResponseResult> {
+public class RecordController extends BaseController<RecordVO, ResponseResult> {
 
     @Autowired
     private RecordService recordService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(RecordVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(RecordVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(RecordVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(RecordVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(RecordVO entity) {
         return null;

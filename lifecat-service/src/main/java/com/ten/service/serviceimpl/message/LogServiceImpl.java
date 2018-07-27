@@ -10,28 +10,29 @@ import java.util.List;
 
 @Service
 public class LogServiceImpl extends BaseServiceImpl<LogVO, LogDO> implements LogService {
+
     @Override
-    public List<LogVO> list(LogDO entity) {
+    public List<LogVO> list(LogVO entity) {
         return null;
     }
 
     @Override
-    public LogVO get(LogDO entity) {
+    public LogVO get(LogVO entity) {
         return null;
     }
 
     @Override
-    public int post(LogDO entity) {
+    public int post(LogVO entity) {
         return 0;
     }
 
     @Override
-    public int put(LogDO entity) {
+    public int put(LogVO entity) {
         return 0;
     }
 
     @Override
-    public int delete(LogDO entity) {
+    public int delete(LogVO entity) {
         return 0;
     }
 }

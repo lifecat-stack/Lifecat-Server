@@ -13,28 +13,29 @@ import java.util.List;
 
 @Service
 public class RecordServiceImpl extends BaseServiceImpl<RecordVO, RecordDO> implements RecordService {
+
     @Override
-    public List<RecordVO> list(RecordDO entity) {
+    public List<RecordVO> list(RecordVO entity) {
         return null;
     }
 
     @Override
-    public RecordVO get(RecordDO entity) {
+    public RecordVO get(RecordVO entity) {
         return null;
     }
 
     @Override
-    public int post(RecordDO entity) {
+    public int post(RecordVO entity) {
         return 0;
     }
 
     @Override
-    public int put(RecordDO entity) {
+    public int put(RecordVO entity) {
         return 0;
     }
 
     @Override
-    public int delete(RecordDO entity) {
+    public int delete(RecordVO entity) {
         return 0;
     }
 }

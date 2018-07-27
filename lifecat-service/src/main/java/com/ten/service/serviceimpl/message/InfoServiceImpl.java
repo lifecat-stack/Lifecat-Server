@@ -10,28 +10,29 @@ import java.util.List;
 
 @Service
 public class InfoServiceImpl extends BaseServiceImpl<InfoVO, InfoDO> implements InfoService {
+
     @Override
-    public List<InfoVO> list(InfoDO entity) {
+    public List<InfoVO> list(InfoVO entity) {
         return null;
     }
 
     @Override
-    public InfoVO get(InfoDO entity) {
+    public InfoVO get(InfoVO entity) {
         return null;
     }
 
     @Override
-    public int post(InfoDO entity) {
+    public int post(InfoVO entity) {
         return 0;
     }
 
     @Override
-    public int put(InfoDO entity) {
+    public int put(InfoVO entity) {
         return 0;
     }
 
     @Override
-    public int delete(InfoDO entity) {
+    public int delete(InfoVO entity) {
         return 0;
     }
 }

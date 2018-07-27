@@ -3,6 +3,7 @@ package com.ten.service.serviceimpl;
 import com.ten.entity.TestDO;
 import com.ten.mapper.TestMapper;
 import com.ten.service.service.TestService;
+import com.ten.utils.DataAndViewTranslator;
 import com.ten.vo.TestVO;
 import com.ten.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,32 +15,34 @@ import java.util.List;
 @Service
 public class TestServiceImpl extends BaseServiceImpl<TestVO, TestDO> implements TestService {
 
+    @Autowired
+    private DataAndViewTranslator<TestDO, TestVO> translator;
+
     @Override
-    public List<TestVO> list(TestDO entity) {
-        List<TestDO> testList = super.exeQueryList(entity);
+    public List<TestVO> list(TestVO entity) {
+        TestDO testDO = translator.transViewToData(entity);
+        List<TestDO> testDOList = super.exeQueryList(testDO);
+        List<TestVO> testVOList = translator.listTransDatasToViews(testDOList);
+        return testVOList;
+    }
+
+    @Override
+    public TestVO get(TestVO entity) {
         return null;
     }
 
     @Override
-    public TestVO get(TestDO entity) {
-        System.out.println("test service get");
-        TestDO testDO = super.exeQuery(entity);
-        TestVO testVO = new TestVO(testDO);
-        return testVO;
-    }
-
-    @Override
-    public int post(TestDO entity) {
+    public int post(TestVO entity) {
         return 0;
     }
 
     @Override
-    public int put(TestDO entity) {
+    public int put(TestVO entity) {
         return 0;
     }
 
     @Override
-    public int delete(TestDO entity) {
+    public int delete(TestVO entity) {
         return 0;
     }
 }

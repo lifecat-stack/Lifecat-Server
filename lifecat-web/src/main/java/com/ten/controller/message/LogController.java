@@ -21,26 +21,41 @@ public class LogController extends BaseController<LogVO, ResponseResult> {
     @Autowired
     private LogService logService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(LogVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(LogVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(LogVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(LogVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(LogVO entity) {
         return null;

@@ -13,5 +13,5 @@ import com.ten.vo.RecordVO;
  *
  * @author Administrator
  */
-public interface RecordService extends BaseService<RecordVO, RecordDO> {
+public interface RecordService extends BaseService<RecordVO> {
 }

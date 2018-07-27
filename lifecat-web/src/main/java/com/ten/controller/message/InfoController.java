@@ -21,26 +21,41 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
     @Autowired
     private InfoService infoService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(InfoVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(InfoVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(InfoVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(InfoVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(InfoVO entity) {
         return null;

@@ -21,26 +21,41 @@ public class RecordPostController extends BaseController<PostVO, ResponseResult>
     @Autowired
     private RecordPostService recordPostService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(PostVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(PostVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(PostVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(PostVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(PostVO entity) {
         return null;

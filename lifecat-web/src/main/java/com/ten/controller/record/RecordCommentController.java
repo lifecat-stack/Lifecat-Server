@@ -17,31 +17,46 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/record/comment")
-public class RecordCommentController  extends BaseController<CommentVO, ResponseResult> {
+public class RecordCommentController extends BaseController<CommentVO, ResponseResult> {
 
     @Autowired
     private RecordCommentService recordCommentService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(CommentVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(CommentVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(CommentVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(CommentVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(CommentVO entity) {
         return null;

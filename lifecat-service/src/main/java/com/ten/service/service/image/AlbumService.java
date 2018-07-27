@@ -13,5 +13,5 @@ import com.ten.vo.AlbumVO;
  *
  * @author Administrator
  */
-public interface AlbumService extends BaseService<AlbumVO, AlbumDO> {
+public interface AlbumService extends BaseService<AlbumVO> {
 }

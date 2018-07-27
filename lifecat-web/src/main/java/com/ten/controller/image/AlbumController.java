@@ -21,26 +21,41 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
     @Autowired
     private AlbumService albumService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(AlbumVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(AlbumVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(AlbumVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(AlbumVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(AlbumVO entity) {
         return null;

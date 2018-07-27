@@ -21,26 +21,41 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
     @Autowired
     private ImageService imageService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(ImageVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(ImageVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(ImageVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(ImageVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(ImageVO entity) {
         return null;

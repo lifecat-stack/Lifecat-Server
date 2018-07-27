@@ -23,26 +23,41 @@ public class UserController extends BaseController<UserVO, ResponseResult> {
     @Autowired
     private UserService userService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(UserVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(UserVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(UserVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(UserVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(UserVO entity) {
         return null;

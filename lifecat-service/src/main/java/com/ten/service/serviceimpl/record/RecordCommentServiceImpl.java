@@ -12,28 +12,29 @@ import java.util.List;
 @Service
 public class RecordCommentServiceImpl extends BaseServiceImpl<CommentVO, RecordCommentDO> implements RecordCommentService {
 
+
     @Override
-    public List<CommentVO> list(RecordCommentDO entity) {
+    public List<CommentVO> list(CommentVO entity) {
         return null;
     }
 
     @Override
-    public CommentVO get(RecordCommentDO entity) {
+    public CommentVO get(CommentVO entity) {
         return null;
     }
 
     @Override
-    public int post(RecordCommentDO entity) {
+    public int post(CommentVO entity) {
         return 0;
     }
 
     @Override
-    public int put(RecordCommentDO entity) {
+    public int put(CommentVO entity) {
         return 0;
     }
 
     @Override
-    public int delete(RecordCommentDO entity) {
+    public int delete(CommentVO entity) {
         return 0;
     }
 }

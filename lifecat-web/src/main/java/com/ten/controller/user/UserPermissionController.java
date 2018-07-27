@@ -21,26 +21,41 @@ public class UserPermissionController extends BaseController<UserPermissionVO, R
     @Autowired
     private UserPermissionService userPermissionService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(UserPermissionVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(UserPermissionVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(UserPermissionVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(UserPermissionVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(UserPermissionVO entity) {
         return null;

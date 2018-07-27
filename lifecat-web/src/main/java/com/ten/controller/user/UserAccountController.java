@@ -21,26 +21,41 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
     @Autowired
     private UserAccountService userAccountService;
 
+    /**
+     * list
+     */
     @Override
     public ResponseResult list(UserAccountVO entity) {
         return null;
     }
 
+    /**
+     * get
+     */
     @Override
     public ResponseResult get(UserAccountVO entity) {
         return null;
     }
 
+    /**
+     * post
+     */
     @Override
     public ResponseResult post(UserAccountVO entity) {
         return null;
     }
 
+    /**
+     * put
+     */
     @Override
     public ResponseResult put(UserAccountVO entity) {
         return null;
     }
 
+    /**
+     * delete
+     */
     @Override
     public ResponseResult delete(UserAccountVO entity) {
         return null;

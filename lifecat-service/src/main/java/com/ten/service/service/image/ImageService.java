@@ -13,5 +13,5 @@ import com.ten.vo.ImageVO;
  *
  * @author Administrator
  */
-public interface ImageService extends BaseService<ImageVO, ImageDO> {
+public interface ImageService extends BaseService<ImageVO> {
 }

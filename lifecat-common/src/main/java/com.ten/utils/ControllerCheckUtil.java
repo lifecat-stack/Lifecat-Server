@@ -31,7 +31,7 @@ public class ControllerCheckUtil {
      * @param string 待检查String
      * @throws RequestDataFormatException string data is not number
      */
-    public static void checkRquestDataFormatInt(String string) {
+    public static void checkRequestDataFormatInt(String string) {
         try {
             Integer.parseInt(string);
         } catch (NumberFormatException e) {

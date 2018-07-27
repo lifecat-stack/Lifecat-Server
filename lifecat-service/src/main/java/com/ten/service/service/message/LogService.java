@@ -13,5 +13,5 @@ import com.ten.vo.LogVO;
  *
  * @author Administrator
  */
-public interface LogService extends BaseService<LogVO, LogDO> {
+public interface LogService extends BaseService<LogVO> {
 }
