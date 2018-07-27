@@ -4,5 +4,14 @@ import com.ten.entity.UserDO;
 import com.ten.service.service.BaseService;
 import com.ten.vo.UserVO;
 
-public interface UserService extends BaseService<UserVO,UserDO> {
+/**
+ * list   :todo
+ * get    :todo
+ * post   :todo
+ * put    :todo
+ * delete :todo
+ *
+ * @author Administrator
+ */
+public interface UserService extends BaseService<UserVO, UserDO> {
 }

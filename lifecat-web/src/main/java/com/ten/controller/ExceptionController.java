@@ -1,6 +1,6 @@
 package com.ten.controller;
 
-import com.ten.exception.ErrorInfo;
+import com.ten.dto.ResponseResult;
 import com.ten.exception.RequestException;
 import com.ten.exception.impl.*;
 import org.springframework.http.HttpStatus;
@@ -20,33 +20,30 @@ public class ExceptionController {
     /**
      * 请求出错 400
      */
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     @ExceptionHandler({
             RequestDataNullException.class,
             RequestDataFormatException.class})
-    public ErrorInfo requestError(RequestException e) {
-        return new ErrorInfo(400, e.getErrorMsg());
+    public ResponseResult requestError(RequestException e) {
+        return new ResponseResult(400, e.getErrorMsg());
     }
 
     /**
      * 查询失败 not found 404
      */
-    @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ErrorInfo resourceNotFoundError(ResourceNotFoundException e) {
-        return new ErrorInfo(404, e.getErrorMsg());
+    public ResponseResult resourceNotFoundError(ResourceNotFoundException e) {
+        return new ResponseResult(404, e.getErrorMsg());
     }
 
     /**
      * 增加、修改、删除失败 conflict 409
      */
-    @ResponseStatus(HttpStatus.CONFLICT)
     @ResponseBody
     @ExceptionHandler(ResourceExecuteException.class)
-    public ErrorInfo resourceExecuteError(ResourceExecuteException e) {
-        return new ErrorInfo(409, e.getErrorMsg());
+    public ResponseResult resourceExecuteError(ResourceExecuteException e) {
+        return new ResponseResult(409, e.getErrorMsg());
     }
 
 }

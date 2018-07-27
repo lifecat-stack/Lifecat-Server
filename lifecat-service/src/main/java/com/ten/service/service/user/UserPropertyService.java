@@ -1,4 +1,17 @@
 package com.ten.service.service.user;
 
-public interface UserPropertyService {
+import com.ten.entity.UserDO;
+import com.ten.service.service.BaseService;
+import com.ten.vo.UserPropertyVO;
+
+/**
+ * list   :获取所有用户property信息集合
+ * get    :获取某位用户的property信息
+ * post   :第一次上传用户property信息
+ * put    :更新用户property信息
+ * delete :删除用户property信息
+ *
+ * @author Administrator
+ */
+public interface UserPropertyService extends BaseService<UserPropertyVO, UserDO> {
 }

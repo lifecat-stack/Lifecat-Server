@@ -1,6 +1,7 @@
-package com.ten.controller;
+package com.ten.controller.shiro;
 
 import com.ten.jms.AlertService;
+import com.ten.service.service.shiro.ShiroService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -17,13 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/verify")
 public class VerificationController {
-
-    private final AlertService alertService;
-
-    @Autowired
-    public VerificationController(AlertService alertService) {
-        this.alertService = alertService;
-    }
 
     /**
      * admin login

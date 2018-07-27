@@ -1,5 +1,11 @@
 package com.ten.controller.record;
 
+import com.ten.controller.BaseController;
+import com.ten.dto.ResponseResult;
+import com.ten.service.service.record.RecordPostService;
+import com.ten.vo.PostVO;
+import com.ten.vo.TestVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,5 +16,33 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/record/post")
-public class RecordPostController {
+public class RecordPostController extends BaseController<PostVO, ResponseResult> {
+
+    @Autowired
+    private RecordPostService recordPostService;
+
+    @Override
+    public ResponseResult list(PostVO entity) {
+        return null;
+    }
+
+    @Override
+    public ResponseResult get(PostVO entity) {
+        return null;
+    }
+
+    @Override
+    public ResponseResult post(PostVO entity) {
+        return null;
+    }
+
+    @Override
+    public ResponseResult put(PostVO entity) {
+        return null;
+    }
+
+    @Override
+    public ResponseResult delete(PostVO entity) {
+        return null;
+    }
 }

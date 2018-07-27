@@ -1,5 +1,7 @@
 package com.ten.vo;
 
+import com.ten.entity.AlbumDO;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,13 @@ public class AlbumVO {
      * imageVO list
      */
     private List<ImageVO> albumImageList;
+
+    public AlbumVO() {
+    }
+
+    public AlbumVO(AlbumDO albumDO) {
+        this.albumId = albumDO.getAlbumId();
+    }
 
     @Override
     public String toString() {

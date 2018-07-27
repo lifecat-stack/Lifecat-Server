@@ -1,5 +1,6 @@
 package com.ten.controller;
 
+import com.ten.dto.ResponseResult;
 import com.ten.entity.TestDO;
 import com.ten.service.service.TestService;
 import com.ten.vo.TestVO;
@@ -11,36 +12,54 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class TestController extends BaseController<TestVO, ResponseResult> {
 
     @Autowired
     private TestService testService;
 
-    @RequestMapping("/list")
-    public List<TestVO> list(TestDO test) {
-        return testService.list(test);
+    @RequestMapping(value = "/list/{testId}", method = RequestMethod.GET)
+    @Override
+    public ResponseResult list(@PathVariable String id) {
+        TestVO testVO = new TestVO();
+        return this.list(testVO);
     }
 
-    @RequestMapping(value = "/get/{testId}", method = RequestMethod.GET)
-    public TestVO get(@PathVariable String testId) {
-        System.out.println("test controller get");
-        TestDO testDO = new TestDO();
-        testDO.setTestId(Integer.valueOf(testId));
-        return testService.get(testDO);
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @Override
+    public ResponseResult get(String id) {
+        return super.get(id);
     }
 
-    @RequestMapping("/put")
-    public int update(TestDO test) {
-        return testService.put(test);
+    @Override
+    public ResponseResult list(@RequestBody TestVO entity) {
+        return null;
     }
 
-    @RequestMapping("/post")
-    public int save(TestDO test) {
-        return testService.post(test);
+    @Override
+    public ResponseResult get(@RequestBody TestVO entity) {
+        return null;
     }
 
-    @RequestMapping("/delete")
-    public int delete(TestDO test) {
-        return testService.delete(test);
+    @RequestMapping(method = RequestMethod.POST)
+    @Override
+    public ResponseResult post(@RequestBody TestVO entity) {
+        return null;
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    @Override
+    public ResponseResult put(@RequestBody TestVO entity) {
+        return null;
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    @Override
+    public ResponseResult delete(String id) {
+        return super.delete(id);
+    }
+
+    @Override
+    public ResponseResult delete(@RequestBody TestVO entity) {
+        return null;
     }
 }
