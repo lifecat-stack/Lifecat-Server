@@ -19,7 +19,12 @@ public class ResponseResult {
      */
     private Object responseData;
 
+    /**
+     * success without data object
+     */
     public ResponseResult() {
+        this.statusCode = 200;
+        this.responseMessage = "success";
     }
 
     /**
@@ -28,6 +33,7 @@ public class ResponseResult {
      * @param responseData 返回JSON对象
      */
     public ResponseResult(Object responseData) {
+        this.statusCode = 200;
         if (responseData == null) {
             responseData = "json date is null";
         }

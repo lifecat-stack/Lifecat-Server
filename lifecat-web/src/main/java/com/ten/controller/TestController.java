@@ -6,11 +6,9 @@ import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
+import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.checkExecuteResultSuccess;
-import static com.ten.utils.ControllerCheckUtil.checkRequestDataNotNull;
-import static com.ten.utils.ControllerCheckUtil.checkRequestDataFormatInt;
+import static com.ten.utils.ControllerCheckUtil.*;
 
 @RestController
 @RequestMapping("/test")
@@ -22,7 +20,7 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     /**
      * list
      */
-    @RequestMapping(value = "/list/{testId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     @Override
     public ResponseResult list(@PathVariable String testId) {
         // check
@@ -32,28 +30,53 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
         int id = Integer.parseInt(testId);
         TestVO testVO = new TestVO();
         testVO.setTestId(id);
+        List<TestVO> testVOList = testService.list(testVO);
         // return
-        return this.list(testVO);
+        checkResourceNotNull(testVOList);
+        return new ResponseResult(testVOList);
     }
 
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     @Override
-    public ResponseResult list(TestVO entity) {
-        List testList = (List) testService.list(entity);
-        return new ResponseResult(testList);
+    public ResponseResult list(@RequestBody TestVO entity) {
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        List<TestVO> testVOList = testService.list(entity);
+        // return
+        checkResourceNotNull(testVOList);
+        return new ResponseResult(testVOList);
     }
 
     /**
      * get
      */
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{testId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult get(String id) {
-        return super.get(id);
+    public ResponseResult get(@PathVariable String testId) {
+        // check
+        checkRequestDataNotNull(testId);
+        checkRequestDataFormatInt(testId);
+        // execute
+        TestVO testVO = new TestVO();
+        int id = Integer.parseInt(testId);
+        testVO.setTestId(id);
+        TestVO test = testService.get(testVO);
+        // return
+        checkResourceNotNull(test, "test not found where :" + test.toString());
+        return new ResponseResult(test);
     }
 
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     @Override
     public ResponseResult get(@RequestBody TestVO entity) {
-        return null;
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        TestVO testVO = testService.get(entity);
+        // return
+        checkResourceNotNull(testVO, "test not found where :" + entity.toString());
+        return new ResponseResult(testVO);
     }
 
     /**
@@ -62,7 +85,13 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     @RequestMapping(method = RequestMethod.POST)
     @Override
     public ResponseResult post(@RequestBody TestVO entity) {
-        return null;
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        int result = testService.post(entity);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
     /**
@@ -71,20 +100,46 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     @RequestMapping(method = RequestMethod.PUT)
     @Override
     public ResponseResult put(@RequestBody TestVO entity) {
-        return null;
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        int result = testService.put(entity);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
     /**
-     * delete
+     * delete by test_id
      */
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{testId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult delete(String id) {
-        return super.delete(id);
+    public ResponseResult delete(@PathVariable String testId) {
+        // check
+        checkRequestDataNotNull(testId);
+        checkRequestDataFormatInt(testId);
+        // execute
+        TestVO testVO = new TestVO();
+        int id = Integer.parseInt(testId);
+        testVO.setTestId(id);
+        int result = testService.delete(testVO);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
     @Override
     public ResponseResult delete(@RequestBody TestVO entity) {
-        return null;
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        TestVO testVO = new TestVO();
+        int id = entity.getTestId();
+        testVO.setTestId(id);
+        int result = testService.delete(testVO);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 }

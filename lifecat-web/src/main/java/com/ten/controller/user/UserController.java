@@ -19,8 +19,6 @@ import static com.ten.utils.ControllerCheckUtil.checkResourceNotNull;
 @RequestMapping("/user")
 public class UserController extends BaseController<UserVO, ResponseResult> {
 
-    @Autowired
-    private UserService userService;
 
     /**
      * list
