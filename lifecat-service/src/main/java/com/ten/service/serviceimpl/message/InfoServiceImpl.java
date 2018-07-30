@@ -7,9 +7,18 @@ import com.ten.vo.InfoVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * info service
+ *
+ * @author Administrator
+ */
 @Service
 public class InfoServiceImpl extends BaseServiceImpl<InfoVO, InfoDO> implements InfoService {
+
+    @Override
+    public List<InfoVO> all() {
+        return null;
+    }
 
     @Override
     public List<InfoVO> list(InfoVO entity) {

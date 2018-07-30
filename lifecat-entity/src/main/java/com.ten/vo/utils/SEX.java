@@ -1,26 +1,26 @@
 package com.ten.vo.utils;
 
 /**
- * c_info :info_level
+ * user sex
  *
  * @author Administrator
  */
-public enum InfoLevel {
+public enum SEX {
     /**
-     * INFO  1
-     * alert 2
-     * warn  3
+     * 0 默认
+     * 1 男
+     * 2 女
      */
-    INFO(1, "info"),
-    ALERT(2, "alert"),
-    WARN(3, "warn");
+    EMPTY(0, "empty"),
+    MAN(1, "男"),
+    WOMAN(2, "女");
 
     private int num;
     private String desc;
 
-    InfoLevel(int i, String val) {
-        this.num = i;
-        this.desc = val;
+    SEX(int val, String desc) {
+        this.num = val;
+        this.desc = desc;
     }
 
     public int getNum() {

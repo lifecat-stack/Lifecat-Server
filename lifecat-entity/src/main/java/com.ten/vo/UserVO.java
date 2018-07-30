@@ -1,7 +1,7 @@
 package com.ten.vo;
 
 import com.ten.entity.UserDO;
-import com.ten.vo.utils.Sex;
+import com.ten.vo.utils.SEX;
 
 /**
  * user
@@ -13,7 +13,7 @@ public class UserVO {
     private Integer userId;
     private String userAccountName;
     private String userName;
-    private Sex userSex;
+    private SEX userSex;
     private String userBirthday;
     private String userEmail;
     private String userLocation;
@@ -34,15 +34,15 @@ public class UserVO {
         this.userId = userDO.getUserId();
         this.userAccountName = userDO.getUserAccountName();
         this.userName = userDO.getUserName();
-        // int => Sex
+        // int => SEX
         // 0:empty 1:man 2:woman
         int sex = userDO.getUserSex();
         if (sex == 0) {
-            this.userSex = Sex.EMPTY;
+            this.userSex = SEX.EMPTY;
         } else if (sex == 1) {
-            this.userSex = Sex.MAN;
+            this.userSex = SEX.MAN;
         } else if (sex == 2) {
-            this.userSex = Sex.WOMAN;
+            this.userSex = SEX.WOMAN;
         }
         this.userBirthday = userDO.getUserBirthday();
         this.userEmail = userDO.getUserEmail();
@@ -98,11 +98,11 @@ public class UserVO {
         this.userName = userName;
     }
 
-    public Sex getUserSex() {
+    public SEX getUserSex() {
         return userSex;
     }
 
-    public void setUserSex(Sex userSex) {
+    public void setUserSex(SEX userSex) {
         this.userSex = userSex;
     }
 

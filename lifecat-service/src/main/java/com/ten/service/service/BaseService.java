@@ -9,6 +9,11 @@ import java.util.List;
  */
 public interface BaseService<VO> {
     /**
+     * select all
+     */
+    List<VO> all();
+
+    /**
      * select list
      *
      * @param entity VO object

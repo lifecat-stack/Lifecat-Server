@@ -2,6 +2,8 @@ package com.ten.service.serviceimpl;
 
 import com.ten.service.service.BaseExecute;
 import com.ten.service.service.BaseService;
+import com.ten.utils.DateTimeUtil;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.common.Mapper;
 
@@ -17,6 +19,9 @@ import java.util.List;
  * @see BaseService,BaseExecute
  */
 public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO>, BaseExecute<DO> {
+
+    protected DateTimeUtil dateTimeUtil = DateTimeUtil.getInstance();
+
     /**
      * base mapper
      */
@@ -26,6 +31,12 @@ public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO>, BaseEx
     /* **********************************/
     /* ********** base service***********/
     /* **********************************/
+
+    /**
+     * select all
+     */
+    @Override
+    public abstract List<VO> all();
 
     /**
      * select list
@@ -70,6 +81,16 @@ public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO>, BaseEx
     /* **********************************/
     /* ********** base execute***********/
     /* **********************************/
+
+    /**
+     * execute query all
+     *
+     * @return DO list
+     */
+    @Override
+    public List<DO> exeQueryAll() {
+        return mapper.selectAll();
+    }
 
     /**
      * execute query list

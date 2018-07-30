@@ -9,6 +9,13 @@ import java.util.List;
  */
 public interface BaseExecute<DO> {
     /**
+     * execute query all
+     *
+     * @return DO list
+     */
+    List<DO> exeQueryAll();
+
+    /**
      * execute query list
      *
      * @param entity DO object

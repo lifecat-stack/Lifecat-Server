@@ -13,6 +13,7 @@ import java.util.List;
 public class RecordVO {
 
     private Integer recordId;
+    private Integer userId;
     private String recordGmtCreate;
     private String recordGmtModified;
     /**
@@ -32,6 +33,7 @@ public class RecordVO {
 
     public RecordVO(RecordDO recordDO) {
         this.recordId = recordDO.getRecordId();
+        this.userId = recordDO.getUserId();
         this.recordGmtCreate = recordDO.getRecordGmtCreate();
         this.recordGmtModified = recordDO.getRecordGmtModified();
     }
@@ -75,10 +77,19 @@ public class RecordVO {
     public String toString() {
         return "VO:record@{" +
                 "recordid:" + recordId +
+                "userid:" + userId +
                 ",recordgmtcreate:" + recordGmtCreate +
                 ",recordgmtmodified:" + recordGmtModified +
                 ",commentsize:" + comments.size() +
                 "}";
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getRecordId() {

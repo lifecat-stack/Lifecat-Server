@@ -4,21 +4,31 @@ import com.ten.exception.impl.RequestDataNullException;
 import org.springframework.stereotype.Component;
 
 /**
- * Check service function and throwing exception to the ExceptionController
+ * Check service paramaters and make them allowable
  *
  * @author Administrator
  */
 @Component
 public class ServiceCheckUtil {
     /**
-     * 检查传入对象的参数 Null
+     * 检查传入对象的参数 Not Null
      *
-     * @param property request parameter property
-     * @throws RequestDataNullException request parameter property is null
+     * @param property parameter property
      */
-    public static void checkObjectDataNotNull(Object property) {
+    public static void checkObjectDataNotNull(Object property, Object defalutValue) {
         if (property == null) {
-            throw new RequestDataNullException();
+            property = defalutValue;
+        }
+    }
+
+    /**
+     * 检查传入对象的参数 Is Null
+     *
+     * @param property parameter property
+     */
+    public static void checkObjectDataIsNull(Object property) {
+        if (property != null) {
+            property = null;
         }
     }
 }

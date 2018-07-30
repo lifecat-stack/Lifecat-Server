@@ -29,13 +29,13 @@ public class RecordDO {
 
     public RecordDO(RecordVO recordVO) {
         this.recordId = recordVO.getRecordId();
+        this.userId = recordVO.getUserId();
         this.recordGmtCreate = recordVO.getRecordGmtCreate();
         this.recordGmtModified = recordVO.getRecordGmtModified();
     }
 
     private RecordDO(Builder b) {
         this(b.recordVO);
-        userId = b.userId;
         postId = b.postId;
         deleted = b.deleted;
     }
@@ -45,17 +45,11 @@ public class RecordDO {
      */
     public static class Builder implements MyBuilder<RecordDO> {
         private RecordVO recordVO = null;
-        private Integer userId = null;
         private Integer postId = null;
         private Integer deleted = null;
 
         public Builder recordVO(RecordVO recordVO) {
             this.recordVO = recordVO;
-            return this;
-        }
-
-        public Builder userId(Integer userId) {
-            this.userId = userId;
             return this;
         }
 

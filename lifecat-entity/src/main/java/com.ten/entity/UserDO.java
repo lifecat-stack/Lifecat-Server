@@ -3,7 +3,7 @@ package com.ten.entity;
 import com.ten.vo.UserAccountVO;
 import com.ten.vo.UserPropertyVO;
 import com.ten.vo.UserVO;
-import com.ten.vo.utils.Sex;
+import com.ten.vo.utils.SEX;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -55,14 +55,14 @@ public class UserDO {
         this.userId = userVO.getUserId();
         this.userAccountName = userVO.getUserAccountName();
         this.userName = userVO.getUserName();
-        // Sex => int
+        // SEX => int
         // 0:empty 1:man 2:woman
-        Sex sex = userVO.getUserSex();
-        if (sex == Sex.EMPTY) {
+        SEX sex = userVO.getUserSex();
+        if (sex == SEX.EMPTY) {
             this.userSex = 0;
-        } else if (sex == Sex.MAN) {
+        } else if (sex == SEX.MAN) {
             this.userSex = 1;
-        } else if (sex == Sex.WOMAN) {
+        } else if (sex == SEX.WOMAN) {
             this.userSex = 2;
         }
         this.userBirthday = userVO.getUserBirthday();
@@ -83,14 +83,14 @@ public class UserDO {
         this.userId = userPropertyVO.getUserId();
         this.userAccountName = userPropertyVO.getUserAccountName();
         this.userName = userPropertyVO.getUserName();
-        // Sex => int
+        // SEX => int
         // 0:empty 1:man 2:woman
-        Sex sex = userPropertyVO.getUserSex();
-        if (sex == Sex.EMPTY) {
+        SEX sex = userPropertyVO.getUserSex();
+        if (sex == SEX.EMPTY) {
             this.userSex = 0;
-        } else if (sex == Sex.MAN) {
+        } else if (sex == SEX.MAN) {
             this.userSex = 1;
-        } else if (sex == Sex.WOMAN) {
+        } else if (sex == SEX.WOMAN) {
             this.userSex = 2;
         }
         this.userBirthday = userPropertyVO.getUserBirthday();

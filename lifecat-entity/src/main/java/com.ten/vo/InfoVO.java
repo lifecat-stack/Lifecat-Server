@@ -1,7 +1,7 @@
 package com.ten.vo;
 
 import com.ten.entity.InfoDO;
-import com.ten.vo.utils.InfoLevel;
+import com.ten.vo.utils.INFOLEVEL;
 
 /**
  * INFO
@@ -19,7 +19,7 @@ public class InfoVO {
     /**
      * INFO level
      */
-    private InfoLevel infoLevel;
+    private INFOLEVEL infoLevel;
 
     /**
      * constructor
@@ -36,15 +36,15 @@ public class InfoVO {
         this.readed = infoDO.getReaded() >= 1;
         this.infoGmtCreate = infoDO.getInfoGmtCreate();
         this.infoGmtModified = infoDO.getInfoGmtModified();
-        // int => InfoLevel
+        // int => INFOLEVEL
         // 1:info 2:alert 3:warn 4:read
         int infolevel = infoDO.getInfoLevel();
         if (infolevel == 1) {
-            this.infoLevel = InfoLevel.INFO;
+            this.infoLevel = INFOLEVEL.INFO;
         } else if (infolevel == 2) {
-            this.infoLevel = InfoLevel.ALERT;
+            this.infoLevel = INFOLEVEL.ALERT;
         } else if (infolevel == 3) {
-            this.infoLevel = InfoLevel.WARN;
+            this.infoLevel = INFOLEVEL.WARN;
         }
     }
 
@@ -109,11 +109,11 @@ public class InfoVO {
         this.infoGmtModified = infoGmtModified;
     }
 
-    public InfoLevel getInfoLevel() {
+    public INFOLEVEL getInfoLevel() {
         return infoLevel;
     }
 
-    public void setInfoLevel(InfoLevel infoLevel) {
+    public void setInfoLevel(INFOLEVEL infoLevel) {
         this.infoLevel = infoLevel;
     }
 }

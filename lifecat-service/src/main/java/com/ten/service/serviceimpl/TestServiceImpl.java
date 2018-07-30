@@ -1,52 +1,90 @@
 package com.ten.service.serviceimpl;
 
 import com.ten.entity.TestDO;
-import com.ten.mapper.TestMapper;
 import com.ten.service.service.TestService;
-import com.ten.utils.DataAndViewTranslator;
 import com.ten.vo.TestVO;
-import com.ten.vo.UserVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.common.Mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class TestServiceImpl extends BaseServiceImpl<TestVO, TestDO> implements TestService {
 
-    private final DataAndViewTranslator<TestDO, TestVO> translator;
+    private Logger logger = LoggerFactory.getLogger(TestServiceImpl.class);
 
-    @Autowired
-    public TestServiceImpl(DataAndViewTranslator<TestDO, TestVO> translator) {
-        this.translator = translator;
+    /**
+     * selete all test
+     */
+    @Override
+    public List<TestVO> all() {
+        List<TestDO> testDOS = exeQueryAll();
+        List<TestVO> testVOS = new ArrayList<>(16);
+        for (TestDO testDO : testDOS) {
+            TestVO testVO = new TestVO(testDO);
+            testVOS.add(testVO);
+        }
+        return testVOS;
     }
 
+    /**
+     * selete all test
+     */
     @Override
     public List<TestVO> list(TestVO entity) {
-        TestDO testDO = translator.transViewToData(entity);
-        List<TestDO> testDOList = super.exeQueryList(testDO);
-        List<TestVO> testVOList = translator.listTransDatasToViews(testDOList);
-        return testVOList;
+        List<TestDO> testDOS = exeQueryAll();
+        List<TestVO> testVOS = new ArrayList<>(16);
+        for (TestDO testDO : testDOS) {
+            TestVO testVO = new TestVO(testDO);
+            testVOS.add(testVO);
+        }
+        return testVOS;
     }
 
+    /**
+     * selete test :
+     * test_id
+     * test_name
+     */
     @Override
     public TestVO get(TestVO entity) {
-        return null;
+        TestDO testDO = new TestDO(entity);
+        return new TestVO(exeQuery(testDO));
     }
 
+    /**
+     * create test :
+     * test_id :auto
+     * test_name
+     */
     @Override
     public int post(TestVO entity) {
-        return 0;
+        TestDO testDO = new TestDO(entity);
+        testDO.setTestId(null);
+        return exeInsert(testDO);
     }
 
+    /**
+     * update test :
+     * test_name
+     * by test_id
+     */
     @Override
     public int put(TestVO entity) {
-        return 0;
+        TestDO testDO = new TestDO(entity);
+        return exeUpdate(testDO);
     }
 
+    /**
+     * delete test :
+     * by test_id
+     */
     @Override
     public int delete(TestVO entity) {
-        return 0;
+        TestDO testDO = new TestDO();
+        testDO.setTestId(entity.getTestId());
+        return exeDelete(testDO);
     }
 }

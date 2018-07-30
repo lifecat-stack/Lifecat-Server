@@ -1,24 +1,22 @@
 package com.ten.vo.utils;
 
 /**
- * user role
+ * user permission
  *
  * @author Administrator
  */
-public enum Role {
+public enum PERMISSION {
     /**
-     * role
+     * permisson
      */
-    SUPER("permission:crud"),
-    ADMIN("permission:crud"),
-    VVIP("permission:crud"),
-    VIP("permission:crud"),
-    USER("permission:crud"),
-    TOURIST("permission:just query");
+    CREATE("query"),
+    DELETE("delete"),
+    UPDATE("update"),
+    QUERY("query");
 
     private String desc;
 
-    Role(String val) {
+    PERMISSION(String val) {
         this.desc = val;
     }
 

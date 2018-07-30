@@ -12,6 +12,11 @@ import java.util.List;
 public class RecordPostServiceImpl extends BaseServiceImpl<RecordPostVO, RecordPostDO> implements RecordPostService {
 
     @Override
+    public List<RecordPostVO> all() {
+        return null;
+    }
+
+    @Override
     public List<RecordPostVO> list(RecordPostVO entity) {
         return null;
     }

@@ -2,7 +2,6 @@ package com.ten.controller.user;
 
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
-import com.ten.service.service.user.UserPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

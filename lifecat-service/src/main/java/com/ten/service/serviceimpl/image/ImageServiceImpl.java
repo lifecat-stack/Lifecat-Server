@@ -12,6 +12,11 @@ import java.util.List;
 public class ImageServiceImpl extends BaseServiceImpl<ImageVO, ImageDO> implements ImageService {
 
     @Override
+    public List<ImageVO> all() {
+        return null;
+    }
+
+    @Override
     public List<ImageVO> list(ImageVO entity) {
         return null;
     }

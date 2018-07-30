@@ -8,8 +8,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * log service
+ *
+ * @author Administrator
+ */
 @Service
 public class LogServiceImpl extends BaseServiceImpl<LogVO, LogDO> implements LogService {
+
+    @Override
+    public List<LogVO> all() {
+        return null;
+    }
 
     @Override
     public List<LogVO> list(LogVO entity) {

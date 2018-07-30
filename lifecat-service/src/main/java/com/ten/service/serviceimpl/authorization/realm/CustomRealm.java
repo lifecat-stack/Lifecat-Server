@@ -8,21 +8,22 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
- * authorization admin 拦截器
+ * shiro authorization realm
  *
  * @author Administrator
  */
 public class CustomRealm extends AuthorizingRealm {
 
+    private UserAuthorizationData data = UserAuthorizationData.getInstance();
 
     /**
      * 授权
      * <p>
-     * subject.
+     * subject.checkRole()
+     * subject.checkPermission()
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
@@ -32,16 +33,15 @@ public class CustomRealm extends AuthorizingRealm {
         // 2.从UsernamePasswordToken获取username
         String username = token.getUsername();
         SimpleAuthorizationInfo simpleAuthorInfo = new SimpleAuthorizationInfo();
-        // 根据角色ID查询角色（role），放入到Authorization里。
-        Set<String> roles = new HashSet<String>();
-        roles.add("角色1");
-        roles.add("角色2");
+
+        // 根据username查询roles，放入到Authorization里
+        Set<String> roles = data.getRolesByUserName(username);
         simpleAuthorInfo.setRoles(roles);
-        // 根据用户ID查询权限（permission），放入到Authorization里。
-        Set<String> permissions = new HashSet<String>();
-        permissions.add("权限1");
-        permissions.add("权限2");
+
+        // 根据username查询permissions，放入到Authorization里
+        Set<String> permissions = data.getPermissionsByUserName(username);
         simpleAuthorInfo.setStringPermissions(permissions);
+
         return simpleAuthorInfo;
     }
 
@@ -58,15 +58,12 @@ public class CustomRealm extends AuthorizingRealm {
         // 2.从UsernamePasswordToken获取username
         String username = token.getUsername();
 
-        // 3.获取user account认证信息
-        Map<String, String> userAccount = UserAuthorizationData.getInstance().getUserAccountMap();
-
         // 4.从user account中根据username获取password
-        String userPassword = userAccount.get(username);
+        String userPassword = data.getPasswordByUserName(username);
         String tokenPassword = String.valueOf(token.getPassword());
 
         // 5.验证密码
-        if (userPassword.equals(tokenPassword)) {
+        if (userPassword != null && userPassword.equals(tokenPassword)) {
             return new SimpleAuthenticationInfo(
                     username, userPassword, getName());
         } else {

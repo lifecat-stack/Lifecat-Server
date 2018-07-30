@@ -9,14 +9,49 @@ import com.ten.vo.AlbumVO;
 import com.ten.vo.RecordVO;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
+/**
+ * record
+ *
+ * @author Administrator
+ */
 @Service
 public class RecordServiceImpl extends BaseServiceImpl<RecordVO, RecordDO> implements RecordService {
 
+    /**
+     * selete all record for all user
+     */
+    @Override
+    public List<RecordVO> all() {
+        List<RecordDO> recordDOS = exeQueryAll();
+        List<RecordVO> recordVOS = new ArrayList<>(32);
+        for (RecordDO recordDO : recordDOS) {
+            RecordVO recordVO = new RecordVO(recordDO);
+            recordVOS.add(recordVO);
+        }
+        return recordVOS;
+    }
+
+    /**
+     * selete all record for user
+     * by user_id
+     */
     @Override
     public List<RecordVO> list(RecordVO entity) {
-        return null;
+        RecordDO record = new RecordDO();
+        record.setUserId(entity.getUserId());
+
+        List<RecordDO> recordDOS = exeQueryList(record);
+
+        List<RecordVO> recordVOS = new ArrayList<>(32);
+        for (RecordDO recordDO : recordDOS) {
+            RecordVO recordVO = new RecordVO(recordDO);
+            recordVOS.add(recordVO);
+        }
+        return recordVOS;
     }
 
     @Override
@@ -34,6 +69,10 @@ public class RecordServiceImpl extends BaseServiceImpl<RecordVO, RecordDO> imple
         return 0;
     }
 
+    /**
+     * delete record :
+     * set is_deleted = 1
+     */
     @Override
     public int delete(RecordVO entity) {
         return 0;

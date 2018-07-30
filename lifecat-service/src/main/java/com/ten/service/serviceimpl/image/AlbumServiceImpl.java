@@ -12,6 +12,11 @@ import java.util.List;
 public class AlbumServiceImpl extends BaseServiceImpl<AlbumVO, AlbumDO> implements AlbumService {
 
     @Override
+    public List<AlbumVO> all() {
+        return null;
+    }
+
+    @Override
     public List<AlbumVO> list(AlbumVO entity) {
         return null;
     }

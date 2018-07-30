@@ -13,6 +13,11 @@ public class RecordCommentServiceImpl extends BaseServiceImpl<RecordCommentVO, R
 
 
     @Override
+    public List<RecordCommentVO> all() {
+        return null;
+    }
+
+    @Override
     public List<RecordCommentVO> list(RecordCommentVO entity) {
         return null;
     }
