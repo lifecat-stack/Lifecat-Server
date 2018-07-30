@@ -1,5 +1,7 @@
 package com.ten.entity;
 
+import com.ten.vo.TestVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,6 +15,17 @@ public class TestDO {
     @Id
     private Integer testId;
     private String testName;
+
+    /**
+     * constructor
+     */
+    public TestDO() {
+    }
+
+    public TestDO(TestVO testVO) {
+        this.testId = testVO.getTestId();
+        this.testName = testVO.getTestName();
+    }
 
     @Override
     public String toString() {

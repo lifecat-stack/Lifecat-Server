@@ -3,8 +3,6 @@ package com.ten.controller.user;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.service.service.user.UserPermissionService;
-import com.ten.vo.PostVO;
-import com.ten.vo.UserPermissionVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/user/permission")
-public class UserPermissionController extends BaseController<UserPermissionVO, ResponseResult> {
+public class UserPermissionController extends BaseController<UserAuthorizationVO, ResponseResult> {
 
     @Autowired
     private UserPermissionService userPermissionService;
@@ -25,7 +23,7 @@ public class UserPermissionController extends BaseController<UserPermissionVO, R
      * list
      */
     @Override
-    public ResponseResult list(UserPermissionVO entity) {
+    public ResponseResult list(UserAuthorizationVO entity) {
         return null;
     }
 
@@ -33,7 +31,7 @@ public class UserPermissionController extends BaseController<UserPermissionVO, R
      * get
      */
     @Override
-    public ResponseResult get(UserPermissionVO entity) {
+    public ResponseResult get(UserAuthorizationVO entity) {
         return null;
     }
 
@@ -41,7 +39,7 @@ public class UserPermissionController extends BaseController<UserPermissionVO, R
      * post
      */
     @Override
-    public ResponseResult post(UserPermissionVO entity) {
+    public ResponseResult post(UserAuthorizationVO entity) {
         return null;
     }
 
@@ -49,7 +47,7 @@ public class UserPermissionController extends BaseController<UserPermissionVO, R
      * put
      */
     @Override
-    public ResponseResult put(UserPermissionVO entity) {
+    public ResponseResult put(UserAuthorizationVO entity) {
         return null;
     }
 
@@ -57,7 +55,7 @@ public class UserPermissionController extends BaseController<UserPermissionVO, R
      * delete
      */
     @Override
-    public ResponseResult delete(UserPermissionVO entity) {
+    public ResponseResult delete(UserAuthorizationVO entity) {
         return null;
     }
 }

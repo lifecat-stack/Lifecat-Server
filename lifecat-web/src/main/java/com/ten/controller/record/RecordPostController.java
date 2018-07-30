@@ -3,8 +3,7 @@ package com.ten.controller.record;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.service.service.record.RecordPostService;
-import com.ten.vo.PostVO;
-import com.ten.vo.TestVO;
+import com.ten.vo.RecordPostVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/record/post")
-public class RecordPostController extends BaseController<PostVO, ResponseResult> {
+public class RecordPostController extends BaseController<RecordPostVO, ResponseResult> {
 
     @Autowired
     private RecordPostService recordPostService;
@@ -25,7 +24,7 @@ public class RecordPostController extends BaseController<PostVO, ResponseResult>
      * list
      */
     @Override
-    public ResponseResult list(PostVO entity) {
+    public ResponseResult list(RecordPostVO entity) {
         return null;
     }
 
@@ -33,7 +32,7 @@ public class RecordPostController extends BaseController<PostVO, ResponseResult>
      * get
      */
     @Override
-    public ResponseResult get(PostVO entity) {
+    public ResponseResult get(RecordPostVO entity) {
         return null;
     }
 
@@ -41,7 +40,7 @@ public class RecordPostController extends BaseController<PostVO, ResponseResult>
      * post
      */
     @Override
-    public ResponseResult post(PostVO entity) {
+    public ResponseResult post(RecordPostVO entity) {
         return null;
     }
 
@@ -49,7 +48,7 @@ public class RecordPostController extends BaseController<PostVO, ResponseResult>
      * put
      */
     @Override
-    public ResponseResult put(PostVO entity) {
+    public ResponseResult put(RecordPostVO entity) {
         return null;
     }
 
@@ -57,7 +56,7 @@ public class RecordPostController extends BaseController<PostVO, ResponseResult>
      * delete
      */
     @Override
-    public ResponseResult delete(PostVO entity) {
+    public ResponseResult delete(RecordPostVO entity) {
         return null;
     }
 }

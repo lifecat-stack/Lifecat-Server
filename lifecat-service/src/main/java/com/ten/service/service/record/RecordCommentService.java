@@ -1,9 +1,7 @@
 package com.ten.service.service.record;
 
-import com.ten.entity.RecordCommentDO;
 import com.ten.service.service.BaseService;
-import com.ten.vo.CommentVO;
-import com.ten.vo.RecordVO;
+import com.ten.vo.RecordCommentVO;
 
 /**
  * list   :获取用户某条record信息的c_record_comment集合
@@ -14,5 +12,5 @@ import com.ten.vo.RecordVO;
  *
  * @author Administrator
  */
-public interface RecordCommentService extends BaseService<CommentVO> {
+public interface RecordCommentService extends BaseService<RecordCommentVO> {
 }

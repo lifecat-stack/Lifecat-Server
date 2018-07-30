@@ -1,9 +1,7 @@
 package com.ten.service.service.record;
 
-import com.ten.entity.RecordPostDO;
 import com.ten.service.service.BaseService;
-import com.ten.vo.PostVO;
-import com.ten.vo.RecordVO;
+import com.ten.vo.RecordPostVO;
 
 /**
  * list   :todo
@@ -14,5 +12,5 @@ import com.ten.vo.RecordVO;
  *
  * @author Administrator
  */
-public interface RecordPostService extends BaseService<PostVO> {
+public interface RecordPostService extends BaseService<RecordPostVO> {
 }

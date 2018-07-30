@@ -7,7 +7,7 @@ package com.ten.vo.utils;
  */
 public enum Role {
     /**
-     * permisson
+     * role
      */
     SUPER("permission:crud"),
     ADMIN("permission:crud"),
@@ -24,5 +24,10 @@ public enum Role {
 
     public String getDesc() {
         return desc;
+    }
+
+    @Override
+    public String toString() {
+        return getDesc();
     }
 }

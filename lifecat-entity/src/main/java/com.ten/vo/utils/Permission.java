@@ -23,4 +23,9 @@ public enum Permission {
     public String getDesc() {
         return desc;
     }
+
+    @Override
+    public String toString() {
+        return getDesc();
+    }
 }

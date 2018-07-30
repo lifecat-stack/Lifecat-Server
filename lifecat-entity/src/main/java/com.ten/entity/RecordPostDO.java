@@ -1,5 +1,7 @@
 package com.ten.entity;
 
+import com.ten.vo.RecordPostVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,6 +17,19 @@ public class RecordPostDO {
     private String postTitle;
     private String postContent;
     private String postImageUrl;
+
+    /**
+     * constructor
+     */
+    public RecordPostDO() {
+    }
+
+    public RecordPostDO(RecordPostVO recordPostVO) {
+        this.postId = recordPostVO.getPostId();
+        this.postTitle = recordPostVO.getPostTitle();
+        this.postContent = recordPostVO.getPostContent();
+        this.postImageUrl = recordPostVO.getPostImageUrl();
+    }
 
     @Override
     public String toString() {

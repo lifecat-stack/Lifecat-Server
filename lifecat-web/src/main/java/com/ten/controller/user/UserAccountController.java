@@ -3,7 +3,6 @@ package com.ten.controller.user;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.service.service.user.UserAccountService;
-import com.ten.vo.PostVO;
 import com.ten.vo.UserAccountVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

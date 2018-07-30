@@ -1,6 +1,8 @@
 package com.ten.vo;
 
-import java.util.ArrayList;
+import com.ten.MyBuilder;
+import com.ten.entity.RecordDO;
+
 import java.util.List;
 
 /**
@@ -16,11 +18,58 @@ public class RecordVO {
     /**
      * post
      */
-    private PostVO post;
+    private RecordPostVO post;
     /**
      * comment list
      */
-    private List<CommentVO> comments;
+    private List<RecordCommentVO> comments;
+
+    /**
+     * constructor
+     */
+    public RecordVO() {
+    }
+
+    public RecordVO(RecordDO recordDO) {
+        this.recordId = recordDO.getRecordId();
+        this.recordGmtCreate = recordDO.getRecordGmtCreate();
+        this.recordGmtModified = recordDO.getRecordGmtModified();
+    }
+
+    private RecordVO(Builder b) {
+        this(b.recordDO);
+        post = b.post;
+        comments = b.comments;
+    }
+
+    /**
+     * builder
+     */
+    public static class Builder implements MyBuilder<RecordVO> {
+        private RecordDO recordDO = null;
+        private RecordPostVO post = null;
+        private List<RecordCommentVO> comments = null;
+
+        public Builder recordDO(RecordDO recordDO) {
+            this.recordDO = recordDO;
+            return this;
+        }
+
+        public Builder commentRecordId(RecordPostVO post) {
+            this.post = post;
+            return this;
+        }
+
+        public Builder deleted(List<RecordCommentVO> comments) {
+            this.comments = comments;
+            return this;
+        }
+
+        @Override
+        public RecordVO build() {
+            return new RecordVO(this);
+        }
+    }
 
     @Override
     public String toString() {
@@ -56,19 +105,19 @@ public class RecordVO {
         this.recordGmtModified = recordGmtModified;
     }
 
-    public PostVO getPost() {
+    public RecordPostVO getPost() {
         return post;
     }
 
-    public void setPost(PostVO post) {
+    public void setPost(RecordPostVO post) {
         this.post = post;
     }
 
-    public List<CommentVO> getComments() {
+    public List<RecordCommentVO> getComments() {
         return comments;
     }
 
-    public void setComments(List<CommentVO> comments) {
+    public void setComments(List<RecordCommentVO> comments) {
         this.comments = comments;
     }
 }

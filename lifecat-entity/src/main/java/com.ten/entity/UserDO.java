@@ -1,5 +1,10 @@
 package com.ten.entity;
 
+import com.ten.vo.UserAccountVO;
+import com.ten.vo.UserPropertyVO;
+import com.ten.vo.UserVO;
+import com.ten.vo.utils.Sex;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -26,6 +31,78 @@ public class UserDO {
     private String userGmtModified;
     private String userLastLogin;
     private Integer userLoginCount;
+
+    /**
+     * constructor
+     */
+    public UserDO() {
+    }
+
+    /**
+     * constructor - user account vo
+     */
+
+    public UserDO(UserAccountVO userAccountVO) {
+        this.userId = userAccountVO.getUserId();
+        this.userAccountName = userAccountVO.getUserAccountName();
+        this.userAccountPassword = userAccountVO.getUserAccountPassword();
+    }
+
+    /**
+     * constructor - user vo
+     */
+    public UserDO(UserVO userVO) {
+        this.userId = userVO.getUserId();
+        this.userAccountName = userVO.getUserAccountName();
+        this.userName = userVO.getUserName();
+        // Sex => int
+        // 0:empty 1:man 2:woman
+        Sex sex = userVO.getUserSex();
+        if (sex == Sex.EMPTY) {
+            this.userSex = 0;
+        } else if (sex == Sex.MAN) {
+            this.userSex = 1;
+        } else if (sex == Sex.WOMAN) {
+            this.userSex = 2;
+        }
+        this.userBirthday = userVO.getUserBirthday();
+        this.userEmail = userVO.getUserEmail();
+        this.userLocation = userVO.getUserLocation();
+        this.userPhoneNumber = userVO.getUserPhoneNumber();
+        this.userIconUrl = userVO.getUserIconUrl();
+        this.userGmtCreate = userVO.getUserGmtCreate();
+        this.userGmtModified = userVO.getUserGmtModified();
+        this.userLastLogin = userVO.getUserLastLogin();
+        this.userLoginCount = userVO.getUserLoginCount();
+    }
+
+    /**
+     * constructor - user property vo
+     */
+    public UserDO(UserPropertyVO userPropertyVO) {
+        this.userId = userPropertyVO.getUserId();
+        this.userAccountName = userPropertyVO.getUserAccountName();
+        this.userName = userPropertyVO.getUserName();
+        // Sex => int
+        // 0:empty 1:man 2:woman
+        Sex sex = userPropertyVO.getUserSex();
+        if (sex == Sex.EMPTY) {
+            this.userSex = 0;
+        } else if (sex == Sex.MAN) {
+            this.userSex = 1;
+        } else if (sex == Sex.WOMAN) {
+            this.userSex = 2;
+        }
+        this.userBirthday = userPropertyVO.getUserBirthday();
+        this.userEmail = userPropertyVO.getUserEmail();
+        this.userLocation = userPropertyVO.getUserLocation();
+        this.userPhoneNumber = userPropertyVO.getUserPhoneNumber();
+        this.userIconUrl = userPropertyVO.getUserIconUrl();
+        this.userGmtCreate = userPropertyVO.getUserGmtCreate();
+        this.userGmtModified = userPropertyVO.getUserGmtModified();
+        this.userLastLogin = userPropertyVO.getUserLastLogin();
+        this.userLoginCount = userPropertyVO.getUserLoginCount();
+    }
 
     @Override
     public String toString() {

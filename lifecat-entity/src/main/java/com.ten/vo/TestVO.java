@@ -7,7 +7,11 @@ public class TestVO {
     private Integer testId;
     private String testName;
 
-    public TestVO(){}
+    /**
+     * constructor
+     */
+    public TestVO() {
+    }
 
     public TestVO(TestDO testDO) {
         this.testId = testDO.getTestId();

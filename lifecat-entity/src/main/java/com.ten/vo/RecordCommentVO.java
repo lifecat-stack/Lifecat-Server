@@ -1,17 +1,34 @@
 package com.ten.vo;
 
+import com.ten.entity.LogDO;
+import com.ten.entity.RecordCommentDO;
+
 /**
  * record comment
  *
  * @author Administrator
  */
-public class CommentVO {
+public class RecordCommentVO {
 
     private Integer commentId;
     private Integer commentCustomerId;
     private String commentContent;
     private String commentGmtCreate;
     private String commentGmtModified;
+
+    /**
+     * constructor
+     */
+    public RecordCommentVO() {
+    }
+
+    public RecordCommentVO(RecordCommentDO recordCommentDO) {
+        this.commentId = recordCommentDO.getCommentId();
+        this.commentCustomerId = recordCommentDO.getCommentCustomerId();
+        this.commentContent = recordCommentDO.getCommentContent();
+        this.commentGmtCreate = recordCommentDO.getCommentGmtCreate();
+        this.commentGmtModified = recordCommentDO.getCommentGmtModified();
+    }
 
     @Override
     public String toString() {

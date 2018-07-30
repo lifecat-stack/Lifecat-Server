@@ -1,23 +1,20 @@
-package com.ten.controller.shiro;
+package com.ten.controller.authorization;
 
-import com.ten.jms.AlertService;
-import com.ten.service.service.shiro.ShiroService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * shiro controller
+ * realm controller
  *
  * @author Administrator
  */
 @Controller
 @RequestMapping(value = "/verify")
-public class VerificationController {
+public class AuthorizationController {
 
     /**
      * admin login

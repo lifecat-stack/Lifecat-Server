@@ -1,5 +1,8 @@
 package com.ten.vo;
 
+import com.ten.entity.UserDO;
+import com.ten.vo.utils.Sex;
+
 /**
  * user property
  *
@@ -10,7 +13,7 @@ public class UserPropertyVO {
     private Integer userId;
     private String userAccountName;
     private String userName;
-    private Integer userSex;
+    private Sex userSex;
     private String userBirthday;
     private String userEmail;
     private String userLocation;
@@ -20,6 +23,37 @@ public class UserPropertyVO {
     private String userGmtModified;
     private String userLastLogin;
     private Integer userLoginCount;
+
+    /**
+     * constructor
+     */
+    public UserPropertyVO() {
+    }
+
+    public UserPropertyVO(UserDO userDO) {
+        this.userId = userDO.getUserId();
+        this.userAccountName = userDO.getUserAccountName();
+        this.userName = userDO.getUserName();
+        // int => Sex
+        // 0:empty 1:man 2:woman
+        int sex = userDO.getUserSex();
+        if (sex == 0) {
+            this.userSex = Sex.EMPTY;
+        } else if (sex == 1) {
+            this.userSex = Sex.MAN;
+        } else if (sex == 2) {
+            this.userSex = Sex.WOMAN;
+        }
+        this.userBirthday = userDO.getUserBirthday();
+        this.userEmail = userDO.getUserEmail();
+        this.userLocation = userDO.getUserLocation();
+        this.userPhoneNumber = userDO.getUserPhoneNumber();
+        this.userIconUrl = userDO.getUserIconUrl();
+        this.userGmtCreate = userDO.getUserGmtCreate();
+        this.userGmtModified = userDO.getUserGmtModified();
+        this.userLastLogin = userDO.getUserLastLogin();
+        this.userLoginCount = userDO.getUserLoginCount();
+    }
 
     @Override
     public String toString() {
@@ -64,11 +98,11 @@ public class UserPropertyVO {
         this.userName = userName;
     }
 
-    public Integer getUserSex() {
+    public Sex getUserSex() {
         return userSex;
     }
 
-    public void setUserSex(Integer userSex) {
+    public void setUserSex(Sex userSex) {
         this.userSex = userSex;
     }
 

@@ -23,11 +23,19 @@ public class AlbumVO {
      */
     private List<ImageVO> albumImageList;
 
+    /**
+     * constructor
+     */
     public AlbumVO() {
     }
 
     public AlbumVO(AlbumDO albumDO) {
         this.albumId = albumDO.getAlbumId();
+        this.albumName = albumDO.getAlbumName();
+        this.albumDesc = albumDO.getAlbumDesc();
+        this.albumCoverUrl = albumDO.getAlbumCoverUrl();
+        this.albumGmtCreate = albumDO.getAlbumGmtCreate();
+        this.albumGmtModified = albumDO.getAlbumGmtModified();
     }
 
     @Override

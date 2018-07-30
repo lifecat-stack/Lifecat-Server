@@ -1,7 +1,11 @@
 package com.ten.entity;
 
+import com.ten.MyBuilder;
+import com.ten.vo.AlbumVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Locale;
 
 /**
  * c_album
@@ -19,6 +23,56 @@ public class AlbumDO {
     private Integer deleted;
     private String albumGmtCreate;
     private String albumGmtModified;
+
+    /**
+     * constructor
+     */
+    public AlbumDO() {
+    }
+
+    public AlbumDO(AlbumVO albumVO) {
+        this.albumId = albumVO.getAlbumId();
+        this.albumName = albumVO.getAlbumName();
+        this.albumDesc = albumVO.getAlbumDesc();
+        this.albumCoverUrl = albumVO.getAlbumCoverUrl();
+        this.albumGmtCreate = albumVO.getAlbumGmtCreate();
+        this.albumGmtModified = albumVO.getAlbumGmtModified();
+    }
+
+    private AlbumDO(Builder b) {
+        this(b.albumVO);
+        userId = b.userId;
+        deleted = b.deleted;
+    }
+
+    /**
+     * builder
+     */
+    public static class Builder implements MyBuilder<AlbumDO> {
+        private AlbumVO albumVO = null;
+        private Integer userId = null;
+        private Integer deleted = null;
+
+        public Builder albumVO(AlbumVO albumVO) {
+            this.albumVO = albumVO;
+            return this;
+        }
+
+        public Builder userId(Integer userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public Builder deleted(Integer deleted) {
+            this.deleted = deleted;
+            return this;
+        }
+
+        @Override
+        public AlbumDO build() {
+            return new AlbumDO(this);
+        }
+    }
 
     @Override
     public String toString() {

@@ -1,5 +1,7 @@
 package com.ten.vo;
 
+import com.ten.entity.UserDO;
+
 /**
  * user account
  *
@@ -10,6 +12,18 @@ public class UserAccountVO {
     private Integer userId;
     private String userAccountName;
     private String userAccountPassword;
+
+    /**
+     * constructor
+     */
+    public UserAccountVO() {
+    }
+
+    public UserAccountVO(UserDO userDO) {
+        this.userId = userDO.getUserId();
+        this.userAccountName = userDO.getUserAccountName();
+        this.userAccountPassword = userDO.getUserAccountPassword();
+    }
 
     @Override
     public String toString() {

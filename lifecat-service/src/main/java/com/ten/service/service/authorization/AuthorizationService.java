@@ -1,10 +1,8 @@
-package com.ten.service.service.shiro;
-
-import com.ten.service.service.BaseService;
+package com.ten.service.service.authorization;
 
 /**
  * 特殊 - Not Extended Base
- * ShiroService :权限控制
+ * AuthorizationService :权限控制
  * <p>
  * list   :todo
  * get    :todo
@@ -14,5 +12,5 @@ import com.ten.service.service.BaseService;
  *
  * @author Administrator
  */
-public interface ShiroService {
+public interface AuthorizationService {
 }

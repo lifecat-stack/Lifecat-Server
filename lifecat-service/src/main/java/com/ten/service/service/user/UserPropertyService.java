@@ -13,5 +13,5 @@ import com.ten.vo.UserPropertyVO;
  *
  * @author Administrator
  */
-public interface UserPropertyService extends BaseService<UserPropertyVO, UserDO> {
+public interface UserPropertyService extends BaseService<UserPropertyVO> {
 }

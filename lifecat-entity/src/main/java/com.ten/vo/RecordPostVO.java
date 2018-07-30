@@ -1,16 +1,31 @@
 package com.ten.vo;
 
+import com.ten.entity.RecordPostDO;
+
 /**
  * record post
  *
  * @author Administrator
  */
-public class PostVO {
+public class RecordPostVO {
 
     private Integer postId;
     private String postTitle;
     private String postContent;
     private String postImageUrl;
+
+    /**
+     * constructor
+     */
+    public RecordPostVO() {
+    }
+
+    public RecordPostVO(RecordPostDO recordPostDO) {
+        this.postId = recordPostDO.getPostId();
+        this.postTitle = recordPostDO.getPostTitle();
+        this.postContent = recordPostDO.getPostContent();
+        this.postImageUrl = recordPostDO.getPostImageUrl();
+    }
 
     @Override
     public String toString() {

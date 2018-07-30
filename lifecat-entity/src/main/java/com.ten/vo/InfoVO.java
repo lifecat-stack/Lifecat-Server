@@ -1,5 +1,6 @@
 package com.ten.vo;
 
+import com.ten.entity.InfoDO;
 import com.ten.vo.utils.InfoLevel;
 
 /**
@@ -12,13 +13,40 @@ public class InfoVO {
     private Integer infoId;
     private String infoTitle;
     private String infoContent;
-    private Integer readed;
+    private Boolean readed;
     private String infoGmtCreate;
     private String infoGmtModified;
     /**
      * INFO level
      */
     private InfoLevel infoLevel;
+
+    /**
+     * constructor
+     */
+    public InfoVO() {
+    }
+
+    public InfoVO(InfoDO infoDO) {
+        this.infoId = infoDO.getInfoId();
+        this.infoTitle = infoDO.getInfoTitle();
+        this.infoContent = infoDO.getInfoContent();
+        // int => boolean
+        // 0:unread-false 1:read-true
+        this.readed = infoDO.getReaded() >= 1;
+        this.infoGmtCreate = infoDO.getInfoGmtCreate();
+        this.infoGmtModified = infoDO.getInfoGmtModified();
+        // int => InfoLevel
+        // 1:info 2:alert 3:warn 4:read
+        int infolevel = infoDO.getInfoLevel();
+        if (infolevel == 1) {
+            this.infoLevel = InfoLevel.INFO;
+        } else if (infolevel == 2) {
+            this.infoLevel = InfoLevel.ALERT;
+        } else if (infolevel == 3) {
+            this.infoLevel = InfoLevel.WARN;
+        }
+    }
 
     @Override
     public String toString() {
@@ -57,11 +85,11 @@ public class InfoVO {
         this.infoContent = infoContent;
     }
 
-    public Integer getReaded() {
+    public Boolean getReaded() {
         return readed;
     }
 
-    public void setReaded(Integer readed) {
+    public void setReaded(Boolean readed) {
         this.readed = readed;
     }
 

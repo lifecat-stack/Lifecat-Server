@@ -1,5 +1,8 @@
 package com.ten.entity;
 
+import com.ten.MyBuilder;
+import com.ten.vo.RecordCommentVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,6 +21,55 @@ public class RecordCommentDO {
     private Integer deleted;
     private String commentGmtCreate;
     private String commentGmtModified;
+
+    /**
+     * constructor
+     */
+    public RecordCommentDO() {
+    }
+
+    public RecordCommentDO(RecordCommentVO recordCommentVO) {
+        this.commentId = recordCommentVO.getCommentId();
+        this.commentCustomerId = recordCommentVO.getCommentCustomerId();
+        this.commentContent = recordCommentVO.getCommentContent();
+        this.commentGmtCreate = recordCommentVO.getCommentGmtCreate();
+        this.commentGmtModified = recordCommentVO.getCommentGmtModified();
+    }
+
+    private RecordCommentDO(Builder b) {
+        this(b.recordCommentVO);
+        commentRecordId = b.commentRecordId;
+        deleted = b.deleted;
+    }
+
+    /**
+     * builder
+     */
+    public static class Builder implements MyBuilder<RecordCommentDO> {
+        private RecordCommentVO recordCommentVO = null;
+        private Integer commentRecordId = null;
+        private Integer deleted = null;
+
+        public Builder recordCommentVO(RecordCommentVO recordCommentVO) {
+            this.recordCommentVO = recordCommentVO;
+            return this;
+        }
+
+        public Builder commentRecordId(Integer commentRecordId) {
+            this.commentRecordId = commentRecordId;
+            return this;
+        }
+
+        public Builder deleted(Integer deleted) {
+            this.deleted = deleted;
+            return this;
+        }
+
+        @Override
+        public RecordCommentDO build() {
+            return new RecordCommentDO(this);
+        }
+    }
 
     @Override
     public String toString() {

@@ -1,5 +1,7 @@
 package com.ten.vo;
 
+import com.ten.entity.LogDO;
+
 /**
  * log
  *
@@ -14,6 +16,22 @@ public class LogVO {
     private String userAddress;
     private String userSource;
     private String logRecordTime;
+
+    /**
+     * constructor
+     */
+    public LogVO() {
+    }
+
+    public LogVO(LogDO logDO) {
+        this.logId = logDO.getLogId();
+        this.userId = logDO.getUserId();
+        this.userRoleId = logDO.getUserRoleId();
+        this.userIp = logDO.getUserIp();
+        this.userAddress = logDO.getUserAddress();
+        this.userSource = logDO.getUserSource();
+        this.logRecordTime = logDO.getLogRecordTime();
+    }
 
     @Override
     public String toString() {

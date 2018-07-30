@@ -1,5 +1,9 @@
 package com.ten.entity;
 
+import com.ten.MyBuilder;
+import com.ten.vo.AlbumVO;
+import com.ten.vo.ImageVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,6 +25,64 @@ public class ImageDO {
     private Integer deleted;
     private String imageGmtCreate;
     private String imageGmtModified;
+
+    /**
+     * constructor
+     */
+    public ImageDO() {
+    }
+
+    public ImageDO(ImageVO imageVO) {
+        this.imageId = imageVO.getImageId();
+        this.imageType = imageVO.getImageType();
+        this.imageName = imageVO.getImageName();
+        this.imageDesc = imageVO.getImageDesc();
+        this.imageUrl = imageVO.getImageUrl();
+        this.imageGmtCreate = imageVO.getImageGmtCreate();
+        this.imageGmtModified = imageVO.getImageGmtModified();
+    }
+
+    private ImageDO(ImageDO.Builder b) {
+        this(b.imageVO);
+        albumId = b.albumId;
+        userId = b.userId;
+        deleted = b.deleted;
+    }
+
+    /**
+     * builder
+     */
+    public static class Builder implements MyBuilder<ImageDO> {
+        private ImageVO imageVO = null;
+        private Integer albumId = null;
+        private Integer userId = null;
+        private Integer deleted = null;
+
+        public Builder imageVO(ImageVO imageVO) {
+            this.imageVO = imageVO;
+            return this;
+        }
+
+        public Builder albumId(Integer albumId) {
+            this.albumId = albumId;
+            return this;
+        }
+
+        public Builder userId(Integer userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public Builder deleted(Integer deleted) {
+            this.deleted = deleted;
+            return this;
+        }
+
+        @Override
+        public ImageDO build() {
+            return new ImageDO(this);
+        }
+    }
 
     @Override
     public String toString() {

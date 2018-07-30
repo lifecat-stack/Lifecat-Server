@@ -1,5 +1,9 @@
 package com.ten.entity;
 
+import com.ten.MyBuilder;
+import com.ten.vo.InfoVO;
+import com.ten.vo.utils.InfoLevel;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -19,6 +23,61 @@ public class InfoDO {
     private Integer readed;
     private String infoGmtCreate;
     private String infoGmtModified;
+
+    /**
+     * constructor
+     */
+    public InfoDO() {
+    }
+
+    public InfoDO(InfoVO infoVO) {
+        this.infoId = infoVO.getInfoId();
+        this.infoTitle = infoVO.getInfoTitle();
+        this.infoContent = infoVO.getInfoContent();
+        // boolean => int
+        // 0:unread-false 1:read-true
+        this.readed = infoVO.getReaded() ? 1 : 0;
+        this.infoGmtCreate = infoVO.getInfoGmtCreate();
+        this.infoGmtModified = infoVO.getInfoGmtModified();
+        // InfoLevel => int
+        // 1:info 2:alert 3:warn 4:read
+        InfoLevel infolevel = infoVO.getInfoLevel();
+        if (infolevel == InfoLevel.INFO) {
+            this.infoLevel = 1;
+        } else if (infolevel == InfoLevel.ALERT) {
+            this.infoLevel = 2;
+        } else if (infolevel == InfoLevel.WARN) {
+            this.infoLevel = 3;
+        }
+    }
+
+    private InfoDO(Builder b) {
+        this(b.infoVO);
+        userId = b.userId;
+    }
+
+    /**
+     * builder
+     */
+    public static class Builder implements MyBuilder<InfoDO> {
+        private InfoVO infoVO = null;
+        private Integer userId = null;
+
+        public Builder infoVO(InfoVO infoVO) {
+            this.infoVO = infoVO;
+            return this;
+        }
+
+        public Builder userId(Integer userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        @Override
+        public InfoDO build() {
+            return new InfoDO(this);
+        }
+    }
 
     @Override
     public String toString() {

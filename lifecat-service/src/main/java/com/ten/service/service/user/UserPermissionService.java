@@ -1,8 +1,6 @@
 package com.ten.service.service.user;
 
-import com.ten.entity.UserPermissionDO;
 import com.ten.service.service.BaseService;
-import com.ten.vo.UserPermissionVO;
 
 /**
  * list   :获取所有用户permission信息集合
@@ -13,5 +11,5 @@ import com.ten.vo.UserPermissionVO;
  *
  * @author Administrator
  */
-public interface UserPermissionService extends BaseService<UserPermissionVO, UserPermissionDO> {
+public interface UserPermissionService extends BaseService<UserAuthorizationVO> {
 }

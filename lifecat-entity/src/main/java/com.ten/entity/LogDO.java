@@ -1,5 +1,7 @@
 package com.ten.entity;
 
+import com.ten.vo.LogVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,6 +20,22 @@ public class LogDO {
     private String userAddress;
     private String userSource;
     private String logRecordTime;
+
+    /**
+     * constructor
+     */
+    public LogDO() {
+    }
+
+    public LogDO(LogVO logVO) {
+        this.logId = logVO.getLogId();
+        this.userId = logVO.getUserId();
+        this.userRoleId = logVO.getUserRoleId();
+        this.userIp = logVO.getUserIp();
+        this.userAddress = logVO.getUserAddress();
+        this.userSource = logVO.getUserSource();
+        this.logRecordTime = logVO.getLogRecordTime();
+    }
 
     @Override
     public String toString() {

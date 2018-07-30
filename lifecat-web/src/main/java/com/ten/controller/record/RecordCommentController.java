@@ -3,9 +3,7 @@ package com.ten.controller.record;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.service.service.record.RecordCommentService;
-import com.ten.vo.CommentVO;
-import com.ten.vo.RecordVO;
-import com.ten.vo.TestVO;
+import com.ten.vo.RecordCommentVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/record/comment")
-public class RecordCommentController extends BaseController<CommentVO, ResponseResult> {
+public class RecordCommentController extends BaseController<RecordCommentVO, ResponseResult> {
 
     @Autowired
     private RecordCommentService recordCommentService;
@@ -26,7 +24,7 @@ public class RecordCommentController extends BaseController<CommentVO, ResponseR
      * list
      */
     @Override
-    public ResponseResult list(CommentVO entity) {
+    public ResponseResult list(RecordCommentVO entity) {
         return null;
     }
 
@@ -34,7 +32,7 @@ public class RecordCommentController extends BaseController<CommentVO, ResponseR
      * get
      */
     @Override
-    public ResponseResult get(CommentVO entity) {
+    public ResponseResult get(RecordCommentVO entity) {
         return null;
     }
 
@@ -42,7 +40,7 @@ public class RecordCommentController extends BaseController<CommentVO, ResponseR
      * post
      */
     @Override
-    public ResponseResult post(CommentVO entity) {
+    public ResponseResult post(RecordCommentVO entity) {
         return null;
     }
 
@@ -50,7 +48,7 @@ public class RecordCommentController extends BaseController<CommentVO, ResponseR
      * put
      */
     @Override
-    public ResponseResult put(CommentVO entity) {
+    public ResponseResult put(RecordCommentVO entity) {
         return null;
     }
 
@@ -58,7 +56,7 @@ public class RecordCommentController extends BaseController<CommentVO, ResponseR
      * delete
      */
     @Override
-    public ResponseResult delete(CommentVO entity) {
+    public ResponseResult delete(RecordCommentVO entity) {
         return null;
     }
 }

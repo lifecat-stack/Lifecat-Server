@@ -10,28 +10,29 @@ import java.util.List;
 
 @Service
 public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, UserDO> implements UserPropertyService {
+
     @Override
-    public List<UserPropertyVO> list(UserDO entity) {
+    public List<UserPropertyVO> list(UserPropertyVO entity) {
         return null;
     }
 
     @Override
-    public UserPropertyVO get(UserDO entity) {
+    public UserPropertyVO get(UserPropertyVO entity) {
         return null;
     }
 
     @Override
-    public int post(UserDO entity) {
+    public int post(UserPropertyVO entity) {
         return 0;
     }
 
     @Override
-    public int put(UserDO entity) {
+    public int put(UserPropertyVO entity) {
         return 0;
     }
 
     @Override
-    public int delete(UserDO entity) {
+    public int delete(UserPropertyVO entity) {
         return 0;
     }
 }

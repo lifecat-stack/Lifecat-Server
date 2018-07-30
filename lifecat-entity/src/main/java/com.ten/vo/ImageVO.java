@@ -1,5 +1,7 @@
 package com.ten.vo;
 
+import com.ten.entity.ImageDO;
+
 /**
  * image
  *
@@ -14,6 +16,22 @@ public class ImageVO {
     private String imageUrl;
     private String imageGmtCreate;
     private String imageGmtModified;
+
+    /**
+     * constructor
+     */
+    public ImageVO() {
+    }
+
+    public ImageVO(ImageDO imageDO) {
+        this.imageId = imageDO.getImageId();
+        this.imageType = imageDO.getImageType();
+        this.imageName = imageDO.getImageName();
+        this.imageDesc = imageDO.getImageDesc();
+        this.imageUrl = imageDO.getImageUrl();
+        this.imageGmtCreate = imageDO.getImageGmtCreate();
+        this.imageGmtModified = imageDO.getImageGmtModified();
+    }
 
     @Override
     public String toString() {

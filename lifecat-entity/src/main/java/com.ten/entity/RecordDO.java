@@ -1,5 +1,8 @@
 package com.ten.entity;
 
+import com.ten.MyBuilder;
+import com.ten.vo.RecordVO;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,6 +20,60 @@ public class RecordDO {
     private Integer deleted;
     private String recordGmtCreate;
     private String recordGmtModified;
+
+    /**
+     * constructor
+     */
+    public RecordDO() {
+    }
+
+    public RecordDO(RecordVO recordVO) {
+        this.recordId = recordVO.getRecordId();
+        this.recordGmtCreate = recordVO.getRecordGmtCreate();
+        this.recordGmtModified = recordVO.getRecordGmtModified();
+    }
+
+    private RecordDO(Builder b) {
+        this(b.recordVO);
+        userId = b.userId;
+        postId = b.postId;
+        deleted = b.deleted;
+    }
+
+    /**
+     * builder
+     */
+    public static class Builder implements MyBuilder<RecordDO> {
+        private RecordVO recordVO = null;
+        private Integer userId = null;
+        private Integer postId = null;
+        private Integer deleted = null;
+
+        public Builder recordVO(RecordVO recordVO) {
+            this.recordVO = recordVO;
+            return this;
+        }
+
+        public Builder userId(Integer userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public Builder postId(Integer postId) {
+            this.postId = postId;
+            return this;
+        }
+
+        public Builder deleted(Integer deleted) {
+            this.deleted = deleted;
+            return this;
+        }
+
+        @Override
+        public RecordDO build() {
+            return new RecordDO(this);
+        }
+    }
 
     @Override
     public String toString() {

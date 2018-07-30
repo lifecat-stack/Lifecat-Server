@@ -15,8 +15,12 @@ import java.util.List;
 @Service
 public class TestServiceImpl extends BaseServiceImpl<TestVO, TestDO> implements TestService {
 
+    private final DataAndViewTranslator<TestDO, TestVO> translator;
+
     @Autowired
-    private DataAndViewTranslator<TestDO, TestVO> translator;
+    public TestServiceImpl(DataAndViewTranslator<TestDO, TestVO> translator) {
+        this.translator = translator;
+    }
 
     @Override
     public List<TestVO> list(TestVO entity) {
