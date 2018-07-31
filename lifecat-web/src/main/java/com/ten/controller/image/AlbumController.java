@@ -2,12 +2,14 @@ package com.ten.controller.image;
 
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
-import com.ten.service.service.image.AlbumService;
+import com.ten.manager.image.ImageServiceManager;
 import com.ten.vo.AlbumVO;
-import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static com.ten.utils.ControllerCheckUtil.*;
 
 /**
  * album
@@ -19,11 +21,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
 
     @Autowired
-    private AlbumService albumService;
+    private ImageServiceManager imageServiceManager;
 
     /**
-     * list
+     * listById
+     * <p>
+     * 获取用户所有Album信息
+     *
+     * @param userId user_id
+     * @return listById AlbumVO
      */
+    @RequestMapping(value = "/list/{userId}", method = RequestMethod.GET)
+    @Override
+    public ResponseResult listById(@PathVariable String userId) {
+        // check
+        checkRequestDataNotNull(userId);
+        checkRequestDataFormatInt(userId);
+        // execute
+        int id = Integer.parseInt(userId);
+        List<AlbumVO> albumVOList = imageServiceManager.getAlbumListByUserId(id);
+        // return
+        checkResourceNotNull(albumVOList);
+        return new ResponseResult(albumVOList);
+    }
+
     @Override
     public ResponseResult list(AlbumVO entity) {
         return null;
@@ -31,31 +52,86 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
 
     /**
      * get
+     * <p>
+     * 获取某个Album信息
+     *
+     * @param entity AlbumVO
+     * @return AlbumVO
      */
+    @RequestMapping(method = RequestMethod.GET)
     @Override
-    public ResponseResult get(AlbumVO entity) {
-        return null;
+    public ResponseResult get(@RequestBody AlbumVO entity) {
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        AlbumVO albumVO = imageServiceManager.getAlbumByEntity(entity);
+        // return
+        checkResourceNotNull(albumVO);
+        return new ResponseResult(albumVO);
     }
 
     /**
      * post
+     * <p>
+     * 创建Album
+     *
+     * @param entity AlbumVO
+     * @return result
      */
+    @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(AlbumVO entity) {
-        return null;
+    public ResponseResult post(@RequestBody AlbumVO entity) {
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        int result = imageServiceManager.createAlbum(entity);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
     /**
      * put
+     * <p>
+     * 更新Album信息
+     *
+     * @param entity AlbumVO
+     * @return result
      */
+    @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(AlbumVO entity) {
-        return null;
+    public ResponseResult put(@RequestBody AlbumVO entity) {
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        int result = imageServiceManager.updateAlbum(entity);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
     /**
-     * delete
+     * deleteById
+     * <p>
+     * 删除Album
+     *
+     * @param albumId album_id
+     * @return result
      */
+    @RequestMapping(value = "/{albumId}", method = RequestMethod.DELETE)
+    @Override
+    public ResponseResult deleteById(@PathVariable String albumId) {
+        // check
+        checkRequestDataNotNull(albumId);
+        checkRequestDataFormatInt(albumId);
+        // execute
+        int id = Integer.parseInt(albumId);
+        int result = imageServiceManager.deleteAlbumByPrimaryKey(id);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
+    }
+
     @Override
     public ResponseResult delete(AlbumVO entity) {
         return null;

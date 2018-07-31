@@ -36,15 +36,19 @@ public abstract class BaseController<VO, DTO> {
     /* ******** seletive methods*********/
     /* **********************************/
 
-    public DTO list(String id) {
+    public DTO all() {
         return null;
     }
 
-    public DTO get(String id) {
+    public DTO listById(String id) {
         return null;
     }
 
-    public DTO delete(String id) {
+    public DTO getById(String id) {
+        return null;
+    }
+
+    public DTO deleteById(String id) {
         return null;
     }
 

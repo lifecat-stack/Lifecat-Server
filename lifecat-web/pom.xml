@@ -25,6 +25,10 @@
     <dependencies>
         <dependency>
             <groupId>com.ten</groupId>
+            <artifactId>lifecat-manager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ten</groupId>
             <artifactId>lifecat-service</artifactId>
         </dependency>
         <dependency>

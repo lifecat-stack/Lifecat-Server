@@ -2,12 +2,14 @@ package com.ten.controller.image;
 
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
+import com.ten.manager.image.ImageServiceManager;
 import com.ten.service.service.image.ImageService;
 import com.ten.vo.ImageVO;
 import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import static com.ten.utils.ControllerCheckUtil.*;
 
 /**
  * image
@@ -19,10 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ImageController extends BaseController<ImageVO, ResponseResult> {
 
     @Autowired
-    private ImageService imageService;
+    private ImageServiceManager imageServiceManager;
 
     /**
-     * list
+     * listById
      */
     @Override
     public ResponseResult list(ImageVO entity) {
@@ -39,23 +41,67 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
 
     /**
      * post
+     * <p>
+     * 上传Image到相册
+     *
+     * @param entity ImageVO
+     * @return result
      */
+    @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(ImageVO entity) {
-        return null;
+    public ResponseResult post(@RequestBody ImageVO entity) {
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        int result = imageServiceManager.uploadImageToAlbum(entity);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
     /**
      * put
+     * <p>
+     * 更新Image信息
+     *
+     * @param entity ImageVO
+     * @return result
      */
+    @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(ImageVO entity) {
-        return null;
+    public ResponseResult put(@RequestBody ImageVO entity) {
+        // check
+        checkRequestDataNotNull(entity);
+        // execute
+        int result = imageServiceManager.updateImage(entity);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
     }
 
+
     /**
-     * delete
+     * deleteById
+     * <p>
+     * 删除Image
+     *
+     * @param imageId image_id
+     * @return result
      */
+    @RequestMapping(value = "/{imageId}", method = RequestMethod.DELETE)
+    @Override
+    public ResponseResult deleteById(@PathVariable String imageId) {
+        // check
+        checkRequestDataNotNull(imageId);
+        checkRequestDataFormatInt(imageId);
+        // execute
+        int id = Integer.parseInt(imageId);
+        int result = imageServiceManager.deleteImageByPrimaryKey(id);
+        // return
+        checkExecuteResultSuccess(result);
+        return new ResponseResult();
+    }
+
     @Override
     public ResponseResult delete(ImageVO entity) {
         return null;

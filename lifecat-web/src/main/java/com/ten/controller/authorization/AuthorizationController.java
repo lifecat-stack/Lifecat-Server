@@ -1,14 +1,20 @@
 package com.ten.controller.authorization;
 
+import com.ten.service.service.user.UserAccountService;
+import com.ten.vo.UserAccountVO;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import static com.ten.utils.ControllerCheckUtil.*;
+
 /**
- * realm controller
+ * authorization controller
  *
  * @author Administrator
  */
@@ -17,25 +23,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AuthorizationController {
 
     /**
-     * admin login
+     * login
+     *
+     * @param userAccountVO UserAccountVO
      */
-    @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
-    public String adminLogin() {
-        System.out.println("admin login verification");
-        String adminName = "admin";
-        String adminPassword = "1234";
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@RequestBody UserAccountVO userAccountVO) {
+        // check
+        checkRequestDataNotNull(userAccountVO);
+        String username = userAccountVO.getUserAccountName();
+        String password = userAccountVO.getUserAccountPassword();
+        checkRequestDataNotNull(username);
+        checkRequestDataNotNull(password);
         // verify
-        UsernamePasswordToken token = new UsernamePasswordToken(adminName, adminPassword);
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);
-            // success: send message
-//            AlertMessage message = new AlertMessage("admin login success");
-//            userAlertService.sendLoginAlert(message);
             return "home";
         } catch (Exception e) {
             return "redirect:/index.html";
         }
     }
-
 }

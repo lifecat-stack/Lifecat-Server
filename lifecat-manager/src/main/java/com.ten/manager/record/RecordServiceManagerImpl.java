@@ -3,6 +3,7 @@ package com.ten.manager.record;
 import com.ten.service.service.record.RecordCommentService;
 import com.ten.service.service.record.RecordPostService;
 import com.ten.service.service.record.RecordService;
+import com.ten.vo.RecordCommentVO;
 import com.ten.vo.RecordVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,26 +21,44 @@ import java.util.List;
 @Service
 public class RecordServiceManagerImpl implements RecordServiceManager {
 
-    private final RecordService recordService;
-    private final RecordPostService recordPostService;
-    private final RecordCommentService recordCommentService;
 
-    @Autowired
-    public RecordServiceManagerImpl(RecordService recordService,
-                                    RecordPostService recordPostService,
-                                    RecordCommentService recordCommentService) {
-        this.recordService = recordService;
-        this.recordPostService = recordPostService;
-        this.recordCommentService = recordCommentService;
+    @Override
+    public List<RecordVO> getUserRecordListByUserId(Integer userId) {
+        return null;
     }
 
     @Override
-    public List<RecordVO> getUserRecordListByUserId(int userId) {
-        RecordVO record = new RecordVO();
-        record.setUserId(userId);
-        List<RecordVO> recordVOS = recordService.list(record);
-        for (RecordVO recordVO:recordVOS){
-        }
+    public RecordVO getRecordByEntity(RecordVO entity) {
         return null;
+    }
+
+    @Override
+    public int createRecord(RecordVO entity) {
+        return 0;
+    }
+
+    @Override
+    public int deleteRecordByPrimaryKey(Integer recordId) {
+        return 0;
+    }
+
+    @Override
+    public int updateRecord(RecordVO entity) {
+        return 0;
+    }
+
+    @Override
+    public int createRecordComment(RecordCommentVO entity) {
+        return 0;
+    }
+
+    @Override
+    public int updateRecordComment(RecordCommentVO entity) {
+        return 0;
+    }
+
+    @Override
+    public int deleteRecordCommentByPrimaryKey(Integer id) {
+        return 0;
     }
 }

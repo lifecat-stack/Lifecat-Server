@@ -3,13 +3,12 @@ package com.ten.controller.user;
 
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
-import com.ten.service.service.user.UserService;
+import com.ten.manager.user.UserServiceManager;
 import com.ten.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import static com.ten.utils.ControllerCheckUtil.checkResourceNotNull;
-
+import static com.ten.utils.ControllerCheckUtil.*;
 /**
  * user
  *
@@ -20,8 +19,10 @@ import static com.ten.utils.ControllerCheckUtil.checkResourceNotNull;
 public class UserController extends BaseController<UserVO, ResponseResult> {
 
 
+    @Autowired
+    private UserServiceManager userServiceManager;
     /**
-     * list
+     * listById
      */
     @Override
     public ResponseResult list(UserVO entity) {
@@ -53,7 +54,7 @@ public class UserController extends BaseController<UserVO, ResponseResult> {
     }
 
     /**
-     * delete
+     * deleteById
      */
     @Override
     public ResponseResult delete(UserVO entity) {
