@@ -32,6 +32,7 @@ public class AlbumDO {
 
     public AlbumDO(AlbumVO albumVO) {
         this.albumId = albumVO.getAlbumId();
+        this.userId = albumVO.getUserId();
         this.albumName = albumVO.getAlbumName();
         this.albumDesc = albumVO.getAlbumDesc();
         this.albumCoverUrl = albumVO.getAlbumCoverUrl();

@@ -11,6 +11,7 @@ import com.ten.vo.utils.INFOLEVEL;
 public class InfoVO {
 
     private Integer infoId;
+    private Integer userId;
     private String infoTitle;
     private String infoContent;
     private Boolean readed;
@@ -29,6 +30,7 @@ public class InfoVO {
 
     public InfoVO(InfoDO infoDO) {
         this.infoId = infoDO.getInfoId();
+        this.userId = infoDO.getUserId();
         this.infoTitle = infoDO.getInfoTitle();
         this.infoContent = infoDO.getInfoContent();
         // int => boolean
@@ -52,6 +54,7 @@ public class InfoVO {
     public String toString() {
         return "VO:INFO@{" +
                 "infoid:" + infoId +
+                "userid:" + userId +
                 ",infotitle:" + infoTitle +
                 ",infocontent:" + infoContent +
                 ",infolevel:" + infoLevel +
@@ -59,6 +62,14 @@ public class InfoVO {
                 ",infogmtcreate:" + infoGmtCreate +
                 ",infogmtfinish:" + infoGmtModified +
                 "}";
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getInfoId() {

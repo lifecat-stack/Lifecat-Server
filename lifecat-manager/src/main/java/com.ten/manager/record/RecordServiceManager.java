@@ -27,5 +27,5 @@ public interface RecordServiceManager {
 
     int updateRecordComment(RecordCommentVO entity);
 
-    int deleteRecordCommentByPrimaryKey(Integer id);
+    int deleteRecordCommentByPrimaryKey(Integer commentId);
 }

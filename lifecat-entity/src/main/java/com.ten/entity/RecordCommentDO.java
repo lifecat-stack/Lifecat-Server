@@ -30,6 +30,7 @@ public class RecordCommentDO {
 
     public RecordCommentDO(RecordCommentVO recordCommentVO) {
         this.commentId = recordCommentVO.getCommentId();
+        this.commentRecordId = recordCommentVO.getCommentRecordId();
         this.commentCustomerId = recordCommentVO.getCommentCustomerId();
         this.commentContent = recordCommentVO.getCommentContent();
         this.commentGmtCreate = recordCommentVO.getCommentGmtCreate();

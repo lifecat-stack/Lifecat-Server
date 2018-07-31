@@ -30,6 +30,7 @@ public class RecordDO {
     public RecordDO(RecordVO recordVO) {
         this.recordId = recordVO.getRecordId();
         this.userId = recordVO.getUserId();
+        this.postId = recordVO.getPostId();
         this.recordGmtCreate = recordVO.getRecordGmtCreate();
         this.recordGmtModified = recordVO.getRecordGmtModified();
     }

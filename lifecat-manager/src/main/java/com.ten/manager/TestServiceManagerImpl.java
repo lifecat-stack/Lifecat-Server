@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class TestServiceManagerImpl implements TestServiceManager {
 
+    private final TestService testService;
+
     @Autowired
-    private TestService testService;
+    public TestServiceManagerImpl(TestService testService) {
+        this.testService = testService;
+    }
 
     @Override
     public List<TestVO> getAllTest() {

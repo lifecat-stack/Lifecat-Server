@@ -32,6 +32,7 @@ public class InfoDO {
 
     public InfoDO(InfoVO infoVO) {
         this.infoId = infoVO.getInfoId();
+        this.userId = infoVO.getUserId();
         this.infoTitle = infoVO.getInfoTitle();
         this.infoContent = infoVO.getInfoContent();
         // boolean => int

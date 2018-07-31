@@ -14,6 +14,7 @@ public class RecordVO {
 
     private Integer recordId;
     private Integer userId;
+    private Integer postId;
     private String recordGmtCreate;
     private String recordGmtModified;
     /**
@@ -34,6 +35,7 @@ public class RecordVO {
     public RecordVO(RecordDO recordDO) {
         this.recordId = recordDO.getRecordId();
         this.userId = recordDO.getUserId();
+        this.postId = recordDO.getPostId();
         this.recordGmtCreate = recordDO.getRecordGmtCreate();
         this.recordGmtModified = recordDO.getRecordGmtModified();
     }
@@ -78,10 +80,19 @@ public class RecordVO {
         return "VO:record@{" +
                 "recordid:" + recordId +
                 "userid:" + userId +
+                "postid:" + postId +
                 ",recordgmtcreate:" + recordGmtCreate +
                 ",recordgmtmodified:" + recordGmtModified +
                 ",commentsize:" + comments.size() +
                 "}";
+    }
+
+    public Integer getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Integer postId) {
+        this.postId = postId;
     }
 
     public Integer getUserId() {

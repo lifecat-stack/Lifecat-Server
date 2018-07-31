@@ -14,23 +14,24 @@ import java.util.List;
  * @author Administrator
  */
 public interface UserServiceManager {
+
     List<UserAccountVO> getAllUserAccount();
 
     UserAccountVO getUserAccountByEntity(UserAccountVO entity);
 
-    UserAccountVO createUserAccount(UserAccountVO entity);
+    UserAccountVO createUserAccountAndReturn(UserAccountVO entity);
 
     int deleteUserByPrimaryKey(Integer userId);
 
-    UserAccountVO updateUserPassword(UserAccountVO entity);
+    UserAccountVO updateUserPasswordAndReturn(UserAccountVO entity);
 
     List<UserPropertyVO> getAllUserProperty();
 
     UserPropertyVO getUserPropertyByEntity(UserPropertyVO entity);
 
-    UserPropertyVO createUserProperty(UserPropertyVO entity);
+    UserPropertyVO createUserPropertyAndReturn(UserPropertyVO entity);
 
-    UserPropertyVO updateUserProperty(UserPropertyVO entity);
+    UserPropertyVO updateUserPropertyAndReturn(UserPropertyVO entity);
 
     int deleteUserPropertyByPrimaryKey(Integer userId);
 

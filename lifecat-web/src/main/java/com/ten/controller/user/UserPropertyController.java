@@ -3,8 +3,6 @@ package com.ten.controller.user;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.manager.user.UserServiceManager;
-import com.ten.service.service.user.UserPropertyService;
-import com.ten.vo.UserPropertyVO;
 import com.ten.vo.UserPropertyVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -105,7 +103,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
         // check
         checkRequestDataNotNull(entity);
         // execute
-        UserPropertyVO newUserPropertyVO = userServiceManager.createUserProperty(entity);
+        UserPropertyVO newUserPropertyVO = userServiceManager.createUserPropertyAndReturn(entity);
         // return
         checkResourceNotNull(newUserPropertyVO);
         return new ResponseResult(newUserPropertyVO);
@@ -125,7 +123,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
         // check
         checkRequestDataNotNull(entity);
         // execute
-        UserPropertyVO newUserPropertyVO = userServiceManager.updateUserProperty(entity);
+        UserPropertyVO newUserPropertyVO = userServiceManager.updateUserPropertyAndReturn(entity);
         // return
         checkResourceNotNull(newUserPropertyVO);
         return new ResponseResult(newUserPropertyVO);

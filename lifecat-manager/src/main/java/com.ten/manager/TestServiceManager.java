@@ -5,6 +5,7 @@ import com.ten.vo.TestVO;
 import java.util.List;
 
 public interface TestServiceManager {
+
     List<TestVO> getAllTest();
 
     List<TestVO> getTestListByTestId(Integer testId);

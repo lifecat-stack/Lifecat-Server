@@ -13,6 +13,7 @@ import java.util.List;
 public class AlbumVO {
 
     private Integer albumId;
+    private Integer userId;
     private String albumName;
     private String albumDesc;
     private String albumCoverUrl;
@@ -31,6 +32,7 @@ public class AlbumVO {
 
     public AlbumVO(AlbumDO albumDO) {
         this.albumId = albumDO.getAlbumId();
+        this.userId = albumDO.getUserId();
         this.albumName = albumDO.getAlbumName();
         this.albumDesc = albumDO.getAlbumDesc();
         this.albumCoverUrl = albumDO.getAlbumCoverUrl();
@@ -42,6 +44,7 @@ public class AlbumVO {
     public String toString() {
         return "VO:album@{" +
                 "albumid:" + albumId +
+                "userid:" + userId +
                 ",albumname:" + albumName +
                 ",albumdesc:" + albumDesc +
                 ",albumcoverurl:" + albumCoverUrl +
@@ -49,6 +52,14 @@ public class AlbumVO {
                 ",albumgmtmodified:" + albumGmtModified +
                 ",albumsize:" + albumImageList.size() +
                 "}";
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public List<ImageVO> getAlbumImageList() {

@@ -11,6 +11,7 @@ import com.ten.entity.RecordCommentDO;
 public class RecordCommentVO {
 
     private Integer commentId;
+    private Integer commentRecordId;
     private Integer commentCustomerId;
     private String commentContent;
     private String commentGmtCreate;
@@ -24,6 +25,7 @@ public class RecordCommentVO {
 
     public RecordCommentVO(RecordCommentDO recordCommentDO) {
         this.commentId = recordCommentDO.getCommentId();
+        this.commentRecordId = recordCommentDO.getCommentRecordId();
         this.commentCustomerId = recordCommentDO.getCommentCustomerId();
         this.commentContent = recordCommentDO.getCommentContent();
         this.commentGmtCreate = recordCommentDO.getCommentGmtCreate();
@@ -34,11 +36,20 @@ public class RecordCommentVO {
     public String toString() {
         return "VO:comment@{" +
                 "commenid:" + commentId +
+                "commentRecordId:" + commentRecordId +
                 ",commencustomeid:" + commentCustomerId +
                 ",commencontent:" + commentContent +
                 ",commengmcreate:" + commentGmtCreate +
                 ",commengmmodified:" + commentGmtModified +
                 "}";
+    }
+
+    public Integer getCommentRecordId() {
+        return commentRecordId;
+    }
+
+    public void setCommentRecordId(Integer commentRecordId) {
+        this.commentRecordId = commentRecordId;
     }
 
     public Integer getCommentId() {
