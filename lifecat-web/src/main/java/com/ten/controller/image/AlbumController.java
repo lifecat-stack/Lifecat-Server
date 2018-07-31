@@ -20,8 +20,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/album")
 public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
 
+    private final ImageServiceManager imageServiceManager;
+
     @Autowired
-    private ImageServiceManager imageServiceManager;
+    public AlbumController(ImageServiceManager imageServiceManager) {
+        this.imageServiceManager = imageServiceManager;
+    }
 
     /**
      * listById

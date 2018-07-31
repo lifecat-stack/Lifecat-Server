@@ -22,8 +22,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/user/account")
 public class UserAccountController extends BaseController<UserAccountVO, ResponseResult> {
 
+    private final UserServiceManager userServiceManager;
+
     @Autowired
-    private UserServiceManager userServiceManager;
+    public UserAccountController(UserServiceManager userServiceManager) {
+        this.userServiceManager = userServiceManager;
+    }
 
     /**
      * all

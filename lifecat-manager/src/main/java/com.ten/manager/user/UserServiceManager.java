@@ -15,6 +15,10 @@ import java.util.List;
  */
 public interface UserServiceManager {
 
+    /* **********************************/
+    /* *********** account **************/
+    /* **********************************/
+
     List<UserAccountVO> getAllUserAccount();
 
     UserAccountVO getUserAccountByEntity(UserAccountVO entity);
@@ -24,6 +28,10 @@ public interface UserServiceManager {
     int deleteUserByPrimaryKey(Integer userId);
 
     UserAccountVO updateUserPasswordAndReturn(UserAccountVO entity);
+
+    /* **********************************/
+    /* *********** property *************/
+    /* **********************************/
 
     List<UserPropertyVO> getAllUserProperty();
 

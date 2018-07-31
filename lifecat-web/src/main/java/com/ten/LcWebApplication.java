@@ -18,15 +18,19 @@ import javax.sql.DataSource;
 @MapperScan("com.ten.mapper")
 class LcWebApplication {
 
+    private final Environment env;
+
+    @Autowired
+    public LcWebApplication(Environment env) {
+        this.env = env;
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(LcWebApplication.class, args);
     }
 
-    @Autowired
-    private Environment env;
-
     /**
-     * destroy-method="close"的作用是当数据库连接不使用的时候,就把该连接重新放到数据池中,方便下次使用调用.
+     * 配置druid数据源
      */
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
@@ -53,5 +57,4 @@ class LcWebApplication {
         dataSource.setPoolPreparedStatements(false);
         return dataSource;
     }
-
 }

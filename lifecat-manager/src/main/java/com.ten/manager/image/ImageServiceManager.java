@@ -12,9 +12,10 @@ import java.util.List;
  */
 public interface ImageServiceManager {
 
-    /**
-     * album
-     */
+    /* **********************************/
+    /* ************* album **************/
+    /* **********************************/
+
     List<AlbumVO> getAlbumListByUserId(Integer userId);
 
     AlbumVO getAlbumByEntity(AlbumVO albumVO);
@@ -25,9 +26,10 @@ public interface ImageServiceManager {
 
     int deleteAlbumByPrimaryKey(Integer albumId);
 
-    /**
-     * image
-     */
+    /* **********************************/
+    /* ************* image **************/
+    /* **********************************/
+
     int uploadImageToAlbum(ImageVO imageVO);
 
     int updateImage(ImageVO imageVO);

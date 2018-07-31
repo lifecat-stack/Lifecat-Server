@@ -1,7 +1,7 @@
 package com.ten.vo;
 
 import com.ten.entity.UserDO;
-import com.ten.vo.utils.SEX;
+import com.ten.vo.constant.SEX;
 
 /**
  * user

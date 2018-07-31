@@ -3,7 +3,7 @@ package com.ten.entity;
 import com.ten.vo.UserAccountVO;
 import com.ten.vo.UserPropertyVO;
 import com.ten.vo.UserVO;
-import com.ten.vo.utils.SEX;
+import com.ten.vo.constant.SEX;
 
 import javax.persistence.Id;
 import javax.persistence.Table;

@@ -21,8 +21,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/record")
 public class RecordController extends BaseController<RecordVO, ResponseResult> {
 
+    private final RecordServiceManager recordServiceManager;
+
     @Autowired
-    private RecordServiceManager recordServiceManager;
+    public RecordController(RecordServiceManager recordServiceManager) {
+        this.recordServiceManager = recordServiceManager;
+    }
 
     /**
      * listById

@@ -2,8 +2,8 @@ package com.ten.service.serviceimpl.authorization.data;
 
 import com.ten.entity.*;
 import com.ten.mapper.*;
-import com.ten.vo.utils.PERMISSION;
-import com.ten.vo.utils.ROLE;
+import com.ten.vo.constant.PERMISSION;
+import com.ten.vo.constant.ROLE;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;

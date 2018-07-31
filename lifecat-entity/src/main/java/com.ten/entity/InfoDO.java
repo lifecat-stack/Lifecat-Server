@@ -2,7 +2,7 @@ package com.ten.entity;
 
 import com.ten.MyBuilder;
 import com.ten.vo.InfoVO;
-import com.ten.vo.utils.INFOLEVEL;
+import com.ten.vo.constant.INFOLEVEL;
 
 import javax.persistence.Id;
 import javax.persistence.Table;

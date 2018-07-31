@@ -7,8 +7,8 @@ import com.ten.vo.LogVO;
 /**
  * list   :todo
  * get    :todo
- * create   :todo
- * update    :todo
+ * create :todo
+ * update :todo
  * delete :todo
  *
  * @author Administrator

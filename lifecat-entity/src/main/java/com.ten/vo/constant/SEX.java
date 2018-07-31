@@ -1,4 +1,4 @@
-package com.ten.vo.utils;
+package com.ten.vo.constant;
 
 /**
  * user sex

@@ -26,8 +26,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/info")
 public class InfoController extends BaseController<InfoVO, ResponseResult> {
 
+    private final MessageServiceManager messageServiceManager;
+
     @Autowired
-    private MessageServiceManager messageServiceManager;
+    public InfoController(MessageServiceManager messageServiceManager) {
+        this.messageServiceManager = messageServiceManager;
+    }
 
 
     /**

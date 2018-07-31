@@ -20,8 +20,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/user/property")
 public class UserPropertyController extends BaseController<UserPropertyVO, ResponseResult> {
 
+    private final UserServiceManager userServiceManager;
+
     @Autowired
-    private UserServiceManager userServiceManager;
+    public UserPropertyController(UserServiceManager userServiceManager) {
+        this.userServiceManager = userServiceManager;
+    }
 
     /**
      * all

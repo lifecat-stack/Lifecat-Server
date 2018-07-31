@@ -1,5 +1,6 @@
 package com.ten.service.serviceimpl.authorization;
 
+import com.ten.service.service.authorization.AuthorizationService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -13,14 +14,19 @@ import org.springframework.stereotype.Service;
  * 用户权限认证
  *
  * @author Administrator
+ * @table c_user
+ * @table c_user_role
+ * @table c_role
+ * @table c_role_permission
+ * @table c_permission
  */
 @Service
-public class AuthorizationServiceImpl {
-
+public class AuthorizationServiceImpl implements AuthorizationService {
 
     /**
      * 认证
      */
+    @Override
     public boolean verifyLogin(String username, String password) {
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
@@ -35,6 +41,7 @@ public class AuthorizationServiceImpl {
     /**
      * 角色
      */
+    @Override
     public boolean verifyRole(String role) {
         Subject subject = SecurityUtils.getSubject();
         try {
@@ -48,6 +55,7 @@ public class AuthorizationServiceImpl {
     /**
      * 权限
      */
+    @Override
     public boolean verifyPermission(String permission) {
         Subject subject = SecurityUtils.getSubject();
         try {

@@ -16,9 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * user account of c_user
+ * user account
  *
  * @author Administrator
+ * @table c_user
  */
 @Service
 public class UserAccountServiceImpl extends BaseServiceImpl<UserAccountVO, UserDO> implements UserAccountService {

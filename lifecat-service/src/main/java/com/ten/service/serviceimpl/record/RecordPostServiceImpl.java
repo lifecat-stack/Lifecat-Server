@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * record post
+ *
+ * @author Administrator
+ * @table c_record_post
+ */
 @Service
 public class RecordPostServiceImpl extends BaseServiceImpl<RecordPostVO, RecordPostDO> implements RecordPostService {
 

@@ -17,6 +17,7 @@ import java.util.List;
  * record
  *
  * @author Administrator
+ * @table c_record
  */
 @Service
 public class RecordServiceImpl extends BaseServiceImpl<RecordVO, RecordDO> implements RecordService {

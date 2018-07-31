@@ -10,6 +10,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * test
+ *
+ * @author Administrator
+ * @table c_test
+ */
 @Service
 public class TestServiceImpl extends BaseServiceImpl<TestVO, TestDO> implements TestService {
 

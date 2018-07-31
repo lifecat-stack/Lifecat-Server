@@ -1,7 +1,7 @@
 package com.ten.vo;
 
 import com.ten.entity.InfoDO;
-import com.ten.vo.utils.INFOLEVEL;
+import com.ten.vo.constant.INFOLEVEL;
 
 /**
  * INFO

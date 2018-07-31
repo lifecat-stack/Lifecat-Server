@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * image service
+ *
+ * @author Administrator
+ * @table c_image
+ */
 @Service
 public class ImageServiceImpl extends BaseServiceImpl<ImageVO, ImageDO> implements ImageService {
 

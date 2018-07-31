@@ -7,10 +7,12 @@ import com.ten.vo.InfoVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 /**
  * info service
  *
  * @author Administrator
+ * @table c_info
  */
 @Service
 public class InfoServiceImpl extends BaseServiceImpl<InfoVO, InfoDO> implements InfoService {

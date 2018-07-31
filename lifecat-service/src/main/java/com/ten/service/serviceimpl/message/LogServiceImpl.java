@@ -12,6 +12,7 @@ import java.util.List;
  * log service
  *
  * @author Administrator
+ * @table c_log
  */
 @Service
 public class LogServiceImpl extends BaseServiceImpl<LogVO, LogDO> implements LogService {

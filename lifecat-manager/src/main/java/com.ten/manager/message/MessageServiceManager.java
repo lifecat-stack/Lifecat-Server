@@ -13,15 +13,17 @@ import java.util.List;
  */
 public interface MessageServiceManager {
 
-    /**
-     * info
-     */
+    /* **********************************/
+    /* ************* info  **************/
+    /* **********************************/
+
     List<InfoVO> getInfoListByUserId(Integer userId);
 
     int deleteInfoByPrimaryKey(Integer infoId);
 
-    /**
-     * log
-     */
+    /* **********************************/
+    /* ************* log   **************/
+    /* **********************************/
+
     List<LogVO> getAllLogs();
 }

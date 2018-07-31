@@ -20,8 +20,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/image")
 public class ImageController extends BaseController<ImageVO, ResponseResult> {
 
+    private final ImageServiceManager imageServiceManager;
+
     @Autowired
-    private ImageServiceManager imageServiceManager;
+    public ImageController(ImageServiceManager imageServiceManager) {
+        this.imageServiceManager = imageServiceManager;
+    }
 
     /**
      * listById

@@ -23,8 +23,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/record/comment")
 public class RecordCommentController extends BaseController<RecordCommentVO, ResponseResult> {
 
+    private final RecordServiceManager recordServiceManager;
+
     @Autowired
-    private RecordServiceManager recordServiceManager;
+    public RecordCommentController(RecordServiceManager recordServiceManager) {
+        this.recordServiceManager = recordServiceManager;
+    }
 
     /**
      * listById

@@ -10,9 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * user property of c_user
+ * user property
  *
  * @author Administrator
+ * @table c_user
  */
 @Service
 public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, UserDO> implements UserPropertyService {

@@ -15,8 +15,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/test")
 public class TestController extends BaseController<TestVO, ResponseResult> {
 
+    private final TestServiceManager testServiceManager;
+
     @Autowired
-    private TestServiceManager testServiceManager;
+    public TestController(TestServiceManager testServiceManager) {
+        this.testServiceManager = testServiceManager;
+    }
 
     /**
      * all

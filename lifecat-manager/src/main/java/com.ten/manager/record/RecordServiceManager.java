@@ -13,6 +13,10 @@ import java.util.List;
  */
 public interface RecordServiceManager {
 
+    /* **********************************/
+    /* ************ record **************/
+    /* **********************************/
+
     List<RecordVO> getUserRecordListByUserId(Integer userId);
 
     RecordVO getRecordByEntity(RecordVO entity);
@@ -22,6 +26,10 @@ public interface RecordServiceManager {
     int deleteRecordByPrimaryKey(Integer recordId);
 
     int updateRecord(RecordVO entity);
+
+    /* **********************************/
+    /* ************ comment *************/
+    /* **********************************/
 
     int createRecordComment(RecordCommentVO entity);
 

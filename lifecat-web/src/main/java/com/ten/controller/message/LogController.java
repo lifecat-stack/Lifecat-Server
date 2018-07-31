@@ -24,8 +24,12 @@ import static com.ten.utils.ControllerCheckUtil.*;
 @RequestMapping("/log")
 public class LogController extends BaseController<LogVO, ResponseResult> {
 
+    private final MessageServiceManager messageServiceManager;
+
     @Autowired
-    private MessageServiceManager messageServiceManager;
+    public LogController(MessageServiceManager messageServiceManager) {
+        this.messageServiceManager = messageServiceManager;
+    }
 
     /**
      * all
