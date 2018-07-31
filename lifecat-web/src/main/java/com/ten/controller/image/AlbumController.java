@@ -71,7 +71,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      * <p>
      * 创建Album
      *
@@ -91,7 +91,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      * <p>
      * 更新Album信息
      *

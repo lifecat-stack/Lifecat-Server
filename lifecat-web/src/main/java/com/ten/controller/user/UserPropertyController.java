@@ -92,7 +92,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     }
 
     /**
-     * post
+     * create
      * <p>
      * 上传用户资料信息
      *
@@ -112,7 +112,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     }
 
     /**
-     * put
+     * update
      * <p>
      * 更新用户资料信息
      *

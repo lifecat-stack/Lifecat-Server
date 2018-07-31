@@ -60,12 +60,12 @@ public class RecordServiceImpl extends BaseServiceImpl<RecordVO, RecordDO> imple
     }
 
     @Override
-    public int post(RecordVO entity) {
+    public int create(RecordVO entity) {
         return 0;
     }
 
     @Override
-    public int put(RecordVO entity) {
+    public int update(RecordVO entity) {
         return 0;
     }
 

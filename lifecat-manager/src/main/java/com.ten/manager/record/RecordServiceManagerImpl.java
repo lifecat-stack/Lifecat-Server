@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * record manager for :
  * record service
- * record post service
+ * record create service
  * record comment service
  *
  * @author Administrator

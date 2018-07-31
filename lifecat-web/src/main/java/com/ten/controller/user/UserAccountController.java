@@ -70,7 +70,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
     }
 
     /**
-     * post
+     * create
      * <p>
      * 用户注册
      *
@@ -90,7 +90,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
     }
 
     /**
-     * put
+     * update
      * <p>
      * 更新用户密码
      *

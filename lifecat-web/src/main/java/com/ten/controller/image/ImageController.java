@@ -40,7 +40,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      * <p>
      * 上传Image到相册
      *
@@ -60,7 +60,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      * <p>
      * 更新Image信息
      *

@@ -27,12 +27,12 @@ public class ImageServiceImpl extends BaseServiceImpl<ImageVO, ImageDO> implemen
     }
 
     @Override
-    public int post(ImageVO entity) {
+    public int create(ImageVO entity) {
         return 0;
     }
 
     @Override
-    public int put(ImageVO entity) {
+    public int update(ImageVO entity) {
         return 0;
     }
 

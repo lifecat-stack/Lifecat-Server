@@ -6,8 +6,8 @@ package com.ten.service.service.authorization;
  * <p>
  * list   :todo
  * get    :todo
- * post   :todo
- * put    :todo
+ * create   :todo
+ * update    :todo
  * delete :todo
  *
  * @author Administrator

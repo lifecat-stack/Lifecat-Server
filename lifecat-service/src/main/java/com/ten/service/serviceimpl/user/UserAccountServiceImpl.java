@@ -76,7 +76,7 @@ public class UserAccountServiceImpl extends BaseServiceImpl<UserAccountVO, UserD
      * user_gmt_modified
      */
     @Override
-    public int post(UserAccountVO entity) {
+    public int create(UserAccountVO entity) {
         UserDO userDO = new UserDO(entity);
         userDO.setUserId(null);
         userDO.setDeleted(0);
@@ -94,7 +94,7 @@ public class UserAccountServiceImpl extends BaseServiceImpl<UserAccountVO, UserD
      * user_account_password
      */
     @Override
-    public int put(UserAccountVO entity) {
+    public int update(UserAccountVO entity) {
         UserDO userDO = new UserDO(entity);
         // set modified
         String currentTime = dateTimeUtil.getCurrentTime();

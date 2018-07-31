@@ -60,7 +60,7 @@ public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO>, BaseEx
      * @param entity VO object
      */
     @Override
-    public abstract int post(VO entity);
+    public abstract int create(VO entity);
 
     /**
      * update
@@ -68,7 +68,7 @@ public abstract class BaseServiceImpl<VO, DO> implements BaseService<VO>, BaseEx
      * @param entity VO object
      */
     @Override
-    public abstract int put(VO entity);
+    public abstract int update(VO entity);
 
     /**
      * delete

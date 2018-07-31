@@ -60,7 +60,7 @@ public class TestServiceImpl extends BaseServiceImpl<TestVO, TestDO> implements 
      * test_name
      */
     @Override
-    public int post(TestVO entity) {
+    public int create(TestVO entity) {
         TestDO testDO = new TestDO(entity);
         testDO.setTestId(null);
         return exeInsert(testDO);
@@ -72,7 +72,7 @@ public class TestServiceImpl extends BaseServiceImpl<TestVO, TestDO> implements 
      * by test_id
      */
     @Override
-    public int put(TestVO entity) {
+    public int update(TestVO entity) {
         TestDO testDO = new TestDO(entity);
         return exeUpdate(testDO);
     }

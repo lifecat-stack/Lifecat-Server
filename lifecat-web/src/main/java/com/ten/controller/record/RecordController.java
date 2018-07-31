@@ -72,7 +72,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      * <p>
      * 创建新的Record信息
      *
@@ -92,7 +92,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      * <p>
      * 更新某条Record
      *

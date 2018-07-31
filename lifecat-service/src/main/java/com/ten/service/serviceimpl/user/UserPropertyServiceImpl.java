@@ -67,7 +67,7 @@ public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, Use
      * set modified
      */
     @Override
-    public int post(UserPropertyVO entity) {
+    public int create(UserPropertyVO entity) {
         UserDO userDO = new UserDO(entity);
         // set modified time
         String currentTime = dateTimeUtil.getCurrentTime();
@@ -81,7 +81,7 @@ public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, Use
      * set modified
      */
     @Override
-    public int put(UserPropertyVO entity) {
+    public int update(UserPropertyVO entity) {
         UserDO userDO = new UserDO(entity);
         // set modified time
         String currentTime = dateTimeUtil.getCurrentTime();

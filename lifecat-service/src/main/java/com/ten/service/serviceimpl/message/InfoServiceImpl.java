@@ -31,12 +31,12 @@ public class InfoServiceImpl extends BaseServiceImpl<InfoVO, InfoDO> implements 
     }
 
     @Override
-    public int post(InfoVO entity) {
+    public int create(InfoVO entity) {
         return 0;
     }
 
     @Override
-    public int put(InfoVO entity) {
+    public int update(InfoVO entity) {
         return 0;
     }
 

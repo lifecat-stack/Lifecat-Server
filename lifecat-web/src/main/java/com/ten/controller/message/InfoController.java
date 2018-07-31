@@ -66,7 +66,7 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      */
     @Override
     public ResponseResult post(InfoVO entity) {
@@ -74,7 +74,7 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      */
     @Override
     public ResponseResult put(InfoVO entity) {

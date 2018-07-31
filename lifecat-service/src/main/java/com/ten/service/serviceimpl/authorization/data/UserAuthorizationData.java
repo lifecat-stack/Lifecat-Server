@@ -148,7 +148,7 @@ public class UserAuthorizationData {
             int roleId = userRoleDO.getRoleId();
             roles.add(PERMISSIONS[roleId].toString());
         }
-        // put
+        // update
         userRolesMap.put(user.getUserAccountName(), roles);
     }
 
@@ -178,7 +178,7 @@ public class UserAuthorizationData {
                 permissions.add(PERMISSIONS[permissionId].toString());
             }
         }
-        // put
+        // update
         userPermissionsMap.put(user.getUserAccountName(), permissions);
     }
 

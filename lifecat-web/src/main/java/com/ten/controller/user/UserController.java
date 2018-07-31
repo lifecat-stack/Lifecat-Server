@@ -38,7 +38,7 @@ public class UserController extends BaseController<UserVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      */
     @Override
     public ResponseResult post(UserVO entity) {
@@ -46,7 +46,7 @@ public class UserController extends BaseController<UserVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      */
     @Override
     public ResponseResult put(UserVO entity) {

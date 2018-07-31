@@ -28,12 +28,12 @@ public class RecordCommentServiceImpl extends BaseServiceImpl<RecordCommentVO, R
     }
 
     @Override
-    public int post(RecordCommentVO entity) {
+    public int create(RecordCommentVO entity) {
         return 0;
     }
 
     @Override
-    public int put(RecordCommentVO entity) {
+    public int update(RecordCommentVO entity) {
         return 0;
     }
 

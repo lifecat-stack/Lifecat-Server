@@ -59,7 +59,7 @@ public class LogController extends BaseController<LogVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      */
     @Override
     public ResponseResult post(LogVO entity) {
@@ -67,7 +67,7 @@ public class LogController extends BaseController<LogVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      */
     @Override
     public ResponseResult put(LogVO entity) {

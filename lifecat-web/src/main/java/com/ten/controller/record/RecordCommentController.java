@@ -48,7 +48,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
     }
 
     /**
-     * post
+     * create
      * <p>
      * 创建新的Comment
      *
@@ -68,7 +68,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
     }
 
     /**
-     * put
+     * update
      * <p>
      * 更新某条Comment信息
      *

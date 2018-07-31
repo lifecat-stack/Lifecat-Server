@@ -27,12 +27,12 @@ public class AlbumServiceImpl extends BaseServiceImpl<AlbumVO, AlbumDO> implemen
     }
 
     @Override
-    public int post(AlbumVO entity) {
+    public int create(AlbumVO entity) {
         return 0;
     }
 
     @Override
-    public int put(AlbumVO entity) {
+    public int update(AlbumVO entity) {
         return 0;
     }
 

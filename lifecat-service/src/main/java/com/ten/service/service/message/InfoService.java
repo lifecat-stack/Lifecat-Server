@@ -7,8 +7,8 @@ import com.ten.vo.InfoVO;
 /**
  * list   :获取用户通知信息c_info集合
  * get    :获取用户单个c_info信息
- * post   :添加c_info到用户通知表
- * put    :更新c_info
+ * create   :添加c_info到用户通知表
+ * update    :更新c_info
  * delete :删除c_info
  *
  * @author Administrator

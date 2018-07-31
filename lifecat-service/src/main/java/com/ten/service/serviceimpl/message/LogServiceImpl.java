@@ -32,12 +32,12 @@ public class LogServiceImpl extends BaseServiceImpl<LogVO, LogDO> implements Log
     }
 
     @Override
-    public int post(LogVO entity) {
+    public int create(LogVO entity) {
         return 0;
     }
 
     @Override
-    public int put(LogVO entity) {
+    public int update(LogVO entity) {
         return 0;
     }
 

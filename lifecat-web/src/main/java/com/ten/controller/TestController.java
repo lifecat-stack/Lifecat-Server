@@ -23,6 +23,7 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
      * <p>
      * 获取所有test信息
      */
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     @Override
     public ResponseResult all() {
         List<TestVO> testVOList = testServiceManager.getAllTest();
@@ -95,7 +96,7 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     }
 
     /**
-     * post
+     * create
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
@@ -110,7 +111,7 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     }
 
     /**
-     * put
+     * update
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override

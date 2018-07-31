@@ -3,7 +3,7 @@ package com.ten.service.service;
 import java.util.List;
 
 /**
- * base service and type is VO-DO
+ * base service and type is VO
  *
  * @author Administrator
  */
@@ -32,14 +32,14 @@ public interface BaseService<VO> {
      *
      * @param entity VO object
      */
-    int post(VO entity);
+    int create(VO entity);
 
     /**
      * update
      *
      * @param entity VO object
      */
-    int put(VO entity);
+    int update(VO entity);
 
     /**
      * delete
