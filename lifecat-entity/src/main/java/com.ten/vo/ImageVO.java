@@ -10,6 +10,7 @@ import com.ten.entity.ImageDO;
 public class ImageVO {
 
     private Integer imageId;
+    private Integer albumId;
     private String imageType;
     private String imageName;
     private String imageDesc;
@@ -25,6 +26,7 @@ public class ImageVO {
 
     public ImageVO(ImageDO imageDO) {
         this.imageId = imageDO.getImageId();
+        this.albumId = imageDO.getAlbumId();
         this.imageType = imageDO.getImageType();
         this.imageName = imageDO.getImageName();
         this.imageDesc = imageDO.getImageDesc();
@@ -37,6 +39,7 @@ public class ImageVO {
     public String toString() {
         return "VO:image@{" +
                 "imageid:" + imageId +
+                ",albumid:" + albumId +
                 ",imagetype:" + imageType +
                 ",imagename:" + imageName +
                 ",imagedesc:" + imageDesc +
@@ -44,6 +47,14 @@ public class ImageVO {
                 ",imagegmtcreate:" + imageGmtCreate +
                 ",imagegmtmodified:" + imageGmtModified +
                 "}";
+    }
+
+    public Integer getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(Integer albumId) {
+        this.albumId = albumId;
     }
 
     public Integer getImageId() {

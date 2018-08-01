@@ -1,5 +1,6 @@
 package com.ten.utils;
 
+import com.ten.exception.impl.NecessaryParameterIsNullException;
 import com.ten.exception.impl.RequestDataNullException;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +11,17 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ServiceCheckUtil {
+    /**
+     * 检查传入对象的参数 Not Null
+     *
+     * @param property parameter property
+     */
+    public static void checkNecessaryParameterNotNull(Object property) {
+        if (property == null) {
+            throw new NecessaryParameterIsNullException();
+        }
+    }
+
     /**
      * 检查传入对象的参数 Not Null
      *

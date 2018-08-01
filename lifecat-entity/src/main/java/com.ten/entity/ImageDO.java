@@ -34,6 +34,7 @@ public class ImageDO {
 
     public ImageDO(ImageVO imageVO) {
         this.imageId = imageVO.getImageId();
+        this.albumId = imageVO.getAlbumId();
         this.imageType = imageVO.getImageType();
         this.imageName = imageVO.getImageName();
         this.imageDesc = imageVO.getImageDesc();

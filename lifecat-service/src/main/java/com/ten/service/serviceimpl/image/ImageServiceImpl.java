@@ -6,7 +6,10 @@ import com.ten.service.serviceimpl.BaseServiceImpl;
 import com.ten.vo.ImageVO;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.ten.utils.ServiceCheckUtil.*;
 
 /**
  * image service
@@ -17,13 +20,38 @@ import java.util.List;
 @Service
 public class ImageServiceImpl extends BaseServiceImpl<ImageVO, ImageDO> implements ImageService {
 
+    /**
+     * select all image
+     */
     @Override
     public List<ImageVO> all() {
-        return null;
+        // execute
+        List<ImageDO> imageDOS = exeQueryAll();
+        List<ImageVO> imageVOS = new ArrayList<>(imageDOS.size());
+        // DO -> VO
+        for (ImageDO imageDO : imageDOS) {
+            ImageVO entity = new ImageVO(imageDO);
+            imageVOS.add(entity);
+        }
+        // return
+        return imageVOS;
     }
 
+    /**
+     * select image list
+     * by album
+     */
     @Override
     public List<ImageVO> list(ImageVO entity) {
+        // check parameter
+        checkNecessaryParameterNotNull(entity.getAlbumId());
+        // VO -> DO
+        ImageDO imageDO = new ImageDO(entity);
+        // execute
+        List<ImageDO> imageDOS = exeQueryList(imageDO);
+        // DO -> VO
+        List<ImageVO> imageVOS = new ArrayList<>(imageDOS.size()+1);
+
         return null;
     }
 

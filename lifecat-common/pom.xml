@@ -23,6 +23,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
         <!-- activemq -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
