@@ -1,6 +1,18 @@
 package com.ten.exception.impl;
 
-public class ResourceExecuteException extends RuntimeException{
+/**
+ * mapper execute error
+ * where :
+ * .  insert
+ * .  update
+ * .  delete
+ * when :
+ * .  affectice row result < 1
+ *
+ * @author Administrator
+ * @call service
+ */
+public class ResourceExecuteException extends RuntimeException {
 
     private String errorMsg;
 
@@ -13,6 +25,11 @@ public class ResourceExecuteException extends RuntimeException{
     }
 
     public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    @Override
+    public String toString() {
         return errorMsg;
     }
 }

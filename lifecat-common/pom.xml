@@ -24,19 +24,17 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.ten</groupId>
+            <artifactId>lifecat-web</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
         <!-- activemq -->
         <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-spring</artifactId>
-            <version>5.15.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jms</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
         <!-- mail -->
         <dependency>
@@ -77,7 +75,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.7.4</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

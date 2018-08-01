@@ -4,11 +4,22 @@ import java.io.File;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * simple email
+ *
+ * @author Administrator
+ * @property accepter 收件人
+ * @property subject 主题
+ * @property content 正文
+ * @property isHtml 正文是否是HTML
+ * @property attachments 附件路径
+ * @property isAttachment 是否有附件
+ */
 public class SimpleEmail {
     /**
      * 收件人
      */
-    private Set<String> toSet;
+    private Set<String> accepter;
     /**
      * 主题
      */
@@ -30,12 +41,12 @@ public class SimpleEmail {
      */
     private boolean isAttachment;
 
-    public Set<String> getToSet() {
-        return toSet;
+    public Set<String> getAccepter() {
+        return accepter;
     }
 
-    public void setToSet(Set<String> toSet) {
-        this.toSet = toSet;
+    public void setAccepter(Set<String> accepter) {
+        this.accepter = accepter;
     }
 
     public String getSubject() {

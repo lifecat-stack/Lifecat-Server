@@ -6,9 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 时间工具类
+ * get current date-time
+ * <p>
  *
- * @auther ten
+ * @author Administrator
+ * @model INSTANCE
  */
 @Component
 public class DateTimeUtil {
@@ -16,7 +18,7 @@ public class DateTimeUtil {
     private static volatile DateTimeUtil INSTANCE = null;
 
     private DateTimeUtil() {
-        System.out.println("MyDate load time:" + this);
+        System.out.println("DateTimeUtil INSTANCE load time:" + this);
     }
 
     public static DateTimeUtil getInstance() {
@@ -31,17 +33,14 @@ public class DateTimeUtil {
     }
 
     /**
-     * 获取当前时间
-     * yyyy-MM-dd HH:mm:ss
+     * get current time
      *
-     * @return yyyy-MM-dd HH:mm:ss
+     * @return String yyyy-MM-dd HH:mm:ss
      */
     public String getCurrentTime() {
-        String tempStr = "";
         Date dt = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        tempStr = sdf.format(dt);
-        return tempStr;
+        return sdf.format(dt);
     }
 
     @Override

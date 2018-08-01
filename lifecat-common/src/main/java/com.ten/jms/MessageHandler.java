@@ -3,22 +3,33 @@ package com.ten.jms;
 import com.ten.email.AlertMailSendManager;
 import com.ten.email.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.annotation.JmsListener;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.stereotype.Component;
 
 import javax.mail.MessagingException;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 异步接受Jms
+ * asyn message for activemq queue
  *
  * @author Administrator
  */
-public class AlertHandler {
+@Component
+public class MessageHandler {
+
+    private final AlertMailSendManager mailSendManager;
+    private final JmsTemplate jmsTemplate;
 
     @Autowired
-    private AlertMailSendManager mailSendManager;
+    public MessageHandler(JmsTemplate jmsTemplate, AlertMailSendManager mailSendManager) {
+        this.jmsTemplate = jmsTemplate;
+        this.mailSendManager = mailSendManager;
+    }
 
-    public void handleLoginAlert(AlertMessage message) throws MessagingException {
+    @JmsListener(destination = "queue.login.notice")
+    public void handleLoginAlert(Message message) throws MessagingException {
         System.out.println("message receive:" + message.getMessage());
 
         SimpleEmail simpleEmail = new SimpleEmail();
@@ -26,7 +37,7 @@ public class AlertHandler {
 
         Set<String> receivers = new HashSet<>();
         receivers.add("18861857305@163.com");
-        simpleEmail.setToSet(receivers);
+        simpleEmail.setAccepter(receivers);
 
         simpleEmail.setHtml(false);
         simpleEmail.setContent(message.getMessage());

@@ -2,11 +2,11 @@ package com.ten.jms;
 
 import java.io.Serializable;
 
-public class AlertMessage implements Serializable {
+public class Message implements Serializable {
 
     private String message;
 
-    public AlertMessage(String message) {
+    public Message(String message) {
         this.message = message;
     }
 

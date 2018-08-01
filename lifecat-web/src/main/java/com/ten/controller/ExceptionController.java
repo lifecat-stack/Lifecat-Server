@@ -18,18 +18,23 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class ExceptionController {
 
     /**
-     * 请求出错 400
+     * request请求出错
+     * <p>
+     * code :400
      */
     @ResponseBody
     @ExceptionHandler({
             RequestDataNullException.class,
-            RequestDataFormatException.class})
+            RequestDataFormatException.class,
+            NecessaryParameterIsNullException.class})
     public ResponseResult requestError(RequestException e) {
         return new ResponseResult(400, e.getErrorMsg());
     }
 
     /**
-     * 查询失败 not found 404
+     * resource is null
+     * <p>
+     * code :404
      */
     @ResponseBody
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -38,7 +43,9 @@ public class ExceptionController {
     }
 
     /**
-     * 增加、修改、删除失败 conflict 409
+     * 增加、修改、删除失败 conflict
+     * <p>
+     * code:409
      */
     @ResponseBody
     @ExceptionHandler(ResourceExecuteException.class)

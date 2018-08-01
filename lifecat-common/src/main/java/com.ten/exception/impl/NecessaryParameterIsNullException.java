@@ -1,11 +1,14 @@
 package com.ten.exception.impl;
 
+import com.ten.exception.RequestException;
+
 /**
- * necessary parameter is null in service call
+ * request necessary parameter is null
  *
  * @author Administrator
+ * @call service
  */
-public class NecessaryParameterIsNullException extends RuntimeException {
+public class NecessaryParameterIsNullException extends RuntimeException implements RequestException {
 
     private String errorMsg;
 
@@ -14,10 +17,16 @@ public class NecessaryParameterIsNullException extends RuntimeException {
     }
 
     public NecessaryParameterIsNullException(String errorMsg) {
-        this.errorMsg = "request data format error : " + errorMsg;
+        this.errorMsg = "request's parameter is null :" + errorMsg;
     }
 
+    @Override
     public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    @Override
+    public String toString() {
         return errorMsg;
     }
 }

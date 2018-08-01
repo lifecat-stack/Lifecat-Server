@@ -1,11 +1,10 @@
 package com.ten.exception;
 
 /**
- * 请求不符合要求 400
+ * request is not available
  *
  * @author Administrator
  */
 public interface RequestException {
     String getErrorMsg();
-
 }

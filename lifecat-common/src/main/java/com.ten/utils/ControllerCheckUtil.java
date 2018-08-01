@@ -6,6 +6,8 @@ import com.ten.exception.impl.ResourceExecuteException;
 import com.ten.exception.impl.ResourceNotFoundException;
 import org.springframework.stereotype.Component;
 
+import java.util.Properties;
+
 /**
  * Check controller function and throwing exception to the ExceptionController
  *
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ControllerCheckUtil {
     /**
-     * 检查请求参数 Null
+     * request data is Null
      *
      * @param obj request parameter
      * @throws RequestDataNullException request data is null
@@ -26,32 +28,32 @@ public class ControllerCheckUtil {
     }
 
     /**
-     * 检查请求参数为 int Format
+     * request data's format is int
      *
-     * @param string 待检查String
-     * @throws RequestDataFormatException string data is not number
+     * @param string suchas id property
+     * @throws RequestDataFormatException string data is not int
      */
     public static void checkRequestDataFormatInt(String string) {
         try {
             Integer.parseInt(string);
         } catch (NumberFormatException e) {
-            throw new RequestDataFormatException("Id must be number");
+            throw new RequestDataFormatException("parameter format must be number");
         }
     }
 
     /**
-     * 检查返回结果 result = 0 is failure
+     * check result : result = 0 is failure
      *
      * @param result SQL执行影响的行数
      */
     public static void checkExecuteResultSuccess(int result) {
         if (result < 1) {
-            throw new ResourceExecuteException("execute failure");
+            throw new ResourceExecuteException("execute is failure");
         }
     }
 
     /**
-     * 检查资源 1
+     * 检查资源
      *
      * @param resource 资源对象
      */
@@ -62,7 +64,7 @@ public class ControllerCheckUtil {
     }
 
     /**
-     * 检查资源 2
+     * 检查资源
      *
      * @param resource 资源对象
      * @param errorMsg 异常信息
