@@ -24,10 +24,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ten</groupId>
-            <artifactId>lifecat-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>

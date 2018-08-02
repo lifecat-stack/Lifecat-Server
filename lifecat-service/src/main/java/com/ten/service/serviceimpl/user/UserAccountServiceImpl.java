@@ -1,15 +1,9 @@
 package com.ten.service.serviceimpl.user;
 
-import com.ten.entity.AlbumDO;
 import com.ten.entity.UserDO;
-import com.ten.mapper.UserMapper;
-import com.ten.service.service.image.AlbumService;
 import com.ten.service.service.user.UserAccountService;
 import com.ten.service.serviceimpl.BaseServiceImpl;
-import com.ten.utils.DateTimeUtil;
-import com.ten.vo.AlbumVO;
 import com.ten.vo.UserAccountVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -45,7 +39,7 @@ public class UserAccountServiceImpl extends BaseServiceImpl<UserAccountVO, UserD
     @Override
     public List<UserAccountVO> list(UserAccountVO entity) {
         UserDO userDO = new UserDO();
-        userDO.setDeleted(0);
+        userDO.setIsUserDeleted(0);
         List<UserDO> userList = exeQueryList(userDO);
         List<UserAccountVO> userAccounts = new ArrayList<>(32);
         for (UserDO user : userList) {
@@ -80,7 +74,7 @@ public class UserAccountServiceImpl extends BaseServiceImpl<UserAccountVO, UserD
     public int create(UserAccountVO entity) {
         UserDO userDO = new UserDO(entity);
         userDO.setUserId(null);
-        userDO.setDeleted(0);
+        userDO.setIsUserDeleted(0);
         // set create and modified
         String currentTime = dateTimeUtil.getCurrentTime();
         userDO.setUserGmtCreate(currentTime);
@@ -110,7 +104,7 @@ public class UserAccountServiceImpl extends BaseServiceImpl<UserAccountVO, UserD
     @Override
     public int delete(UserAccountVO entity) {
         UserDO userDO = new UserDO(entity);
-        userDO.setDeleted(1);
+        userDO.setIsUserDeleted(1);
         // set modified
         String currentTime = dateTimeUtil.getCurrentTime();
         userDO.setUserGmtModified(currentTime);

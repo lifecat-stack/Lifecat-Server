@@ -26,7 +26,7 @@ public class UserDO {
     private String userLocation;
     private String userPhoneNumber;
     private String userIconUrl;
-    private Integer deleted;
+    private Integer isUserDeleted;
     private String userGmtCreate;
     private String userGmtModified;
     private String userLastLogin;
@@ -117,7 +117,7 @@ public class UserDO {
                 ",user_location:" + userLocation +
                 ",user_phone_number:" + userPhoneNumber +
                 ",user_icon_url:" + userIconUrl +
-                ",is_user_deleted:" + deleted +
+                ",is_user_deleted:" + isUserDeleted +
                 ",user_gmt_create:" + userGmtCreate +
                 ",user_gmt_modified:" + userGmtModified +
                 ",user_last_login:" + userLastLogin +
@@ -205,12 +205,12 @@ public class UserDO {
         this.userIconUrl = userIconUrl;
     }
 
-    public Integer getDeleted() {
-        return deleted;
+    public Integer getIsUserDeleted() {
+        return isUserDeleted;
     }
 
-    public void setDeleted(Integer deleted) {
-        this.deleted = deleted;
+    public void setIsUserDeleted(Integer isUserDeleted) {
+        this.isUserDeleted = isUserDeleted;
     }
 
     public String getUserGmtCreate() {

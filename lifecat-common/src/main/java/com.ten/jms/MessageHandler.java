@@ -19,14 +19,14 @@ import java.util.Set;
 @Component
 public class MessageHandler {
 
-    private final AlertMailSendManager mailSendManager;
-    private final JmsTemplate jmsTemplate;
-
-    @Autowired
-    public MessageHandler(JmsTemplate jmsTemplate, AlertMailSendManager mailSendManager) {
-        this.jmsTemplate = jmsTemplate;
-        this.mailSendManager = mailSendManager;
-    }
+//    private final AlertMailSendManager mailSendManager;
+//    private final JmsTemplate jmsTemplate;
+//
+//    @Autowired
+//    public MessageHandler(JmsTemplate jmsTemplate, AlertMailSendManager mailSendManager) {
+//        this.jmsTemplate = jmsTemplate;
+//        this.mailSendManager = mailSendManager;
+//    }
 
     @JmsListener(destination = "queue.login.notice")
     public void handleLoginAlert(Message message) throws MessagingException {
@@ -44,6 +44,6 @@ public class MessageHandler {
 
         simpleEmail.setAttachment(false);
 
-        mailSendManager.sendEmail(simpleEmail);
+//        mailSendManager.sendEmail(simpleEmail);
     }
 }

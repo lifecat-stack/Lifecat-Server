@@ -3,7 +3,7 @@ package com.ten.vo;
 import com.ten.entity.ImageDO;
 
 /**
- * image
+ * album
  *
  * @author Administrator
  */
@@ -37,7 +37,7 @@ public class ImageVO {
 
     @Override
     public String toString() {
-        return "VO:image@{" +
+        return "VO:album@{" +
                 "imageid:" + imageId +
                 ",albumid:" + albumId +
                 ",imagetype:" + imageType +

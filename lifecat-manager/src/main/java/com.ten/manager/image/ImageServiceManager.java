@@ -27,7 +27,7 @@ public interface ImageServiceManager {
     int deleteAlbumByPrimaryKey(Integer albumId);
 
     /* **********************************/
-    /* ************* image **************/
+    /* ************* album **************/
     /* **********************************/
 
     int uploadImageToAlbum(ImageVO imageVO);

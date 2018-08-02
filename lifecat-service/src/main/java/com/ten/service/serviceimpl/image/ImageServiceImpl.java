@@ -39,7 +39,7 @@ public class ImageServiceImpl extends BaseServiceImpl<ImageVO, ImageDO> implemen
 
     /**
      * select image list
-     * by album
+     * by image
      */
     @Override
     public List<ImageVO> list(ImageVO entity) {

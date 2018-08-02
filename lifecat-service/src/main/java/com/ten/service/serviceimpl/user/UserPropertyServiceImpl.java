@@ -56,8 +56,11 @@ public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, Use
     @Override
     public UserPropertyVO get(UserPropertyVO entity) {
         UserDO userDO = new UserDO();
-        userDO.setUserId(entity.getUserId());
+        userDO.setUserAccountName(entity.getUserAccountName());
         UserDO user = exeQuery(userDO);
+        if (user == null) {
+            return new UserPropertyVO();
+        }
         return new UserPropertyVO(user);
     }
 
@@ -100,7 +103,7 @@ public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, Use
     public int delete(UserPropertyVO entity) {
         UserDO userDO = new UserDO();
         userDO.setUserId(entity.getUserId());
-        userDO.setDeleted(1);
+        userDO.setIsUserDeleted(1);
         // set modified time
         String currentTime = dateTimeUtil.getCurrentTime();
         userDO.setUserGmtModified(currentTime);

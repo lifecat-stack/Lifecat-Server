@@ -28,6 +28,20 @@ public class ControllerCheckUtil {
     }
 
     /**
+     * request data is Null
+     *
+     * @param objs request parameters
+     * @throws RequestDataNullException request data is null
+     */
+    public static void checkRequestDataNotNull(Object... objs) {
+        for (Object obj : objs) {
+            if (obj == null) {
+                throw new RequestDataNullException();
+            }
+        }
+    }
+
+    /**
      * request data's format is int
      *
      * @param string suchas id property

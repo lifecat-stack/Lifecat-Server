@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import static com.ten.utils.ControllerCheckUtil.*;
 
 /**
- * image
+ * album
  *
  * @author Administrator
  */
