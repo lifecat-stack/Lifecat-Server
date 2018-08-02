@@ -1,0 +1,279 @@
+swagger: '2.0'
+info:
+  description: tusi face wechat api`
+  version: 1.0.0
+  title: Tusi face wechat API
+  # put the contact info for your development or API team
+  contact:
+    email: wshten@gmail.com
+
+# tags are used for organizing operations
+tags:
+- name: user
+  description: user controller
+
+paths:
+  /miniprogram/vertifyGroupID:
+    get:
+      tags:
+      - user
+      summary: vertifyGroupID
+      operationId: vertifyGroupID
+      description: |
+       在用户填写完之后检验groupID有效性，如果有效返回该groupID的基本信息
+      produces:
+      - text
+      parameters:
+      - in: query
+        name: groupID
+        description: groupID
+        required: true
+        type: string
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/InventoryItem'
+        400:
+          description: bad input parameter
+
+  /miniprogram/vertifyFaceImg:
+    get:
+      tags:
+      - user
+      summary: vertifyGroupID
+      operationId: vertifyFaceImg
+      description: |
+        在用户填写完之后检验groupID有效性，如果有效返回该groupID的基本信息
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: searchString
+        description: pass an optional search string for looking up inventory
+        required: false
+        type: string
+      - in: query
+        name: skip
+        description: number of records to skip for pagination
+        type: integer
+        format: int32
+        minimum: 0
+      - in: query
+        name: limit
+        description: maximum number of records to return
+        type: integer
+        format: int32
+        minimum: 0
+        maximum: 50
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/InventoryItem'
+        400:
+          description: bad input parameter
+  /miniprogram/delFaceImg:
+    get:
+      tags:
+      - user
+      summary: searches inventory
+      operationId: delFaceImg
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: searchString
+        description: pass an optional search string for looking up inventory
+        required: false
+        type: string
+      - in: query
+        name: skip
+        description: number of records to skip for pagination
+        type: integer
+        format: int32
+        minimum: 0
+      - in: query
+        name: limit
+        description: maximum number of records to return
+        type: integer
+        format: int32
+        minimum: 0
+        maximum: 50
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/InventoryItem'
+        400:
+          description: bad input parameter
+  /miniprogram/addFaceInfo:
+    get:
+      tags:
+      - user
+      summary: adds an inventory item
+      operationId: addFaceInfo
+      description: Adds an item to the system
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: inventoryItem
+        description: Inventory item to add
+        schema:
+          $ref: '#/definitions/InventoryItem'
+      responses:
+        201:
+          description: item created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+  /miniprogram/getAuditList:
+    get:
+      tags:
+      - user
+      summary: adds an inventory item
+      operationId: getAuditList
+      description: getAuditList
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: inventoryItem
+        description: Inventory item to add
+        schema:
+          $ref: '#/definitions/InventoryItem'
+      responses:
+        201:
+          description: item created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+  /miniprogram/getNearby:
+    get:
+      tags:
+      - user
+      summary: adds an inventory item
+      operationId: getNearby
+      description: getNearby
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: inventoryItem
+        description: Inventory item to add
+        schema:
+          $ref: '#/definitions/InventoryItem'
+      responses:
+        201:
+          description: item created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+  /miniprogram/delPersonnel:
+    get:
+      tags:
+      - user
+      summary: adds an inventory item
+      operationId: delPersonnel
+      description: Adds an item to the system
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: inventoryItem
+        description: Inventory item to add
+        schema:
+          $ref: '#/definitions/InventoryItem'
+      responses:
+        201:
+          description: item created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+  /miniprogram/generateQRCode:
+    get:
+      tags:
+      - user
+      summary: adds an inventory item
+      operationId: addInventory
+      description: Adds an item to the system
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: inventoryItem
+        description: Inventory item to add
+        schema:
+          $ref: '#/definitions/InventoryItem'
+      responses:
+        201:
+          description: item created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+definitions:
+  InventoryItem:
+    type: object
+    required:
+    - id
+    - name
+    - manufacturer
+    - releaseDate
+    properties:
+      id:
+        type: string
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      name:
+        type: string
+        example: Widget Adapter
+      releaseDate:
+        type: string
+        format: int32
+        example: 2016-08-29T09:12:33.001Z
+      manufacturer:
+        $ref: '#/definitions/Manufacturer'
+  Manufacturer:
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        example: ACME Corporation
+      homePage:
+        type: string
+        format: url
+        example:  https://www.acme-corp.com
+      phone:
+        type: string
+        example: 408-867-5309
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /kevinten10/TusiFaceWeChat/1.0.0
+schemes:
+ - https

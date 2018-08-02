@@ -34,6 +34,7 @@ public class UserServiceManagerImpl implements UserServiceManager {
     @Override
     public UserAccountVO createUserAccountAndReturn(UserAccountVO entity) {
         int result = accountService.create(entity);
+        entity = accountService.get(entity);
         if (result > 0) {
             return entity;
         }
