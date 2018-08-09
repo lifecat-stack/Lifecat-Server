@@ -2,14 +2,13 @@ package com.ten.controller;
 
 import com.ten.dto.ResponseResult;
 import com.ten.manager.TestServiceManager;
-import com.ten.service.service.TestService;
 import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.*;
 
 @RestController
 @RequestMapping("/test")

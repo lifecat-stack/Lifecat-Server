@@ -3,9 +3,7 @@ package com.ten.controller.message;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.manager.message.MessageServiceManager;
-import com.ten.service.service.message.LogService;
 import com.ten.vo.LogVO;
-import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * log

@@ -1,4 +1,4 @@
-package com.ten.utils;
+package com.ten.check;
 
 import com.ten.exception.impl.NecessaryParameterIsNullException;
 import org.springframework.stereotype.Component;

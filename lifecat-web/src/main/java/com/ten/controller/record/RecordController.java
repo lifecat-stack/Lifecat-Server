@@ -3,14 +3,13 @@ package com.ten.controller.record;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.manager.record.RecordServiceManager;
-import com.ten.vo.AlbumVO;
 import com.ten.vo.RecordVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * record

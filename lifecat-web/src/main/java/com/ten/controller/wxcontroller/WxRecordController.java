@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.ten.utils.ControllerCheckUtil.checkRequestDataNotNull;
+import static com.ten.check.ControllerCheckUtil.checkRequestDataNotNull;
 
 /**
  * wechat controller

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.ten.utils.ServiceCheckUtil.*;
+import static com.ten.check.ServiceCheckUtil.*;
 
 /**
  * image service

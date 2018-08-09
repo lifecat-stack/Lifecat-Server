@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.checkExecuteResultSuccess;
-import static com.ten.utils.ControllerCheckUtil.checkRequestDataNotNull;
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.checkExecuteResultSuccess;
+import static com.ten.check.ControllerCheckUtil.checkRequestDataNotNull;
+import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * user account

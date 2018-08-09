@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * album

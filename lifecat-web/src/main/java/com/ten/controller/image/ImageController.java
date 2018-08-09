@@ -3,13 +3,11 @@ package com.ten.controller.image;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.manager.image.ImageServiceManager;
-import com.ten.service.service.image.ImageService;
 import com.ten.vo.ImageVO;
-import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * album

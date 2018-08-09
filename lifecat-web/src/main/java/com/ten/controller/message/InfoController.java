@@ -3,10 +3,7 @@ package com.ten.controller.message;
 import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.manager.message.MessageServiceManager;
-import com.ten.service.service.message.InfoService;
-import com.ten.vo.AlbumVO;
 import com.ten.vo.InfoVO;
-import com.ten.vo.TestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static com.ten.utils.ControllerCheckUtil.*;
+import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * info
