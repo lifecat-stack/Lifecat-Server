@@ -55,7 +55,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(@RequestBody UserAccountVO entity) {
+    public ResponseResult add(@RequestBody UserAccountVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -75,7 +75,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(@RequestBody UserAccountVO entity) {
+    public ResponseResult update(@RequestBody UserAccountVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute

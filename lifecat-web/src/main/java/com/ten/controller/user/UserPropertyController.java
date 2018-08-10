@@ -74,7 +74,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(@RequestBody UserPropertyVO entity) {
+    public ResponseResult add(@RequestBody UserPropertyVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -94,7 +94,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(@RequestBody UserPropertyVO entity) {
+    public ResponseResult update(@RequestBody UserPropertyVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute

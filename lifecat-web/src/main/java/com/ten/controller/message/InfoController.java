@@ -57,7 +57,7 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
      * create
      */
     @Override
-    public ResponseResult post(InfoVO entity) {
+    public ResponseResult add(InfoVO entity) {
         return null;
     }
 
@@ -65,7 +65,7 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
      * update
      */
     @Override
-    public ResponseResult put(InfoVO entity) {
+    public ResponseResult update(InfoVO entity) {
         return null;
     }
 

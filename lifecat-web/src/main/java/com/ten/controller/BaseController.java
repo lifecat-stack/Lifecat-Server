@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public abstract class BaseController<VO, DTO> {
     /**
-     * GET URL
+     * GET
+     * URL
      */
     public DTO all() {
         return null;
@@ -39,21 +40,24 @@ public abstract class BaseController<VO, DTO> {
     }
 
     /**
-     * POST BODY
+     * POST
+     * BODY
      */
-    public DTO post(VO entity) {
+    public DTO add(VO entity) {
         return null;
     }
 
     /**
-     * PUT BODY
+     * PUT
+     * BODY
      */
-    public DTO put(VO entity) {
+    public DTO update(VO entity) {
         return null;
     }
 
     /**
-     * DELETE URL
+     * DELETE
+     * URL
      */
     public DTO delete(Object param) {
         return null;

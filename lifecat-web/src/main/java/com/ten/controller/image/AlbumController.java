@@ -59,7 +59,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(@RequestBody AlbumVO entity) {
+    public ResponseResult add(@RequestBody AlbumVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -79,7 +79,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(@RequestBody AlbumVO entity) {
+    public ResponseResult update(@RequestBody AlbumVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute

@@ -1,19 +1,22 @@
 package com.ten.controller;
 
-import javafx.application.Application;
+import net.minidev.json.JSONObject;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -64,20 +67,7 @@ public class TestControllerTest {
     @Test
     public void testListById() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .get("/test/list/{testId}",1))
-                .andReturn();
-
-        assertNotNull(result);
-        System.out.println(result.getResponse().getContentAsString());
-    }
-
-    /**
-     * Method: list(@RequestBody TestVO entity)
-     */
-    @Test
-    public void testList() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .get("/test/list"))
+                .get("/test/list/{testId}", 1))
                 .andReturn();
 
         assertNotNull(result);
@@ -90,7 +80,7 @@ public class TestControllerTest {
     @Test
     public void testGetById() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .get("/test/get/{testId}",1))
+                .get("/test/get/{testId}", 1))
                 .andReturn();
 
         assertNotNull(result);
@@ -98,32 +88,38 @@ public class TestControllerTest {
     }
 
     /**
-     * Method: get(@RequestBody TestVO entity)
+     * Method: add(@RequestBody TestVO entity)
      */
     @Test
-    public void testGet() throws Exception {
+    public void testAdd() throws Exception {
+        Map<String, String> map = new HashMap<>();
+        map.put("testId", "999");
+        map.put("testName", "mockTest");
+
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .get("/test/get"))
+                .post("/test/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(JSONObject.toJSONString(map)))
                 .andReturn();
 
-        assertNotNull(result);
+        assertNotNull(result.getResponse());
         System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
-     * Method: post(@RequestBody TestVO entity)
+     * Method: update(@RequestBody TestVO entity)
      */
     @Test
-    public void testPost() throws Exception {
-//TODO: Test goes here... 
-    }
+    public void testUpdate() throws Exception {
 
-    /**
-     * Method: put(@RequestBody TestVO entity)
-     */
-    @Test
-    public void testPut() throws Exception {
-//TODO: Test goes here... 
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .put("/test/")
+                .param("testId", "1")
+                .param("testName", "mockTestUpdate"))
+                .andReturn();
+
+        assertNotNull(result);
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
@@ -131,16 +127,12 @@ public class TestControllerTest {
      */
     @Test
     public void testDeleteById() throws Exception {
-//TODO: Test goes here... 
-    }
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .delete("/test/{testId}", 0))
+                .andReturn();
 
-    /**
-     * Method: delete(@RequestBody TestVO entity)
-     */
-    @Test
-    public void testDelete() throws Exception {
-//TODO: Test goes here... 
+        assertNotNull(result);
+        System.out.println("testDeleteById:" + result.getResponse().getContentAsString());
     }
-
 
 } 

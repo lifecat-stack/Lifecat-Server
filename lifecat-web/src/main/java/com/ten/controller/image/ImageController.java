@@ -35,7 +35,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(@RequestBody ImageVO entity) {
+    public ResponseResult add(@RequestBody ImageVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -55,7 +55,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(@RequestBody ImageVO entity) {
+    public ResponseResult update(@RequestBody ImageVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute

@@ -59,7 +59,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(@RequestBody RecordVO entity) {
+    public ResponseResult add(@RequestBody RecordVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -79,7 +79,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(@RequestBody RecordVO entity) {
+    public ResponseResult update(@RequestBody RecordVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute

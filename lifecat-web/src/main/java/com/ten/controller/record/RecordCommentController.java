@@ -43,7 +43,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
      */
     @RequestMapping(method = RequestMethod.POST)
     @Override
-    public ResponseResult post(@RequestBody RecordCommentVO entity) {
+    public ResponseResult add(@RequestBody RecordCommentVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -63,7 +63,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult put(@RequestBody RecordCommentVO entity) {
+    public ResponseResult update(@RequestBody RecordCommentVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
