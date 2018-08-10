@@ -49,31 +49,6 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
         return new ResponseResult(albumVOList);
     }
 
-    @Override
-    public ResponseResult list(AlbumVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     * <p>
-     * 获取某个Album信息
-     *
-     * @param entity AlbumVO
-     * @return AlbumVO
-     */
-    @RequestMapping(method = RequestMethod.GET)
-    @Override
-    public ResponseResult get(@RequestBody AlbumVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        AlbumVO albumVO = imageServiceManager.getAlbumByEntity(entity);
-        // return
-        checkResourceNotNull(albumVO);
-        return new ResponseResult(albumVO);
-    }
-
     /**
      * create
      * <p>
@@ -136,8 +111,4 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
         return new ResponseResult();
     }
 
-    @Override
-    public ResponseResult delete(AlbumVO entity) {
-        return null;
-    }
 }

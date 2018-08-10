@@ -51,20 +51,6 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
         return new ResponseResult(testVOList);
     }
 
-    /**
-     * list
-     */
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    @Override
-    public ResponseResult list(@RequestBody TestVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        List<TestVO> testVOList = testServiceManager.getTestListByEntity(entity);
-        // return
-        checkResourceNotNull(testVOList);
-        return new ResponseResult(testVOList);
-    }
 
     /**
      * getById
@@ -83,20 +69,6 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
         return new ResponseResult(testVO);
     }
 
-    /**
-     * get
-     */
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    @Override
-    public ResponseResult get(@RequestBody TestVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        TestVO testVO = testServiceManager.getTestByEntity(entity);
-        // return
-        checkResourceNotNull(testVO);
-        return new ResponseResult(testVO);
-    }
 
     /**
      * create
@@ -145,18 +117,4 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
         return new ResponseResult();
     }
 
-    /**
-     * delete
-     */
-    @RequestMapping(method = RequestMethod.DELETE)
-    @Override
-    public ResponseResult delete(@RequestBody TestVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        int result = testServiceManager.deleteTestByEntity(entity);
-        // return
-        checkExecuteResultSuccess(result);
-        return new ResponseResult();
-    }
 }

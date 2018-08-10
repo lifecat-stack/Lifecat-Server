@@ -26,22 +26,6 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
     }
 
     /**
-     * listById
-     */
-    @Override
-    public ResponseResult list(ImageVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     */
-    @Override
-    public ResponseResult get(ImageVO entity) {
-        return null;
-    }
-
-    /**
      * create
      * <p>
      * 上传Image到相册
@@ -104,8 +88,4 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
         return new ResponseResult();
     }
 
-    @Override
-    public ResponseResult delete(ImageVO entity) {
-        return null;
-    }
 }

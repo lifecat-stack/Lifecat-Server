@@ -53,19 +53,6 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
         return new ResponseResult(infoVOList);
     }
 
-    @Override
-    public ResponseResult list(InfoVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     */
-    @Override
-    public ResponseResult get(InfoVO entity) {
-        return null;
-    }
-
     /**
      * create
      */
@@ -103,10 +90,5 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
         // return
         checkExecuteResultSuccess(result);
         return new ResponseResult();
-    }
-
-    @Override
-    public ResponseResult delete(InfoVO entity) {
-        return null;
     }
 }

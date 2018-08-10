@@ -45,22 +45,6 @@ public class LogController extends BaseController<LogVO, ResponseResult> {
     }
 
     /**
-     * listById
-     */
-    @Override
-    public ResponseResult list(LogVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     */
-    @Override
-    public ResponseResult get(LogVO entity) {
-        return null;
-    }
-
-    /**
      * create
      */
     @Override
@@ -76,11 +60,4 @@ public class LogController extends BaseController<LogVO, ResponseResult> {
         return null;
     }
 
-    /**
-     * deleteById
-     */
-    @Override
-    public ResponseResult delete(LogVO entity) {
-        return null;
-    }
 }

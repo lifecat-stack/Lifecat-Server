@@ -49,31 +49,6 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
         return new ResponseResult(recordVOList);
     }
 
-    @Override
-    public ResponseResult list(RecordVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     * <p>
-     * 获取某条Record信息
-     *
-     * @param entity RecordVO
-     * @return RecordVO
-     */
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    @Override
-    public ResponseResult get(@PathVariable RecordVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        RecordVO recordVO = recordServiceManager.getRecordByEntity(entity);
-        // return
-        checkResourceNotNull(recordVO);
-        return new ResponseResult(recordVO);
-    }
-
     /**
      * create
      * <p>
@@ -134,10 +109,5 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
         // return
         checkExecuteResultSuccess(result);
         return new ResponseResult();
-    }
-
-    @Override
-    public ResponseResult delete(RecordVO entity) {
-        return null;
     }
 }

@@ -43,35 +43,6 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     }
 
     /**
-     * listById
-     */
-    @Override
-    public ResponseResult list(UserPropertyVO entity) {
-        return null;
-    }
-
-
-    /**
-     * get
-     * <p>
-     * 根据用户账号获取用户资料信息
-     *
-     * @param entity UserPropertyVO
-     * @return UserPropertyVO
-     */
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    @Override
-    public ResponseResult get(@RequestBody UserPropertyVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        UserPropertyVO recordVO = userServiceManager.getUserPropertyByEntity(entity);
-        // return
-        checkResourceNotNull(recordVO);
-        return new ResponseResult(recordVO);
-    }
-
-    /**
      * getById
      * <p>
      * 根据用户账号id获取用户资料信息
@@ -155,8 +126,4 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
         return new ResponseResult();
     }
 
-    @Override
-    public ResponseResult delete(UserPropertyVO entity) {
-        return null;
-    }
 }

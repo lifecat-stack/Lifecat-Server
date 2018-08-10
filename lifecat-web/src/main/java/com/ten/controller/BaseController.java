@@ -1,8 +1,6 @@
 package com.ten.controller;
 
-import com.ten.service.service.BaseService;
 import org.springframework.web.bind.annotation.*;
-
 
 /**
  * base controller
@@ -17,26 +15,14 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 public abstract class BaseController<VO, DTO> {
-
-    /* **********************************/
-    /* ********** base methods***********/
-    /* **********************************/
-
-    public abstract DTO list(VO entity);
-
-    public abstract DTO get(VO entity);
-
-    public abstract DTO post(VO entity);
-
-    public abstract DTO put(VO entity);
-
-    public abstract DTO delete(VO entity);
-
-    /* **********************************/
-    /* ******** seletive methods*********/
-    /* **********************************/
-
+    /**
+     * GET URL
+     */
     public DTO all() {
+        return null;
+    }
+
+    public DTO list(Object param) {
         return null;
     }
 
@@ -44,7 +30,32 @@ public abstract class BaseController<VO, DTO> {
         return null;
     }
 
+    public DTO get(Object param) {
+        return null;
+    }
+
     public DTO getById(String id) {
+        return null;
+    }
+
+    /**
+     * POST BODY
+     */
+    public DTO post(VO entity) {
+        return null;
+    }
+
+    /**
+     * PUT BODY
+     */
+    public DTO put(VO entity) {
+        return null;
+    }
+
+    /**
+     * DELETE URL
+     */
+    public DTO delete(Object param) {
         return null;
     }
 

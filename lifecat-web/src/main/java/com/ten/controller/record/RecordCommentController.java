@@ -33,19 +33,6 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
         return null;
     }
 
-    @Override
-    public ResponseResult list(RecordCommentVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     */
-    @Override
-    public ResponseResult get(RecordCommentVO entity) {
-        return null;
-    }
-
     /**
      * create
      * <p>
@@ -108,8 +95,4 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
         return new ResponseResult();
     }
 
-    @Override
-    public ResponseResult delete(RecordCommentVO entity) {
-        return null;
-    }
 }

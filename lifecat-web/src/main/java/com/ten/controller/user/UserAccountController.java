@@ -44,33 +44,6 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
         return new ResponseResult(userAccountVOList);
     }
 
-    /**
-     * listById
-     */
-    @Override
-    public ResponseResult list(UserAccountVO entity) {
-        return null;
-    }
-
-    /**
-     * get
-     * <p>
-     * 搜索单个用户账号信息
-     *
-     * @param entity UserAccountVO
-     * @return UserAccountVO
-     */
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    @Override
-    public ResponseResult get(@RequestBody UserAccountVO entity) {
-        // check
-        checkRequestDataNotNull(entity);
-        // execute
-        UserAccountVO recordVO = userServiceManager.getUserAccountByEntity(entity);
-        // return
-        checkResourceNotNull(recordVO);
-        return new ResponseResult(recordVO);
-    }
 
     /**
      * create
@@ -134,8 +107,4 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
         return new ResponseResult();
     }
 
-    @Override
-    public ResponseResult delete(UserAccountVO entity) {
-        return null;
-    }
 }

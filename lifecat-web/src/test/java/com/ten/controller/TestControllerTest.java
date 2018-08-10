@@ -5,8 +5,17 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * TestController Tester.
@@ -15,12 +24,21 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @version 1.0
  * @since <pre>���� 9, 2018</pre>
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestControllerTest {
+
+    @Autowired
+    TestController testController;
+
+    @Autowired
+    private WebApplicationContext wac;
+
+    private MockMvc mockMvc;
 
     @Before
     public void before() throws Exception {
+        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
     @After
@@ -32,7 +50,12 @@ public class TestControllerTest {
      */
     @Test
     public void testAll() throws Exception {
-//TODO: Test goes here... 
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .get("/test/all"))
+                .andReturn();
+
+        assertNotNull(result);
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
@@ -40,7 +63,12 @@ public class TestControllerTest {
      */
     @Test
     public void testListById() throws Exception {
-//TODO: Test goes here... 
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .get("/test/list/{testId}",1))
+                .andReturn();
+
+        assertNotNull(result);
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
@@ -48,7 +76,12 @@ public class TestControllerTest {
      */
     @Test
     public void testList() throws Exception {
-//TODO: Test goes here... 
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .get("/test/list"))
+                .andReturn();
+
+        assertNotNull(result);
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
@@ -56,7 +89,12 @@ public class TestControllerTest {
      */
     @Test
     public void testGetById() throws Exception {
-//TODO: Test goes here... 
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .get("/test/get/{testId}",1))
+                .andReturn();
+
+        assertNotNull(result);
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
@@ -64,7 +102,12 @@ public class TestControllerTest {
      */
     @Test
     public void testGet() throws Exception {
-//TODO: Test goes here... 
+        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+                .get("/test/get"))
+                .andReturn();
+
+        assertNotNull(result);
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     /**
