@@ -74,10 +74,6 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     @RequestMapping(method = RequestMethod.POST)
     @Override
     public ResponseResult add(@RequestBody TestVO entity) {
-
-        System.out.println(entity.getTestId());
-        System.out.println(entity.getTestName());
-
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -92,14 +88,9 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseResult update(@RequestParam Integer testId,@RequestParam String testName) {
-
-        System.out.println(testId);
-        System.out.println(testName);
-
         TestVO entity = new TestVO();
         entity.setTestId(testId);
         entity.setTestName(testName);
-
         // check
         checkRequestDataNotNull(entity);
         // execute
