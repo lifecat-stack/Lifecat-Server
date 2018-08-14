@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.After;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
@@ -28,6 +29,7 @@ public class WxAlbumControllerTest {
 
     @Before
     public void before() throws Exception {
+        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
     @After
@@ -35,7 +37,7 @@ public class WxAlbumControllerTest {
     }
 
     /**
-     * Method: listById(@PathVariable String id)
+     * Method: listByUrl(@PathVariable String id)
      */
     @Test
     public void testListById() throws Exception {
@@ -43,7 +45,7 @@ public class WxAlbumControllerTest {
     }
 
     /**
-     * Method: getById(String id)
+     * Method: getByUrl(String id)
      */
     @Test
     public void testGetById() throws Exception {
@@ -59,7 +61,7 @@ public class WxAlbumControllerTest {
     }
 
     /**
-     * Method: deleteById(String id)
+     * Method: deleteByUrl(String id)
      */
     @Test
     public void testDeleteById() throws Exception {

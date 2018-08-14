@@ -105,7 +105,7 @@ paths:
     get:
       tags:
         - test
-      summary: listById 测试
+      summary: listByUrl 测试
       description: list by id
       operationId: ''
       consumes:
@@ -185,8 +185,8 @@ paths:
     put:
       tags:
         - test
-      summary: update test 测试
-      description: update test
+      summary: updateWithEntity test 测试
+      description: updateWithEntity test
       operationId: ''
       consumes:
         - application/form
@@ -502,7 +502,7 @@ paths:
       parameters:
         - name: petId
           in: path
-          description: ID of pet to update
+          description: ID of pet to updateWithEntity
           required: true
           type: integer
           format: int64

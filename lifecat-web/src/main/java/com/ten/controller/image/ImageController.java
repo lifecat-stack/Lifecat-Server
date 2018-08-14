@@ -46,7 +46,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 更新Image信息
      *
@@ -55,7 +55,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult update(@RequestBody ImageVO entity) {
+    public ResponseResult updateWithEntity(@RequestBody ImageVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -67,7 +67,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
 
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除Image
      *
@@ -76,7 +76,7 @@ public class ImageController extends BaseController<ImageVO, ResponseResult> {
      */
     @RequestMapping(value = "/{imageId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String imageId) {
+    public ResponseResult deleteByUrl(@PathVariable String imageId) {
         // check
         checkRequestDataNotNull(imageId);
         checkRequestDataFormatInt(imageId);

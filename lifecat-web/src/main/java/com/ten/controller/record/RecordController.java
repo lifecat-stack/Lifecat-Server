@@ -28,7 +28,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     }
 
     /**
-     * listById
+     * listByUrl
      * <p>
      * 获取用户所有Record信息
      *
@@ -37,7 +37,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
      */
     @RequestMapping(value = "/list/{userId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult listById(@PathVariable String userId) {
+    public ResponseResult listByUrl(@PathVariable String userId) {
         // check
         checkRequestDataNotNull(userId);
         checkRequestDataFormatInt(userId);
@@ -70,7 +70,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 更新某条Record
      *
@@ -79,7 +79,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult update(@RequestBody RecordVO entity) {
+    public ResponseResult updateWithEntity(@RequestBody RecordVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -90,7 +90,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     }
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除某条Record
      *
@@ -99,7 +99,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
      */
     @RequestMapping(value = "/{recordId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String recordId) {
+    public ResponseResult deleteByUrl(@PathVariable String recordId) {
         // check
         checkRequestDataNotNull(recordId);
         checkRequestDataFormatInt(recordId);

@@ -66,7 +66,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 更新用户密码
      *
@@ -75,7 +75,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult update(@RequestBody UserAccountVO entity) {
+    public ResponseResult updateWithEntity(@RequestBody UserAccountVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -86,7 +86,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
     }
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除用户
      *
@@ -95,7 +95,7 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
      */
     @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String userId) {
+    public ResponseResult deleteByUrl(@PathVariable String userId) {
         // check
         checkRequestDataNotNull(userId);
         checkRequestDataFormatInt(userId);

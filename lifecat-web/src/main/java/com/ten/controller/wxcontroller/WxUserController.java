@@ -16,6 +16,9 @@ import static com.ten.check.ControllerCheckUtil.*;
 
 /**
  * wechat controller
+ * <p>
+ * PASS
+ * except 'login'
  *
  * @author wshten
  * @date 2018/8/2 0002
@@ -125,38 +128,19 @@ public class WxUserController {
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 修改用户资料
      *
-     * @param userId key(user_id) required
+     * @param userPropertyVO key(user_id) required
      * @return ResponseResult (UserPropertyVO)
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public ResponseResult updateUserProperty(@RequestParam Integer userId,
-                                             @RequestParam String userName,
-                                             @RequestParam Integer userSex,
-                                             @RequestParam String userBirthday,
-                                             @RequestParam String userEmail,
-                                             @RequestParam String userLocation,
-                                             @RequestParam String userPhoneNumber,
-                                             @RequestParam String userIconUrl) {
+    public ResponseResult updateUserProperty(UserPropertyVO userPropertyVO) {
         /* check */
-        checkRequestDataNotNull(userId);
-        checkDateTime(userBirthday);
-        checkEmail(userEmail);
-        checkPhone(userPhoneNumber);
-        checkUrl(userIconUrl);
+        checkRequestDataNotNull(userPropertyVO);
+        checkResourceNotNull(userPropertyVO.getUserId());
         /* execute */
-        UserPropertyVO userPropertyVO = new UserPropertyVO();
-        userPropertyVO.setUserId(userId);
-        userPropertyVO.setUserName(userName);
-        userPropertyVO.setUserSex(userSex);
-        userPropertyVO.setUserBirthday(userBirthday);
-        userPropertyVO.setUserEmail(userEmail);
-        userPropertyVO.setUserLocation(userLocation);
-        userPropertyVO.setUserPhoneNumber(userPhoneNumber);
-        userPropertyVO.setUserIconUrl(userIconUrl);
         UserPropertyVO newUserProperty = userServiceManager.updateUserPropertyAndReturn(userPropertyVO);
         /* return */
         checkRequestDataNotNull(newUserProperty);

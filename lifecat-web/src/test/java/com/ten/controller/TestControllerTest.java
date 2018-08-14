@@ -65,7 +65,7 @@ public class TestControllerTest {
     }
 
     /**
-     * Method: listById(@PathVariable String testId)
+     * Method: listByUrl(@PathVariable String testId)
      */
     @Test
     public void testListById() throws Exception {
@@ -75,11 +75,11 @@ public class TestControllerTest {
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("listById:" + response);
+        System.out.println("listByUrl:" + response);
     }
 
     /**
-     * Method: getById(@PathVariable String testId)
+     * Method: getByUrl(@PathVariable String testId)
      */
     @Test
     public void testGetById() throws Exception {
@@ -89,7 +89,7 @@ public class TestControllerTest {
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("getById:" + response);
+        System.out.println("getByUrl:" + response);
     }
 
     /**
@@ -113,7 +113,7 @@ public class TestControllerTest {
     }
 
     /**
-     * Method: update(@RequestBody TestVO entity)
+     * Method: updateWithEntity(@RequestBody TestVO entity)
      */
     @Test
     public void testUpdate() throws Exception {
@@ -126,11 +126,11 @@ public class TestControllerTest {
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("update:" + response);
+        System.out.println("updateWithEntity:" + response);
     }
 
     /**
-     * Method: deleteById(@PathVariable String testId)
+     * Method: deleteByUrl(@PathVariable String testId)
      */
     @Test
     public void testDeleteById() throws Exception {
@@ -140,7 +140,7 @@ public class TestControllerTest {
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("deleteById:" + response);
+        System.out.println("deleteByUrl:" + response);
     }
 
 } 

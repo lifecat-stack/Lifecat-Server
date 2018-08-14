@@ -15,6 +15,7 @@
 *.iws
 *.iml
 *.ipr
+springboot-lifecat.iml
 
 ### NetBeans ###
 /nbproject/private/
@@ -25,3 +26,10 @@
 /.nb-gradle/
 
 log
+
+lifecat-common/target
+lifecat-dao/target
+lifecat-entity/target
+lifecat-manager/target
+lifecat-service/target
+lifecat-web/target

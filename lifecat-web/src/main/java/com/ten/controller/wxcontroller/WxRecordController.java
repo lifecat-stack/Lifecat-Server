@@ -13,6 +13,8 @@ import static com.ten.check.ControllerCheckUtil.checkRequestDataNotNull;
 
 /**
  * wechat controller
+ * <p>
+ * TODO
  *
  * @author wshten
  * @date 2018/8/2 0002

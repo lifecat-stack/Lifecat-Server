@@ -26,10 +26,10 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
     }
 
     /**
-     * listById
+     * listByUrl
      */
     @Override
-    public ResponseResult listById(@PathVariable String recordId) {
+    public ResponseResult listByUrl(@PathVariable String recordId) {
         return null;
     }
 
@@ -54,7 +54,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 更新某条Comment信息
      *
@@ -63,7 +63,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult update(@RequestBody RecordCommentVO entity) {
+    public ResponseResult updateWithEntity(@RequestBody RecordCommentVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -74,7 +74,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
     }
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除某条Comment信息
      *
@@ -83,7 +83,7 @@ public class RecordCommentController extends BaseController<RecordCommentVO, Res
      */
     @RequestMapping(value = "/{commentId}")
     @Override
-    public ResponseResult deleteById(String commentId) {
+    public ResponseResult deleteByUrl(String commentId) {
         // check
         checkRequestDataNotNull(commentId);
         checkRequestDataFormatInt(commentId);

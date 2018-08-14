@@ -53,10 +53,10 @@ public class LogController extends BaseController<LogVO, ResponseResult> {
     }
 
     /**
-     * update
+     * updateWithEntity
      */
     @Override
-    public ResponseResult update(LogVO entity) {
+    public ResponseResult updateWithEntity(LogVO entity) {
         return null;
     }
 

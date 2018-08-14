@@ -15,55 +15,75 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 public abstract class BaseController<VO, DTO> {
-    /**
-     * GET
-     * URL
-     */
+
+    /*------ GET ------*/
+
     public DTO all() {
         return null;
     }
 
-    public DTO list(Object param) {
+    /**
+     * 1.@PathVariable
+     */
+    public DTO listByUrl(@PathVariable String id) {
         return null;
     }
 
-    public DTO listById(String id) {
-        return null;
-    }
-
-    public DTO get(Object param) {
-        return null;
-    }
-
-    public DTO getById(String id) {
+    public DTO getByUrl(@PathVariable String id) {
         return null;
     }
 
     /**
-     * POST
-     * BODY
+     * 2.@RequestParam
      */
-    public DTO add(VO entity) {
+    public DTO listByParam(@RequestParam Object param) {
+        return null;
+    }
+
+    public DTO getByParam(@RequestParam Object param) {
+        return null;
+    }
+
+
+    /*------ POST ------*/
+
+    /**
+     * 1.@RequestBody JSON
+     */
+    public DTO add(@RequestBody VO entity) {
+        return null;
+    }
+
+    /*------ PUT ------*/
+
+    /**
+     * 1.entity对象映射
+     */
+    public DTO updateWithEntity(VO entity) {
         return null;
     }
 
     /**
-     * PUT
-     * BODY
+     * 2.@RequestParam
      */
-    public DTO update(VO entity) {
+    public DTO updateWithParams(@RequestParam Object... params) {
+        return null;
+    }
+
+
+    /*------ DELETE ------*/
+
+    /**
+     * 1.@PathVariable
+     */
+    public DTO deleteByUrl(@PathVariable String id) {
         return null;
     }
 
     /**
-     * DELETE
-     * URL
+     * 2.@RequestParam
      */
-    public DTO delete(Object param) {
-        return null;
-    }
-
-    public DTO deleteById(String id) {
+    public DTO deleteByParams(@RequestParam Object param) {
         return null;
     }
 

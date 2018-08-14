@@ -32,16 +32,16 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
 
 
     /**
-     * listById
+     * listByUrl
      * <p>
      * 获取用户所有Info信息
      *
      * @param userId user_id
-     * @return listById InfoVO
+     * @return listByUrl InfoVO
      */
     @RequestMapping(value = "/list/{userId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult listById(@PathVariable String userId) {
+    public ResponseResult listByUrl(@PathVariable String userId) {
         // check
         checkRequestDataNotNull(userId);
         checkRequestDataFormatInt(userId);
@@ -62,16 +62,16 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
     }
 
     /**
-     * update
+     * updateWithEntity
      */
     @Override
-    public ResponseResult update(InfoVO entity) {
+    public ResponseResult updateWithEntity(InfoVO entity) {
         return null;
     }
 
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除用户Info信息
      *
@@ -80,7 +80,7 @@ public class InfoController extends BaseController<InfoVO, ResponseResult> {
      */
     @RequestMapping(value = "/{infoId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String infoId) {
+    public ResponseResult deleteByUrl(@PathVariable String infoId) {
         // check
         checkRequestDataNotNull(infoId);
         checkRequestDataFormatInt(infoId);

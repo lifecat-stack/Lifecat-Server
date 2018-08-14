@@ -4,7 +4,6 @@ import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
 import com.ten.manager.image.ImageServiceManager;
 import com.ten.vo.AlbumVO;
-import com.ten.vo.UserAccountVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,8 @@ import static com.ten.check.ControllerCheckUtil.checkRequestDataNotNull;
 
 /**
  * wechat controller
+ * <p>
+ * TODO
  *
  * @author wshten
  * @date 2018/8/2 0002
@@ -38,8 +39,8 @@ public class WxAlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(value = "/list/{userId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult listById(@PathVariable String id) {
-        return super.listById(id);
+    public ResponseResult listByUrl(@PathVariable String id) {
+        return super.listByUrl(id);
     }
 
     /**
@@ -49,8 +50,8 @@ public class WxAlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(value = "/get/{albumId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult getById(String id) {
-        return super.getById(id);
+    public ResponseResult getByUrl(String id) {
+        return super.getByUrl(id);
     }
 
     /**
@@ -71,7 +72,7 @@ public class WxAlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(value = "/{albumId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(String id) {
-        return super.deleteById(id);
+    public ResponseResult deleteByUrl(String id) {
+        return super.deleteByUrl(id);
     }
 }

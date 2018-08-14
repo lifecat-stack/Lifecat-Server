@@ -43,7 +43,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     }
 
     /**
-     * getById
+     * getByUrl
      * <p>
      * 根据用户账号id获取用户资料信息
      *
@@ -52,7 +52,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
      */
     @RequestMapping(value = "/get/{userId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult getById(@PathVariable String userId) {
+    public ResponseResult getByUrl(@PathVariable String userId) {
         // check
         checkRequestDataNotNull(userId);
         checkRequestDataFormatInt(userId);
@@ -85,7 +85,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 更新用户资料信息
      *
@@ -94,7 +94,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult update(@RequestBody UserPropertyVO entity) {
+    public ResponseResult updateWithEntity(@RequestBody UserPropertyVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -105,7 +105,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     }
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除用户资料信息
      *
@@ -114,7 +114,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
      */
     @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String userId) {
+    public ResponseResult deleteByUrl(@PathVariable String userId) {
         // check
         checkRequestDataNotNull(userId);
         checkRequestDataFormatInt(userId);

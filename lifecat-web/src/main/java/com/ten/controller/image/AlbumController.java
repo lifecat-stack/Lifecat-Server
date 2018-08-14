@@ -28,16 +28,16 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
     }
 
     /**
-     * listById
+     * listByUrl
      * <p>
      * 获取用户所有Album信息
      *
      * @param userId user_id
-     * @return listById AlbumVO
+     * @return listByUrl AlbumVO
      */
     @RequestMapping(value = "/list/{userId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult listById(@PathVariable String userId) {
+    public ResponseResult listByUrl(@PathVariable String userId) {
         // check
         checkRequestDataNotNull(userId);
         checkRequestDataFormatInt(userId);
@@ -70,7 +70,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
     }
 
     /**
-     * update
+     * updateWithEntity
      * <p>
      * 更新Album信息
      *
@@ -79,7 +79,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult update(@RequestBody AlbumVO entity) {
+    public ResponseResult updateWithEntity(@RequestBody AlbumVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -90,7 +90,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
     }
 
     /**
-     * deleteById
+     * deleteByUrl
      * <p>
      * 删除Album
      *
@@ -99,7 +99,7 @@ public class AlbumController extends BaseController<AlbumVO, ResponseResult> {
      */
     @RequestMapping(value = "/{albumId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String albumId) {
+    public ResponseResult deleteByUrl(@PathVariable String albumId) {
         // check
         checkRequestDataNotNull(albumId);
         checkRequestDataFormatInt(albumId);

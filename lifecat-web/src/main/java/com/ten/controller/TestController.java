@@ -41,11 +41,11 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     }
 
     /**
-     * listById
+     * listByUrl
      */
     @RequestMapping(value = "/list/{testId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult listById(@PathVariable String testId) {
+    public ResponseResult listByUrl(@PathVariable String testId) {
         // check
         checkRequestDataNotNull(testId);
         checkRequestDataFormatInt(testId);
@@ -58,11 +58,11 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     }
 
     /**
-     * getById
+     * getByUrl
      */
     @RequestMapping(value = "/get/{testId}", method = RequestMethod.GET)
     @Override
-    public ResponseResult getById(@PathVariable String testId) {
+    public ResponseResult getByUrl(@PathVariable String testId) {
         // check
         checkRequestDataNotNull(testId);
         checkRequestDataFormatInt(testId);
@@ -90,13 +90,11 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     }
 
     /**
-     * update
+     * updateWithEntity
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public ResponseResult update(@RequestParam Integer testId, @RequestParam String testName) {
-        TestVO entity = new TestVO();
-        entity.setTestId(testId);
-        entity.setTestName(testName);
+    @Override
+    public ResponseResult updateWithEntity(TestVO entity) {
         // check
         checkRequestDataNotNull(entity);
         // execute
@@ -107,11 +105,11 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     }
 
     /**
-     * deleteById
+     * deleteByUrl
      */
     @RequestMapping(value = "/{testId}", method = RequestMethod.DELETE)
     @Override
-    public ResponseResult deleteById(@PathVariable String testId) {
+    public ResponseResult deleteByUrl(@PathVariable String testId) {
         // check
         checkRequestDataNotNull(testId);
         checkRequestDataFormatInt(testId);
