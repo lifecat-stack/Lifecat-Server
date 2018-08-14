@@ -32,6 +32,8 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
      * <p>
      * 获取用户所有Record信息
      *
+     * TODO 获取子项post,comments数据
+     *
      * @param userId user_id
      * @return list RecordVO
      */
@@ -62,6 +64,7 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     public ResponseResult add(@RequestBody RecordVO entity) {
         // check
         checkRequestDataNotNull(entity);
+        checkRequestDataNotNull(entity.getUserId());
         // execute
         int result = recordServiceManager.createRecord(entity);
         // return
@@ -72,16 +75,17 @@ public class RecordController extends BaseController<RecordVO, ResponseResult> {
     /**
      * updateWithEntity
      * <p>
-     * 更新某条Record
+     * 更新某条Record by record_id
      *
      * @param entity RecordVO
      * @return result
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult updateWithEntity(@RequestBody RecordVO entity) {
+    public ResponseResult updateWithEntity(RecordVO entity) {
         // check
         checkRequestDataNotNull(entity);
+        checkRequestDataNotNull(entity.getRecordId());
         // execute
         int result = recordServiceManager.updateRecord(entity);
         // return

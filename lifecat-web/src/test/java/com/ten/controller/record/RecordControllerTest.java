@@ -16,7 +16,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
@@ -55,24 +57,41 @@ public class RecordControllerTest {
     @Test
     public void testListByUrl() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .get("/test/all"))
+                .get("/record/list/{userId}", "1"))
                 .andReturn();
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("all:" + response);    }
+        System.out.println("list:" + response);
+    }
 
     /**
      * Method: add(@RequestBody RecordVO entity)
      */
     @Test
     public void testAdd() throws Exception {
-        Map<String, String> map = new HashMap<>();
-        map.put("testId", "999");
-        map.put("testName", "mockTest");
+        // post
+        Map<String, String> post = new HashMap<>(3);
+        post.put("postTitle", "4");
+        post.put("postContent", "4");
+        post.put("postImageUrl", "4");
+        // comments
+        List<Map<String, String>> comments = new ArrayList<>(3);
+        for (int i = 0; i < 3; i++) {
+            Map<String, String> comment = new HashMap<>(3);
+            comment.put("commentRecordId","5");
+            comment.put("commentCustomerId","5");
+            comment.put("commentContent", "comment");
+            comments.add(comment);
+        }
+        // record
+        Map<String, Object> map = new HashMap<>(3);
+        map.put("userId", "1");
+        map.put("post", post);
+        map.put("comments", comments);
 
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .post("/test/")
+                .post("/record")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JSONObject.toJSONString(map)))
                 .andReturn();
@@ -89,14 +108,15 @@ public class RecordControllerTest {
     public void testUpdateWithEntity() throws Exception {
 
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .put("/test/")
-                .param("testId", "1")
-                .param("testName", "mockTestUpdate"))
+                .put("/record")
+                .param("recordId", "4")
+                .param("userId", "1")
+                .param("postId", "5"))
                 .andReturn();
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("updateWithEntity:" + response);
+        System.out.println("update:" + response);
     }
 
     /**
@@ -105,13 +125,12 @@ public class RecordControllerTest {
     @Test
     public void testDeleteByUrl() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                .delete("/test/{testId}", 0))
+                .delete("/record/{recordId}", 4))
                 .andReturn();
 
         String response = result.getResponse().getContentAsString();
         assertNotNull(response);
-        System.out.println("deleteByUrl:" + response);
+        System.out.println("delete:" + response);
     }
-
 
 } 

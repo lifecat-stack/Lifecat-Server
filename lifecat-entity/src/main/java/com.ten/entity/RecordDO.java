@@ -17,7 +17,7 @@ public class RecordDO {
     private Integer recordId;
     private Integer userId;
     private Integer postId;
-    private Integer deleted;
+    private Integer isDeleted;
     private String recordGmtCreate;
     private String recordGmtModified;
 
@@ -38,7 +38,7 @@ public class RecordDO {
     private RecordDO(Builder b) {
         this(b.recordVO);
         postId = b.postId;
-        deleted = b.deleted;
+        isDeleted = b.deleted;
     }
 
     /**
@@ -76,7 +76,7 @@ public class RecordDO {
                 "record_id:" + recordId +
                 ",user_id:" + userId +
                 ",post_id:" + postId +
-                ",is_deleted:" + deleted +
+                ",is_deleted:" + isDeleted +
                 ",record_gmt_create:" + recordGmtCreate +
                 ",record_gmt_modified:" + recordGmtModified +
                 "}";
@@ -106,12 +106,12 @@ public class RecordDO {
         this.postId = postId;
     }
 
-    public Integer getDeleted() {
-        return deleted;
+    public Integer getIsDeleted() {
+        return isDeleted;
     }
 
-    public void setDeleted(Integer deleted) {
-        this.deleted = deleted;
+    public void setIsDeleted(Integer isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     public String getRecordGmtCreate() {

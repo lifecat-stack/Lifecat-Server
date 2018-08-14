@@ -5,6 +5,7 @@ import com.ten.entity.RecordDO;
 import com.ten.service.service.image.AlbumService;
 import com.ten.service.service.record.RecordService;
 import com.ten.service.serviceimpl.BaseServiceImpl;
+import com.ten.utils.DateTimeUtil;
 import com.ten.vo.AlbumVO;
 import com.ten.vo.RecordVO;
 import org.springframework.stereotype.Service;
@@ -62,7 +63,14 @@ public class RecordServiceImpl extends BaseServiceImpl<RecordVO, RecordDO> imple
 
     @Override
     public int create(RecordVO entity) {
-        return 0;
+        RecordDO recordDO = new RecordDO(entity);
+        recordDO.setRecordId(null);
+        recordDO.setIsDeleted(0);
+        DateTimeUtil dateTimeUtil = DateTimeUtil.getInstance();
+        String currentTime = dateTimeUtil.getCurrentTime();
+        recordDO.setRecordGmtCreate(currentTime);
+        recordDO.setRecordGmtModified(currentTime);
+        return exeInsert(recordDO);
     }
 
     @Override

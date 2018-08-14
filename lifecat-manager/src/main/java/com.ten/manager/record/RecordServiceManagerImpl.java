@@ -8,6 +8,7 @@ import com.ten.vo.RecordPostVO;
 import com.ten.vo.RecordVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -57,11 +58,33 @@ public class RecordServiceManagerImpl implements RecordServiceManager {
         return recordVO;
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public int createRecord(RecordVO entity) {
+        // post
+        int result2 = 1;
+        if (entity.getPost() != null) {
+            result2 = postService.create(entity.getPost());
+        }
+        // TODO get post id
+        int postId = 5;
+        entity.setPostId(postId);
+        // record
         int result1 = recordService.create(entity);
-        int result2 = postService.create(entity.getPost());
-        return result1 > 0 ? (result2 > 0 ? 1 : 0) : 0;
+        // TODO get record id
+        int recordId = 5;
+        // comment
+        int result3 = 1;
+        if (entity.getComments().size() > 0) {
+            for (RecordCommentVO commentVO : entity.getComments()) {
+                commentVO.setCommentRecordId(recordId);
+                result3 *= commentService.create(commentVO);
+            }
+        }
+        if (result1 < 1 || result2 < 1 || result3 < 1) {
+            return 0;
+        }
+        return 1;
     }
 
     @Override

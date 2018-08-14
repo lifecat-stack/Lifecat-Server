@@ -35,7 +35,9 @@ public class RecordCommentServiceImpl extends BaseServiceImpl<RecordCommentVO, R
 
     @Override
     public int create(RecordCommentVO entity) {
-        return 0;
+        RecordCommentDO recordCommentDO = new RecordCommentDO(entity);
+        recordCommentDO.setCommentId(null);
+        return exeInsert(recordCommentDO);
     }
 
     @Override

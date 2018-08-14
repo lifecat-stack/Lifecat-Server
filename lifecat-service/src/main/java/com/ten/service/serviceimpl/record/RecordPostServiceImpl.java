@@ -34,7 +34,9 @@ public class RecordPostServiceImpl extends BaseServiceImpl<RecordPostVO, RecordP
 
     @Override
     public int create(RecordPostVO entity) {
-        return 0;
+        RecordPostDO recordPostDO = new RecordPostDO(entity);
+        recordPostDO.setPostId(null);
+        return exeInsert(recordPostDO);
     }
 
     @Override
