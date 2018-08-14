@@ -15,7 +15,6 @@
 *.iws
 *.iml
 *.ipr
-springboot-lifecat.iml
 
 ### NetBeans ###
 /nbproject/private/
