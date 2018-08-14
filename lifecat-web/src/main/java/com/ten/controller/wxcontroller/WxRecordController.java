@@ -28,7 +28,7 @@ public class WxRecordController {
         /* check */
         checkRequestDataNotNull(userAccountVO);
         // execute
-
+        // TODO
         // return
         return new ResponseResult();
     }
@@ -38,7 +38,7 @@ public class WxRecordController {
         /* check */
         checkRequestDataNotNull(userAccountVO);
         // execute
-
+        // TODO
         // return
         return new ResponseResult();
     }

@@ -1,12 +1,14 @@
 package com.ten.controller.wxcontroller;
 
+import com.ten.controller.BaseController;
 import com.ten.dto.ResponseResult;
+import com.ten.manager.image.ImageServiceManager;
+import com.ten.vo.AlbumVO;
 import com.ten.vo.UserAccountVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import static com.ten.check.ControllerCheckUtil.checkRequestDataNotNull;
 
@@ -18,28 +20,58 @@ import static com.ten.check.ControllerCheckUtil.checkRequestDataNotNull;
  */
 @RestController
 @RequestMapping(value = "/wx/album")
-public class WxAlbumController {
+public class WxAlbumController extends BaseController<AlbumVO, ResponseResult> {
 
     private static Logger logger = LoggerFactory.getLogger(WxAlbumController.class);
 
-    @RequestMapping(value = "/get/album")
-    public ResponseResult getUserAlbum(@RequestBody UserAccountVO userAccountVO) {
-        // check
-        checkRequestDataNotNull(userAccountVO);
-        // execute
+    private final ImageServiceManager imageServiceManager;
 
-        // return
-        return new ResponseResult();
+    @Autowired
+    public WxAlbumController(ImageServiceManager imageServiceManager) {
+        this.imageServiceManager = imageServiceManager;
     }
 
+    /**
+     * 获取用户所有Album
+     *
+     * @param id user_id
+     */
+    @RequestMapping(value = "/list/{userId}", method = RequestMethod.GET)
+    @Override
+    public ResponseResult listById(@PathVariable String id) {
+        return super.listById(id);
+    }
 
-    @RequestMapping(value = "/add/album")
-    public ResponseResult addUserAlbum(@RequestBody UserAccountVO userAccountVO) {
-        // check
-        checkRequestDataNotNull(userAccountVO);
-        // execute
+    /**
+     * 获取Album
+     *
+     * @param id album_id
+     */
+    @RequestMapping(value = "/get/{albumId}", method = RequestMethod.GET)
+    @Override
+    public ResponseResult getById(String id) {
+        return super.getById(id);
+    }
 
-        // return
-        return new ResponseResult();
+    /**
+     * 创建Album
+     *
+     * @param entity Album
+     */
+    @RequestMapping(method = RequestMethod.POST)
+    @Override
+    public ResponseResult add(AlbumVO entity) {
+        return super.add(entity);
+    }
+
+    /**
+     * 删除Album
+     *
+     * @param id album_id
+     */
+    @RequestMapping(value = "/{albumId}", method = RequestMethod.DELETE)
+    @Override
+    public ResponseResult deleteById(String id) {
+        return super.deleteById(id);
     }
 }
