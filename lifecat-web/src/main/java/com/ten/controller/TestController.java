@@ -10,6 +10,12 @@ import java.util.List;
 
 import static com.ten.check.ControllerCheckUtil.*;
 
+/**
+ * Test
+ *
+ * @author wshten
+ * @date 2018/8/14 0014
+ */
 @RestController
 @RequestMapping("/test")
 public class TestController extends BaseController<TestVO, ResponseResult> {
@@ -87,7 +93,7 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
      * update
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public ResponseResult update(@RequestParam Integer testId,@RequestParam String testName) {
+    public ResponseResult update(@RequestParam Integer testId, @RequestParam String testName) {
         TestVO entity = new TestVO();
         entity.setTestId(testId);
         entity.setTestName(testName);

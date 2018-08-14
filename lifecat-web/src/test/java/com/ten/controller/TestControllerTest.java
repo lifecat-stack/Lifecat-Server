@@ -22,10 +22,12 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * TestController Tester.
+ * <p>
+ * PASS
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>���� 9, 2018</pre>
+ * @since <pre>八月 10, 2018</pre>
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -57,8 +59,9 @@ public class TestControllerTest {
                 .get("/test/all"))
                 .andReturn();
 
-        assertNotNull(result);
-        System.out.println(result.getResponse().getContentAsString());
+        String response = result.getResponse().getContentAsString();
+        assertNotNull(response);
+        System.out.println("all:" + response);
     }
 
     /**
@@ -70,8 +73,9 @@ public class TestControllerTest {
                 .get("/test/list/{testId}", 1))
                 .andReturn();
 
-        assertNotNull(result);
-        System.out.println(result.getResponse().getContentAsString());
+        String response = result.getResponse().getContentAsString();
+        assertNotNull(response);
+        System.out.println("listById:" + response);
     }
 
     /**
@@ -83,8 +87,9 @@ public class TestControllerTest {
                 .get("/test/get/{testId}", 1))
                 .andReturn();
 
-        assertNotNull(result);
-        System.out.println(result.getResponse().getContentAsString());
+        String response = result.getResponse().getContentAsString();
+        assertNotNull(response);
+        System.out.println("getById:" + response);
     }
 
     /**
@@ -102,8 +107,9 @@ public class TestControllerTest {
                 .content(JSONObject.toJSONString(map)))
                 .andReturn();
 
-        assertNotNull(result.getResponse());
-        System.out.println(result.getResponse().getContentAsString());
+        String response = result.getResponse().getContentAsString();
+        assertNotNull(response);
+        System.out.println("post:" + response);
     }
 
     /**
@@ -118,8 +124,9 @@ public class TestControllerTest {
                 .param("testName", "mockTestUpdate"))
                 .andReturn();
 
-        assertNotNull(result);
-        System.out.println(result.getResponse().getContentAsString());
+        String response = result.getResponse().getContentAsString();
+        assertNotNull(response);
+        System.out.println("update:" + response);
     }
 
     /**
@@ -131,8 +138,9 @@ public class TestControllerTest {
                 .delete("/test/{testId}", 0))
                 .andReturn();
 
-        assertNotNull(result);
-        System.out.println("testDeleteById:" + result.getResponse().getContentAsString());
+        String response = result.getResponse().getContentAsString();
+        assertNotNull(response);
+        System.out.println("deleteById:" + response);
     }
 
 } 
