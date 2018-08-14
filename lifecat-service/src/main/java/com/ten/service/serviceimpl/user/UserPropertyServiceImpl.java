@@ -56,7 +56,7 @@ public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, Use
     @Override
     public UserPropertyVO get(UserPropertyVO entity) {
         UserDO userDO = new UserDO();
-        userDO.setUserAccountName(entity.getUserAccountName());
+        userDO.setUserId(entity.getUserId());
         UserDO user = exeQuery(userDO);
         if (user == null) {
             return new UserPropertyVO();

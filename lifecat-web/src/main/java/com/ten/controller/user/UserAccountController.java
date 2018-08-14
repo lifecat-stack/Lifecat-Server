@@ -68,16 +68,17 @@ public class UserAccountController extends BaseController<UserAccountVO, Respons
     /**
      * updateWithEntity
      * <p>
-     * 更新用户密码
+     * 更新用户账号密码 by user_id
      *
      * @param entity UserAccountVO
      * @return new UserAccountVO
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult updateWithEntity(@RequestBody UserAccountVO entity) {
+    public ResponseResult updateWithEntity(UserAccountVO entity) {
         // check
         checkRequestDataNotNull(entity);
+        checkRequestDataNotNull(entity.getUserId());
         // execute
         UserAccountVO newUserAccountVO = userServiceManager.updateUserPasswordAndReturn(entity);
         // return

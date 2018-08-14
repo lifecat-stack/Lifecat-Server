@@ -45,7 +45,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     /**
      * getByUrl
      * <p>
-     * 根据用户账号id获取用户资料信息
+     * 根据user_id获取用户资料信息
      *
      * @param userId user_id
      * @return userPropertyVO
@@ -67,7 +67,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     /**
      * create
      * <p>
-     * 上传用户资料信息
+     * 上传用户资料信息 by user_id
      *
      * @param entity UserPropertyVO
      * @return new UserPropertyVO
@@ -77,6 +77,7 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     public ResponseResult add(@RequestBody UserPropertyVO entity) {
         // check
         checkRequestDataNotNull(entity);
+        checkRequestDataNotNull(entity.getUserId());
         // execute
         UserPropertyVO newUserPropertyVO = userServiceManager.createUserPropertyAndReturn(entity);
         // return
@@ -87,16 +88,17 @@ public class UserPropertyController extends BaseController<UserPropertyVO, Respo
     /**
      * updateWithEntity
      * <p>
-     * 更新用户资料信息
+     * 更新用户资料信息 by user_id
      *
      * @param entity UserPropertyVO
      * @return new UserPropertyVO
      */
     @RequestMapping(method = RequestMethod.PUT)
     @Override
-    public ResponseResult updateWithEntity(@RequestBody UserPropertyVO entity) {
+    public ResponseResult updateWithEntity(UserPropertyVO entity) {
         // check
         checkRequestDataNotNull(entity);
+        checkRequestDataNotNull(entity.getUserId());
         // execute
         UserPropertyVO newUserPropertyVO = userServiceManager.updateUserPropertyAndReturn(entity);
         // return

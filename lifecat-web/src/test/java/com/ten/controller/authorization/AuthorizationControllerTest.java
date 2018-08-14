@@ -1,5 +1,6 @@
-package com.ten.controller.wxcontroller;
+package com.ten.controller.authorization;
 
+import com.ten.controller.TestController;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -12,9 +13,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * WxAlbumController Tester.
- * <p>
- * TODO
+ * AuthorizationController Tester.
  *
  * @author <Authors name>
  * @version 1.0
@@ -22,10 +21,10 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class WxAlbumControllerTest {
+public class AuthorizationControllerTest {
 
     @Autowired
-    WxAlbumController wxAlbumController;
+    AuthorizationController authorizationController;
 
     @Autowired
     private WebApplicationContext wac;
@@ -42,34 +41,10 @@ public class WxAlbumControllerTest {
     }
 
     /**
-     * Method: listByUrl(@PathVariable String id)
+     * Method: login(@RequestBody UserAccountVO userAccountVO)
      */
     @Test
-    public void testListById() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: getByUrl(String id)
-     */
-    @Test
-    public void testGetById() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: add(AlbumVO entity)
-     */
-    @Test
-    public void testAdd() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: deleteByUrl(String id)
-     */
-    @Test
-    public void testDeleteById() throws Exception {
+    public void testLogin() throws Exception {
 //TODO: Test goes here... 
     }
 
