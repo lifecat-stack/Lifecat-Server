@@ -55,16 +55,7 @@ public class UserDO {
         this.userId = userVO.getUserId();
         this.userAccountName = userVO.getUserAccountName();
         this.userName = userVO.getUserName();
-        // SEX => int
-        // 0:empty 1:man 2:woman
-        SEX sex = userVO.getUserSex();
-        if (sex == SEX.EMPTY) {
-            this.userSex = 0;
-        } else if (sex == SEX.MAN) {
-            this.userSex = 1;
-        } else if (sex == SEX.WOMAN) {
-            this.userSex = 2;
-        }
+        this.userSex = userVO.getUserSex();
         this.userBirthday = userVO.getUserBirthday();
         this.userEmail = userVO.getUserEmail();
         this.userLocation = userVO.getUserLocation();
@@ -83,16 +74,7 @@ public class UserDO {
         this.userId = userPropertyVO.getUserId();
         this.userAccountName = userPropertyVO.getUserAccountName();
         this.userName = userPropertyVO.getUserName();
-        // SEX => int
-        // 0:empty 1:man 2:woman
-        SEX sex = userPropertyVO.getUserSex();
-        if (sex == SEX.EMPTY) {
-            this.userSex = 0;
-        } else if (sex == SEX.MAN) {
-            this.userSex = 1;
-        } else if (sex == SEX.WOMAN) {
-            this.userSex = 2;
-        }
+        this.userSex = userPropertyVO.getUserSex();
         this.userBirthday = userPropertyVO.getUserBirthday();
         this.userEmail = userPropertyVO.getUserEmail();
         this.userLocation = userPropertyVO.getUserLocation();

@@ -11,28 +11,17 @@ public enum SEX {
      * 1 男
      * 2 女
      */
-    EMPTY(0, "empty"),
-    MAN(1, "男"),
-    WOMAN(2, "女");
+    EMPTY(0),
+    MAN(1),
+    WOMAN(2);
 
-    private int num;
-    private String desc;
+    public int num;
 
-    SEX(int val, String desc) {
+    SEX(int val) {
         this.num = val;
-        this.desc = desc;
     }
 
     public int getNum() {
         return num;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    @Override
-    public String toString() {
-        return getDesc();
     }
 }

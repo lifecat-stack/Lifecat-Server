@@ -76,6 +76,11 @@ public class UserPropertyServiceImpl extends BaseServiceImpl<UserPropertyVO, Use
         // set modified time
         String currentTime = dateTimeUtil.getCurrentTime();
         userDO.setUserGmtModified(currentTime);
+        userDO.setUserLastLogin(currentTime);
+        // set properties
+        userDO.setUserAccountName(null);
+        userDO.setUserGmtCreate(null);
+        userDO.setUserLoginCount(null);
         return exeUpdate(userDO);
     }
 

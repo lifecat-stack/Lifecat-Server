@@ -78,15 +78,38 @@ public class ControllerCheckUtil {
     }
 
     /**
-     * 检查资源
+     * 检查日期格式
      *
-     * @param resource 资源对象
-     * @param errorMsg 异常信息
+     * @param datetime 日期对象
      */
-    public static void checkResourceNotNull(Object resource, String errorMsg) {
-        if (resource == null) {
-            throw new ResourceNotFoundException(errorMsg);
-        }
+    public static void checkDateTime(String datetime) {
+        // TODO
     }
 
+    /**
+     * 检查手机号码格式
+     *
+     * @param phone 号码对象
+     */
+    public static void checkPhone(String phone) {
+        // TODO
+    }
+
+    /**
+     * 检查URL格式
+     *
+     * @param url 号码对象
+     */
+    public static void checkUrl(String url) {
+        // TODO
+    }
+
+    /**
+     * 检查邮箱格式
+     *
+     * @param email 号码对象
+     */
+    public static void checkEmail(String email) {
+        // TODO
+    }
 }

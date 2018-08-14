@@ -13,7 +13,7 @@ public class UserVO {
     private Integer userId;
     private String userAccountName;
     private String userName;
-    private SEX userSex;
+    private Integer userSex;
     private String userBirthday;
     private String userEmail;
     private String userLocation;
@@ -34,16 +34,7 @@ public class UserVO {
         this.userId = userDO.getUserId();
         this.userAccountName = userDO.getUserAccountName();
         this.userName = userDO.getUserName();
-        // int => SEX
-        // 0:empty 1:man 2:woman
-        int sex = userDO.getUserSex();
-        if (sex == 0) {
-            this.userSex = SEX.EMPTY;
-        } else if (sex == 1) {
-            this.userSex = SEX.MAN;
-        } else if (sex == 2) {
-            this.userSex = SEX.WOMAN;
-        }
+        this.userSex = userDO.getUserSex();
         this.userBirthday = userDO.getUserBirthday();
         this.userEmail = userDO.getUserEmail();
         this.userLocation = userDO.getUserLocation();
@@ -98,11 +89,11 @@ public class UserVO {
         this.userName = userName;
     }
 
-    public SEX getUserSex() {
+    public Integer getUserSex() {
         return userSex;
     }
 
-    public void setUserSex(SEX userSex) {
+    public void setUserSex(Integer userSex) {
         this.userSex = userSex;
     }
 
