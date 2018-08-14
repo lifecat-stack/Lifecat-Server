@@ -1,5 +1,6 @@
 package com.ten.entity;
 
+import com.ten.annotations.Convertible;
 import com.ten.vo.TestVO;
 
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ import javax.persistence.Table;
  *
  * @author Administrator
  */
+@Convertible(source = TestDO.class, target = TestVO.class)
 @Table(name = "c_test")
 public class TestDO {
     @Id
