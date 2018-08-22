@@ -13,13 +13,16 @@ README -- LifeCat Version3 Back
 |framework|Springboot Mybatis Vuejs
 ******************************************************************************
  #### _@页面展示_  
-  * [LifeCat官网(version1)主页](http://47.106.11.84)
   
-  ![官网](Image/官网首页.png)
+  * [前端页面 live demo](http://www.lifecat.club/admin)
   
-  * [LifeCat官网(version3)主页 (待开发)](http://47.106.11.84)
-******************************************************************************
- #### [_@后端接口API文档(正在开发)_](http://47.106.11.84)
+  * [前端源码 front](http://www.lifecat.club/Vue-Admin-lifecat)
+  
+  ![show](Image/show1.png)
+  
+  ![show](Image/show2.png)
+  
+  
 ******************************************************************************
  #### _@使用技术_
   
@@ -49,11 +52,11 @@ README -- LifeCat Version3 Back
 *****************************************************************************
  ### 相关项目：
  #### [LifeCat version1 servlet基础Javaweb服务网站](https://github.com/kevinten10/lifecatweb)
- 
  #### [LifeCat version2 version1相应SSM后台管理系统](https://github.com/kevinten10/SSM-lifecat)
- #### [LifeCat version3 前后端分离vuejs前端](https://github.com/kevinten10/Web-lifecat)
+ #### [LifeCat version3 前后端分离vuejs前端仿ins网站](https://github.com/kevinten10/Web-lifecat)
+ #### [LifeCat version3 前后端分离vuejs前端后台管理系统](https://github.com/kevinten10/Vue-Admin-lifecat)
  *****************************************************************************
-  #### [LifeCat wechat 微信移动端小程序开发](https://github.com/kevinten10/WeChat-lifecat)
-  #### [LifeCat hadoop 分布式平台进行数据处理](https://github.com/kevinten10/Hadoop-lifecat)
-  #### [LifeCat android 相应Android相册应用](https://github.com/kevinten10/Android-lifecat)
-  #### [LifeCat python 机器学习进行图像智能处理](https://github.com/kevinten10/Python-lifecat)
+ #### [LifeCat wechat 微信移动端小程序开发](https://github.com/kevinten10/WeChat-lifecat)
+ #### [LifeCat hadoop 分布式平台进行数据处理](https://github.com/kevinten10/Hadoop-lifecat)
+ #### [LifeCat android 相应Android相册应用](https://github.com/kevinten10/Android-lifecat)
+ #### [LifeCat python 机器学习进行图像智能处理](https://github.com/kevinten10/Python-lifecat)

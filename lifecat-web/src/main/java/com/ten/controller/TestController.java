@@ -35,6 +35,7 @@ public class TestController extends BaseController<TestVO, ResponseResult> {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @Override
     public ResponseResult all() {
+        System.out.println("test all recived");
         List<TestVO> testVOList = testServiceManager.getAllTest();
         checkResourceNotNull(testVOList);
         return new ResponseResult(testVOList);
