@@ -1,5 +1,5 @@
 # no use
-# TODO
+# TODO swaggerAPI文档
 swagger: '2.0'
 info:
   description: LifeCat项目Version3版本：基于前后端分离，由Springboot + vuejs + WeChat移动端组成，前端通过API接口调用服务。

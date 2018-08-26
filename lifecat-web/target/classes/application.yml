@@ -7,12 +7,12 @@ spring:
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
-    activemq:
-        broker-url: tcp://127.0.0.1:61616
-        user: admin
-        password: admin
-    jms:
-        pub-sub-domain: true
+#    activemq:
+#        broker-url: tcp://127.0.0.1:61616
+#        user: admin
+#        password: admin
+#    jms:
+#        pub-sub-domain: true
 
 mybatis:
     mapperLocations: classpath*:mapper/*.xml

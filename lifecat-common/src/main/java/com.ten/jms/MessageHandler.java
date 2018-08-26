@@ -36,7 +36,7 @@ public class MessageHandler {
         simpleEmail.setSubject(message.getMessage());
 
         Set<String> receivers = new HashSet<>();
-        receivers.add("18861857305@163.com");
+        receivers.add("email@163.com");
         simpleEmail.setAccepter(receivers);
 
         simpleEmail.setHtml(false);

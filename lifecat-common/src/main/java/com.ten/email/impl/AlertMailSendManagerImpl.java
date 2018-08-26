@@ -19,7 +19,7 @@ import java.util.Set;
 @Component
 public class AlertMailSendManagerImpl implements AlertMailSendManager {
 
-    @Value("18861857305@163.com")
+    @Value("email@163.com")
     private String sender;
 
 //    private final JavaMailSender mailSender;
