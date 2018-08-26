@@ -1,9 +1,9 @@
 spring:
     datasource:
         name: lifecat
-        url: jdbc:mysql://127.0.0.1:3306/catdb
+        url: jdbc:mysql://111.230.244.153:3306/catdb
         username: root
-        password: 123456
+        password: wangshihao
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver

@@ -1,9 +1,7 @@
 package com.ten.vo;
 
-import com.ten.annotations.Convertible;
 import com.ten.entity.TestDO;
 
-@Convertible(source = TestVO.class, target = TestDO.class)
 public class TestVO {
 
     private Integer testId;
