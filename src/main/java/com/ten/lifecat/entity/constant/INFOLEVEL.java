@@ -1,4 +1,4 @@
-package com.ten.lifecat.entity.vo.constant;
+package com.ten.lifecat.entity.constant;
 
 /**
  * c_info :info_level
