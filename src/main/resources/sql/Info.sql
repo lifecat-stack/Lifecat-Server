@@ -1,0 +1,15 @@
+-- auto Generated on 2018-11-28 09:30:52 
+-- DROP TABLE IF EXISTS `info`; 
+CREATE TABLE info(
+    `id` INTEGER(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `info_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '信息ID',
+    `user_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '信息所属用户ID',
+    `info_title` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '信息标题',
+    `info_content` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '信息内容',
+    `info_level` INTEGER(12) NOT NULL DEFAULT -1 COMMENT '信息警示等级 0正常 1警示 ...',
+    `is_readed` INTEGER(12) NOT NULL DEFAULT -1 COMMENT '信息阅读标记',
+    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'createTime',
+    `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'updateTime',
+    `is_deleted` INTEGER(12) NOT NULL DEFAULT -1 COMMENT 'isDeleted',
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'info';

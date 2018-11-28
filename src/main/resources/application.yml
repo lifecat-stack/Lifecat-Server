@@ -1,7 +1,7 @@
 spring:
     datasource:
         name: lifecat
-        url: jdbc:mysql://111.230.244.153:3306/catdb
+        url: jdbc:mysql://localhost:3306/lifecat_server
         username: root
         password: wangshihao
         # 使用druid数据源
@@ -16,4 +16,4 @@ spring:
 
 mybatis:
     mapperLocations: classpath*:mapper/*.xml
-    typeAliasesPackage: com.ten.lifecat.entity.entity
+    typeAliasesPackage: com.ten.lifecat.server.entity

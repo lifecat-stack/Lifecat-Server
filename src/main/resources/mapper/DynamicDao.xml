@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ten.lifecat.server.mapper.DynamicDao">
+
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.ten.lifecat.server.entity.Dynamic">
+        <result column="id" property="id"/>
+        <result column="dynamic_id" property="dynamicId"/>
+        <result column="user_id" property="userId"/>
+        <result column="dynamic_content" property="dynamicContent"/>
+        <result column="image_count" property="imageCount"/>
+        <result column="favorite_count" property="favoriteCount"/>
+        <result column="comment_count" property="commentCount"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="is_deleted" property="isDeleted"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        dynamic_id,
+        user_id,
+        dynamic_content,
+        image_count,
+        favorite_count,
+        comment_count,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO dynamic
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null">id,</if>
+            <if test="pojo.dynamicId != null">dynamic_id,</if>
+            <if test="pojo.userId != null">user_id,</if>
+            <if test="pojo.dynamicContent != null">dynamic_content,</if>
+            <if test="pojo.imageCount != null">image_count,</if>
+            <if test="pojo.favoriteCount != null">favorite_count,</if>
+            <if test="pojo.commentCount != null">comment_count,</if>
+            <if test="pojo.createTime != null">create_time,</if>
+            <if test="pojo.updateTime != null">update_time,</if>
+            <if test="pojo.isDeleted != null">is_deleted,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null">#{pojo.id},</if>
+            <if test="pojo.dynamicId != null">#{pojo.dynamicId},</if>
+            <if test="pojo.userId != null">#{pojo.userId},</if>
+            <if test="pojo.dynamicContent != null">#{pojo.dynamicContent},</if>
+            <if test="pojo.imageCount != null">#{pojo.imageCount},</if>
+            <if test="pojo.favoriteCount != null">#{pojo.favoriteCount},</if>
+            <if test="pojo.commentCount != null">#{pojo.commentCount},</if>
+            <if test="pojo.createTime != null">#{pojo.createTime},</if>
+            <if test="pojo.updateTime != null">#{pojo.updateTime},</if>
+            <if test="pojo.isDeleted != null">#{pojo.isDeleted},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO dynamic(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.dynamicId},
+            #{pojo.userId},
+            #{pojo.dynamicContent},
+            #{pojo.imageCount},
+            #{pojo.favoriteCount},
+            #{pojo.commentCount},
+            #{pojo.createTime},
+            #{pojo.updateTime},
+            #{pojo.isDeleted}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE dynamic
+        <set>
+            <if test="pojo.id != null">id = #{pojo.id},</if>
+            <if test="pojo.dynamicId != null">dynamic_id = #{pojo.dynamicId},</if>
+            <if test="pojo.userId != null">user_id = #{pojo.userId},</if>
+            <if test="pojo.dynamicContent != null">dynamic_content = #{pojo.dynamicContent},</if>
+            <if test="pojo.imageCount != null">image_count = #{pojo.imageCount},</if>
+            <if test="pojo.favoriteCount != null">favorite_count = #{pojo.favoriteCount},</if>
+            <if test="pojo.commentCount != null">comment_count = #{pojo.commentCount},</if>
+            <if test="pojo.createTime != null">create_time = #{pojo.createTime},</if>
+            <if test="pojo.isDeleted != null">is_deleted = #{pojo.isDeleted},</if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+
+    <!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT
+        <include refid="all_column"/>
+        FROM dynamic
+        <where>
+            <if test="pojo.id != null">AND id = #{pojo.id}</if>
+            <if test="pojo.dynamicId != null">AND dynamic_id = #{pojo.dynamicId}</if>
+            <if test="pojo.userId != null">AND user_id = #{pojo.userId}</if>
+            <if test="pojo.dynamicContent != null">AND dynamic_content = #{pojo.dynamicContent}</if>
+            <if test="pojo.imageCount != null">AND image_count = #{pojo.imageCount}</if>
+            <if test="pojo.favoriteCount != null">AND favorite_count = #{pojo.favoriteCount}</if>
+            <if test="pojo.commentCount != null">AND comment_count = #{pojo.commentCount}</if>
+            <if test="pojo.createTime != null">AND create_time = #{pojo.createTime}</if>
+            <if test="pojo.updateTime != null">AND update_time = #{pojo.updateTime}</if>
+            <if test="pojo.isDeleted != null">AND is_deleted = #{pojo.isDeleted}</if>
+        </where>
+        LIMIT 1000
+    </select>
+
+    <!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM dynamic where id = #{pojo.id}
+    </delete>
+</mapper>

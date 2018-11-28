@@ -1,0 +1,18 @@
+-- auto Generated on 2018-11-28 09:29:40 
+-- DROP TABLE IF EXISTS `user`; 
+CREATE TABLE user(
+    `id` INTEGER(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `user_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户ID',
+    `user_name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户账号 Unique',
+    `user_sex` INTEGER(12) NOT NULL DEFAULT -1 COMMENT '性别 0空 1男 2女',
+    `user_birthday` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '生日',
+    `user_email` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '邮箱',
+    `user_location` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '住址',
+    `user_phone` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '手机号',
+    `user_icon_url` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户头像链接',
+    `source` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户来源(用于推荐功能)',
+    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'createTime',
+    `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'updateTime',
+    `is_deleted` INTEGER(12) NOT NULL DEFAULT -1 COMMENT 'isDeleted',
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'user';

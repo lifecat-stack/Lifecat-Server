@@ -1,0 +1,13 @@
+-- auto Generated on 2018-11-28 09:31:11 
+-- DROP TABLE IF EXISTS `comment`; 
+CREATE TABLE comment(
+    `id` INTEGER(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `comment_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '评论ID Unique',
+    `dynamic_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '评论所属动态ID',
+    `comment_host_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '评论主体用户ID',
+    `comment_user_id` VARCHAR(50) NOT NULL DEFAULT '' COMMENT '评论客体用户ID',
+    `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'createTime',
+    `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'updateTime',
+    `is_deleted` INTEGER(12) NOT NULL DEFAULT -1 COMMENT 'isDeleted',
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'comment';
